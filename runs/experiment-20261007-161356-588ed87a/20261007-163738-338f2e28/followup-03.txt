@@ -1,0 +1,26 @@
+Your current file now compiles in C89. Keep that declaration placement and all five literal ABI signatures. The independent tests fail because bucket order and typed values are corrupted. Return the complete corrected file in ONE code block.
+
+Remove the key_type macro parameter and the unsigned insertion key. The scratch array and insertion key MUST both have the original signed/floating type. Never convert stored float/double/long double values to unsigned integers; that truncates fractions and is undefined for negatives. Never compare signed integers through an unsigned insertion key. Use unsigned integers ONLY inside the integer bucket-index helpers.
+
+Use separate static bucket-index helpers for int32_t, int64_t, float, double and long double; pass the helper name to the body macro. Integer helpers convert to the SAME-width unsigned type, XOR the sign bit, special-case B=1 to index0, otherwise divide this unsigned monotone key by (unsigned_maximum/B+1). Keep the int64 key truly uint64_t. Use C89 typed shifts for sign masks and ~(uint64_t)0 for unsigned maximum; no ULL/LL literal or INT64_MAX macro.
+
+For EACH floating helper use the fixed legal-domain monotone normalization (value+1000000)/2000000*B, convert its nonnegative value to uint32_t and CLAMP index>=B to B-1. No direct floating-to-unsigned conversion of the original value. No modulo. The upper endpoint is legal and must never index B. Declare the helper index at the TOP before calculations. Store original typed values unchanged, including tiny fractions and signed zeros.
+
+B=1 is NOT a reason to return without sorting: all values go into one bucket and must still be sorted. Replace the buckets==1 early success with count==0 success, after validating me, count<=1000000, B1..1024 and data for positive count. Never call lab_allocator before rejecting null me. Validate the ENTIRE floating array before allocation, including singleton and tail values; reject NaN, infinity and values outside [-1000000,1000000] with -1 and unchanged input.
+
+Initialize every population counter to zero BEFORE counting. Compute starts and cursors, scatter typed originals to the typed temporary array, sort each bucket via insertion using separate scan and left-moving indices, then copy back. Free every successful allocation; allocation failure returns-2 with input unchanged. No standard headers/calls. IMPORTANT: clang is introducing _bzero from your counter-zeroing loop. Declare the population pointer as volatile uint32_t*, use volatile stores for zero initialization, and cast away volatile ONLY when passing it to allocator Free. This prevents compiler-generated forbidden libc calls without changing the compiler flags or tests. Use volatile accesses similarly if copy loops would introduce memcpy/memmove. No libc dependency is allowed in the model methods object.
+
+C89: a BODY-ONLY macro with its own braces; every declaration is at the TOP before statements, including nested blocks and helpers. No declaration in any for initializer. No inline, //, C99, LL/ULL, token pasting ## or placeholders. Use the existing lab_allocator and real Alloc/Free slots. Preserve all five literal names and their exact original array types. Return the full file only.
+
+Allocator ABI reminder: Free takes (IEcoMemoryAllocator1* allocator, voidptr_t memory). Its first argument is ALWAYS the allocator object, and its second argument is the allocated pointer, cast to void* when removing volatile. It never takes a byte count, and the buffer is never its first argument. Preserve the real SDK two-argument calling convention for every cleanup path. This is the supplied allocator API, not a sorting implementation.
+
+Final C89 grammar reminder for NEW helpers. This tiny example is unrelated to sorting and illustrates declaration placement ONLY:
+
+static int grammar_example(int value) {
+    int result;
+    if (value == 0) { return 0; }
+    result = value;
+    return result;
+}
+
+Do not include grammar_example in your source. Follow its declaration placement in EVERY new integer and floating mapper: the unsigned key/index declaration comes FIRST, BEFORE the B==1 or domain if. Compute into that variable later. In every floating exported wrapper, declare the validation-loop index FIRST, BEFORE its if, then use for (i = ...). Keep the shared macro's declarations FIRST too. Check your full output for for (uint32_t ...), inline and declarations following if; remove ALL such C99 constructs before returning. Keep the B==1 INDEX0 special case in both integer helpers to avoid unsigned width overflow and division by zero; never skip actual sorting for B==1. In the shared macro, AFTER the validity guard and BEFORE allocation, a valid count==0 must return0. Preserve full floating validation BEFORE allocation and clamped upper endpoints. Volatile population counters and correct Free(allocator object, pointer) semantics are mandatory. Return ONLY the completed C89 BucketMethods.c file.

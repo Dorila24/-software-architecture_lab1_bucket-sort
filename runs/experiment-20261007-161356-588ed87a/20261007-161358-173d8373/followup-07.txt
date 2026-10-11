@@ -1,0 +1,19 @@
+Fix your latest compact macro source. Return the full corrected file. The shared sorting macro must contain ONLY a block of function-body statements and declarations. It must NOT generate a function definition or construct its name. Do not use the ## token-pasting operator anywhere.
+
+Write FIVE EXPLICIT exported function definitions matching ArpoMethods.h, each calling the common body macro with its real data type, mapper and floating flag. The required name/type pairs are:
+lab_sort_int : int32_t
+lab_sort_long : int64_t
+lab_sort_float : float
+lab_sort_double : double
+lab_sort_long_double : long double
+Every function returns int16_t ECOCALLMETHOD and takes IEcoLab65* me, its typed data pointer, uint32_t count, uint32_t buckets. A type and an exported name are distinct. int32 and int64 are NOT SDK type names; int32_t and int64_t are. long_double is NOT a C type. Do not concatenate long double into an identifier.
+
+Keep the sorting declarations at the top of the common macro's block. Use only existing loop variables; no C99 declarations in for initializers, inline, LL/ULL literals or standard headers. The 64-bit sign mask MUST use the C89 expression ((uint64_t)1 << 63), with no large integer literal. The full unsigned maximum is ~(uint64_t)0. B=1 maps to zero; otherwise the width is unsigned-maximum/B+1. Preserve full 64-bit arithmetic and original typed stored values.
+
+Your floating mappers currently use modulo hashing. That does NOT preserve bucket order. Replace modulo with monotone fixed-domain normalization: add1000000, divide by2000000, multiply by B, convert the nonnegative result to a uint32_t index and clamp it to B-1. This applies to float, double and long double. Validate the full floating input before ANY allocation; reject NaN, infinity and out-of-range values, even singleton arrays.
+
+Add the missing count>1000000 guard before allocations or data reads. Null me is always invalid; null data is invalid for positive count; valid empty input returns0 after validating me and B. Use the already supplied lab_allocator, never redefine it. All buffers come from its Alloc/Free slots. Allocation failure returns-2 unchanged, and frees only successful nonnull buffers. Invalid input returns-1 unchanged.
+
+Maintain the separate population, prefix/start, cursor/scatter passes. Use a SEPARATE scan index for the insertion-sort outer loop, and another index that moves left inside its while loop. Do not decrement the outer-loop scan index. Copy typed values back only after success, then free every buffer. Make the scratch and initialization/copy accesses appropriately volatile so clang O2 does not introduce forbidden memset, memcpy or memmove dependencies. Cast the allocated pointers appropriately when passing them to Free.
+
+Keep one compact common C89 body and all FIVE literal exported functions. Return the full file in exactly one code block.

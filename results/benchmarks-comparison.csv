@@ -1,0 +1,13 @@
+Вариант,Распределение,n,B,Bucket мс,qsort мс,qsort / Bucket
+short,uniform,1000,128,0.016000,0.057000,3.562
+short,uniform,10000,128,0.345000,1.140000,3.304
+short,uniform,50000,128,2.989000,4.747000,1.588
+short,cluster_reverse,1000,128,0.170000,0.016000,0.094
+short,cluster_reverse,5000,128,3.773000,0.070000,0.019
+short,cluster_reverse,10000,128,12.921000,0.124000,0.010
+detailed,uniform,1000,128,0.014000,0.052000,3.714
+detailed,uniform,10000,128,0.312000,1.128000,3.615
+detailed,uniform,50000,128,2.755000,4.789000,1.738
+detailed,cluster_reverse,1000,128,0.167000,0.017000,0.102
+detailed,cluster_reverse,5000,128,3.671000,0.070000,0.019
+detailed,cluster_reverse,10000,128,12.220000,0.129000,0.011

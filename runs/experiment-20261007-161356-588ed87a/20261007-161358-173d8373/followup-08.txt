@@ -1,0 +1,9 @@
+Your latest source now COMPILES in C89 and has all five ABI functions. Preserve that working syntax and structure. The independent client crashes because the three floating mappers return an out-of-bounds index for the LEGAL upper endpoint.
+
+For value=1000000 your expression produces exactly buckets, but only indices0 through buckets-1 exist. In EACH of map_float, map_double and map_long_double, declare a uint32_t index at the TOP of the helper, calculate the normalized index into it, then compare it with buckets and clamp to buckets-1 BEFORE returning. This clamp is mandatory for ALL THREE helpers, including B=1. Do not return the normalization expression directly. Do not use modulo, floor or other library functions. Keep the existing correct unsigned integer mappings.
+
+Move the entire floating-value validation loop BEFORE lab_allocator/Alloc calls. Invalid floating input must return-1 directly without any allocation or write. Do not jump to cleanup before scratch pointers have been assigned. Keep null-me, null-data, count<=1000000, and B1..1024 guards before data reads, and preserve valid empty success0.
+
+Use a separate outer scan variable k (declared at the start of the common macro block) for insertion sorting. The inner position j may move left; k advances through the region independently. Preserve prefix counting, starts initialized from0, cursor scatter, all typed values, cleanup of every nonnull allocation and unchanged input on -1/-2. Keep C89: all variables declared first, no inline/for declarations/LL/ULL/standard library calls. Keep the five literal wrappers and the shared body-only macro with no ## token pasting.
+
+Return the FULL corrected file in one code block. The unchanged independent client must run through all cases without memory corruption.

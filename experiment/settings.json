@@ -1,0 +1,23 @@
+{
+  "model": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+  "revision": "29efdbab55a161237ab1e432a3abaf6c7ae2b477",
+  "weights_bits": 4,
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "top_k": 20,
+  "repetition_penalty": 1.05,
+  "seed": 42,
+  "max_tokens": 8192,
+  "protocol": "single-file",
+  "initial_kv_bits": 4,
+  "continuation_kv_bits": 8,
+  "pairs": 3,
+  "generation_requests": 100,
+  "author": "Фирсова Валерия Дмитриевна",
+  "group": "24ТИДИ",
+  "sdk_archive": "Eco.Framework_20260918.zip",
+  "sdk_archive_sha256": "2f23fffb9e81d4e5423153e2ff7236578ae5e947501a1e5c4168d3dc2b3c08b3",
+  "sdk_tree_sha256": "75d6d2171f845f356a2c9f445b963217fca0f8c4d741ffcea08f04ec9146464a",
+  "hardware": "Apple M4 Pro, 24 GiB RAM",
+  "generation_hardware_scope": "Historical settings only; model and MLX are not needed to build or test this repository."
+}

@@ -1,0 +1,17 @@
+Transform YOUR LAST SOURCE FILE into strict ANSI C89. Do not return the same file. The compiler rejected it. Return the full corrected file only.
+
+1. Remove the word inline from EVERY helper definition. C89 has no inline keyword. Use ordinary static functions.
+2. Hoist every variable declaration to the BEGINNING of its enclosing function or block, BEFORE any if, validation, allocation, loop or other statement. This applies to allocator, buffer pointers, keys, indices and status variables. A declaration with initialization following an if is also illegal. Declare first, then assign later.
+3. Replace EVERY loop initializer that declares a variable. The legal pattern is:
+
+    uint32_t i;
+    /* other declarations come here */
+    for (i = 0; i < count; ++i) {
+        /* statements come here */
+    }
+
+The uint32_t declaration belongs at the very top of the block; the loop initializer contains only an assignment. This snippet illustrates grammar, not a sorting solution. Apply it to ALL loops in all helpers and all five exported methods.
+4. Use /* ... */ comments, 0 for null pointers, and SDK integer typedefs. No long long, ULL literals, variable length arrays, standard headers or library calls.
+5. Keep all five ABI signatures from ArpoMethods.h. lab_allocator is supplied by the scaffold; only call it. Keep one complete source file with all methods; do not replace methods with error placeholders.
+
+Your next output must address these syntax errors everywhere, rather than adding more C99 constructs. Return exactly ONE code block containing the full C89 replacement.

@@ -1,0 +1,1 @@
+Implement Bucket sort for the five functions declared in HeaderFiles/ArpoMethods.h. Follow its contract exactly. Use ANSI C89, only the supplied Eco allocator for temporary memory, and no libc, math.h or third-party calls. The ACOM scaffold and client are supplied. Return one complete SourceFiles/BucketMethods.c including ArpoMethods.h; do not change the ABI or other files.

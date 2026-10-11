@@ -1,0 +1,1046 @@
+{
+  "schema_version": 1,
+  "id": "20261007-164351-bd72add2",
+  "label": "short",
+  "created_at": "2026-10-07T13:43:51.716036+00:00",
+  "finished_at": "2026-10-07T19:32:36.617243+00:00",
+  "status": "passed",
+  "model_revision": {
+    "repo_id": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+    "revision": "29efdbab55a161237ab1e432a3abaf6c7ae2b477"
+  },
+  "seed_sha256": "85605375f84c3ee4ba8135d3f91f4d3a637490ab21a0208f93a4aaf723961e14",
+  "initial_prompt_sha256": "c0967ee83704fe098824d1c2d519777c7b19dfbf47251483ea1f3d5177a79037",
+  "initial_prompt_chars": 377,
+  "initial_prompt_bytes": 377,
+  "validation_files_sha256": {
+    "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+    "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+    "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+  },
+  "metrics": {
+    "requests": 26,
+    "successful_requests": 26,
+    "failed_requests": 0,
+    "requests_without_usage": 0,
+    "prompt_tokens_known": 286474,
+    "completion_tokens_known": 36349,
+    "total_tokens_known": 322823,
+    "tokens_complete": true,
+    "requests_complete": true,
+    "timing_complete": true,
+    "initial_request_prompt_tokens": 2772,
+    "model_time_s": 3651.2728618740075,
+    "tool_time_s": 0.19653200000175275,
+    "validation_time_s": 28.90162054199027,
+    "active_time_s": 3680.567914418003,
+    "tool_calls": 26,
+    "repair_cycles": 25,
+    "estimated_cost_known": 0.0,
+    "context_compaction_time_s": 0.011006291999365203
+  },
+  "seed_context_chars": 7657,
+  "user_followups": 7,
+  "context_compactions": [
+    {
+      "type": "context_compaction",
+      "at": "2026-10-07T17:16:45.784909+00:00",
+      "archive": "context-archive-01.json",
+      "archive_sha256": "45f3051344e726b88eb7104565ade9b4033b448730ce76847860b7bb65f043ae",
+      "messages_before": 14,
+      "messages_after": 2,
+      "chars_before": 59600,
+      "chars_after": 9094,
+      "strategy": "initial contract + all human followups (contract mode)",
+      "duration_s": 0.00114900000335183
+    },
+    {
+      "type": "context_compaction",
+      "at": "2026-10-07T17:58:28.935225+00:00",
+      "archive": "context-archive-02.json",
+      "archive_sha256": "8671aa53fe542cd597ac64a5c98ef4b7581ac43bf5f038d9c84975890483adb1",
+      "messages_before": 12,
+      "messages_after": 6,
+      "chars_before": 61699,
+      "chars_after": 29567,
+      "strategy": "initial contract + all human followups + latest assistant and checks",
+      "duration_s": 0.0013727499899687245
+    },
+    {
+      "type": "context_compaction",
+      "at": "2026-10-07T18:40:48.021649+00:00",
+      "archive": "context-archive-03.json",
+      "archive_sha256": "5fb6ddab6436aa72af44620dae876eea703ffd9263e72b1c07280faf5f63459b",
+      "messages_before": 16,
+      "messages_after": 7,
+      "chars_before": 47498,
+      "chars_after": 21140,
+      "strategy": "initial contract + all human followups + latest assistant and checks",
+      "duration_s": 0.0015120000025490299
+    },
+    {
+      "type": "context_compaction",
+      "at": "2026-10-07T18:56:48.851117+00:00",
+      "archive": "context-archive-04.json",
+      "archive_sha256": "13ce0fbbc4677b2d2ab4e0a533613200f89eefb0956694dccf2c48079aafcb25",
+      "messages_before": 17,
+      "messages_after": 8,
+      "chars_before": 43863,
+      "chars_after": 26911,
+      "strategy": "initial contract + all human followups + latest assistant and checks",
+      "duration_s": 0.0018607920064823702
+    },
+    {
+      "type": "context_compaction",
+      "at": "2026-10-07T19:04:43.818767+00:00",
+      "archive": "context-archive-05.json",
+      "archive_sha256": "c01b311ab893463387779e0fbfeb884fa57fcc960e39f6bd18e96c743638e635",
+      "messages_before": 18,
+      "messages_after": 9,
+      "chars_before": 56709,
+      "chars_after": 33210,
+      "strategy": "initial contract + all human followups + latest assistant and checks",
+      "duration_s": 0.0016852090047905222
+    },
+    {
+      "type": "context_compaction",
+      "at": "2026-10-07T19:13:08.771860+00:00",
+      "archive": "context-archive-06.json",
+      "archive_sha256": "04fe8fc01f3df24c794a8b8a727603697c2eca98d5f0928fa2416ba6632dacc7",
+      "messages_before": 19,
+      "messages_after": 7,
+      "chars_before": 55874,
+      "chars_after": 27239,
+      "strategy": "initial contract + all human followups (contract mode)",
+      "duration_s": 0.0016366659983759746
+    },
+    {
+      "type": "context_compaction",
+      "at": "2026-10-07T19:24:08.838860+00:00",
+      "archive": "context-archive-07.json",
+      "archive_sha256": "fd3dfa40dc293b97e1312ba428717e629c32f44c8faaaf447cf250dd9ccbed7a",
+      "messages_before": 20,
+      "messages_after": 11,
+      "chars_before": 60298,
+      "chars_after": 37697,
+      "strategy": "initial contract + all human followups + latest assistant and checks",
+      "duration_s": 0.0017898749938467517
+    }
+  ],
+  "last_reply_sha256": "502558815bb157ce6f7f9c1b2ff0ef9cc3128fcdfa307b418b4cd3dd0619bd52",
+  "repeat": 3,
+  "source": "variants/short/pair-3/BucketMethods.c",
+  "source_sha256": "33e2ed06d773d7936dc01cadd930520520f4e454bbcbff9c7e820dd7fffc5ee1",
+  "publication_scope": "Measured fields and validation results exported from the original run. SDK header context, full model messages, local paths and solver configuration omitted. Original archives retained locally; all failed generation attempts remain in the request ledger.",
+  "validation": [
+    {
+      "at": "2026-10-07T13:44:34.232705+00:00",
+      "passed": false,
+      "duration_s": 0.18373058299766853,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.09093595900048967,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.09013224999944214,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T13:45:45.728239+00:00",
+      "passed": false,
+      "duration_s": 0.2809818749956321,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.13666937500238419,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.14119208299962338,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T13:47:29.978795+00:00",
+      "passed": false,
+      "duration_s": 0.289594957997906,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.13973720899957698,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.1469130000041332,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T13:49:52.954161+00:00",
+      "passed": false,
+      "duration_s": 0.23345424998842645,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.08836866600904614,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.14224841599934734,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T17:17:59.303036+00:00",
+      "passed": false,
+      "duration_s": 0.2892735000059474,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.14428741700248793,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.1416912079876056,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T17:19:57.796692+00:00",
+      "passed": false,
+      "duration_s": 0.18384708299709018,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.09079766699869651,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.09031962500012014,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T17:22:51.986724+00:00",
+      "passed": false,
+      "duration_s": 0.18147508300899062,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.08848916699935216,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.09032099999603815,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T18:00:35.743799+00:00",
+      "passed": false,
+      "duration_s": 1.7801758339919616,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 0.8388445829914417,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.9377597499988042,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T18:02:48.910381+00:00",
+      "passed": false,
+      "duration_s": 1.7811839589994634,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 0.9354033749987138,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.8402404580119764,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T18:05:14.953596+00:00",
+      "passed": false,
+      "duration_s": 1.623587417008821,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 0.8327526670036605,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.7857707920047687,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T18:42:45.685545+00:00",
+      "passed": false,
+      "duration_s": 1.8752463329874445,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 0.8826037910039304,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.9892245840019314,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T18:44:59.859211+00:00",
+      "passed": false,
+      "duration_s": 1.8578626669914229,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 0.9323382500006119,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.9221015419898322,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T18:47:28.405066+00:00",
+      "passed": false,
+      "duration_s": 1.665649749993463,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 0.731872584001394,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.9299241670087213,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T18:58:54.837957+00:00",
+      "passed": false,
+      "duration_s": 2.250808249998954,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 1.2500474589905934,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.9974582910072058,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:01:31.514839+00:00",
+      "passed": false,
+      "duration_s": 1.9685772090015234,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.7578548340097768,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 1.2074150830012513,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:04:43.507759+00:00",
+      "passed": false,
+      "duration_s": 2.2518853330111597,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 1.1783378330001142,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 1.0695000830019126,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:07:11.631690+00:00",
+      "passed": false,
+      "duration_s": 2.1931372079998255,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 1.027029750010115,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 1.161949707995518,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:09:59.682329+00:00",
+      "passed": false,
+      "duration_s": 1.8821430420066463,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 0.8893679589964449,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.9874767500004964,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:13:08.460779+00:00",
+      "passed": false,
+      "duration_s": 2.038873124998645,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 0.9833743329945719,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 1.0520255000010366,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:15:17.321458+00:00",
+      "passed": false,
+      "duration_s": 0.2343040830019163,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.08444383299502078,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.1471740000124555,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:17:53.427054+00:00",
+      "passed": false,
+      "duration_s": 0.27458120899973437,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.13254525000229478,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.13840741700551007,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:20:50.214105+00:00",
+      "passed": false,
+      "duration_s": 0.2881495420006104,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.14429562499572057,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.14031724999949802,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:24:08.537450+00:00",
+      "passed": false,
+      "duration_s": 0.3778870420064777,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.24276495799131226,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.13142216599953827,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:26:42.053760+00:00",
+      "passed": false,
+      "duration_s": 0.2386104159959359,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.08838420901156496,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.14727025000320282,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:29:29.083295+00:00",
+      "passed": false,
+      "duration_s": 0.24479720801173244,
+      "checks": [
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.1509959160030121,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "duration_s": 0.09040616700076498,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T19:32:36.617005+00:00",
+      "passed": true,
+      "duration_s": 2.4318035829928704,
+      "checks": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 1.214751959007117,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7"
+          },
+          "validator_unchanged": true,
+          "summary_lines": []
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "duration_s": 1.2104145830089692,
+          "validator_sha256": {
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/src/arpo_lab/eco_build.py": "8812640eff13d928981aa9cdd5d529a129068c0cb0d2a3b68a11f296a60fb1d7",
+            "/Users/valeriia_firs/Desktop/github/ARPO_solver_macos/labs/bucket-sort-65/checks/reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057"
+          },
+          "validator_unchanged": true,
+          "summary_lines": [
+            "ACCURACY,index,actual,reference,absolute_error",
+            "ACCURACY,0,-1000000.000000,-1000000.000000,0",
+            "ACCURACY,1,-1.250000,-1.250000,0",
+            "ACCURACY,2,0.000000,0.000000,0",
+            "ACCURACY,3,0.500000,0.500000,0",
+            "ACCURACY,4,0.500000,0.500000,0",
+            "ACCURACY,5,1000000.000000,1000000.000000,0",
+            "BUCKET_CHECK cases=1648 failures=0 live_allocations=0 invalid_frees=0 sizeof_long=8 sizeof_long_double=8 LDBL_MANT_DIG=53"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "started_at": "2026-10-07T13:43:51.718803+00:00",
+      "ended_at": "2026-10-07T13:49:52.954485+00:00",
+      "duration_s": 361.2331989170052,
+      "memory_limits": {
+        "mlx_memory_guideline_bytes": 13958643712,
+        "mlx_wired_limit_bytes": 12884901888,
+        "mlx_free_cache_limit_bytes": 0,
+        "stop_active_mlx_bytes": 13958643712,
+        "stop_peak_rss_bytes": 17179869184,
+        "poll_interval_s": 0.5,
+        "kv_bits": 4,
+        "quantized_kv_start": 0,
+        "prefill_step_size": 128,
+        "context_max_chars": 60000
+      },
+      "kv_bits": "4"
+    },
+    {
+      "started_at": "2026-10-07T17:16:45.786097+00:00",
+      "ended_at": "2026-10-07T17:22:51.986937+00:00",
+      "duration_s": 366.20127600000706,
+      "memory_limits": {
+        "mlx_memory_guideline_bytes": 13958643712,
+        "mlx_wired_limit_bytes": 12884901888,
+        "mlx_free_cache_limit_bytes": 0,
+        "stop_active_mlx_bytes": 13958643712,
+        "stop_peak_rss_bytes": 17179869184,
+        "poll_interval_s": 0.5,
+        "kv_bits": 8,
+        "quantized_kv_start": 0,
+        "prefill_step_size": 128,
+        "context_max_chars": 60000
+      },
+      "kv_bits": "8"
+    },
+    {
+      "started_at": "2026-10-07T17:58:28.936769+00:00",
+      "ended_at": "2026-10-07T18:05:14.953824+00:00",
+      "duration_s": 406.01811316699605,
+      "memory_limits": {
+        "mlx_memory_guideline_bytes": 13958643712,
+        "mlx_wired_limit_bytes": 12884901888,
+        "mlx_free_cache_limit_bytes": 0,
+        "stop_active_mlx_bytes": 13958643712,
+        "stop_peak_rss_bytes": 17179869184,
+        "poll_interval_s": 0.5,
+        "kv_bits": 8,
+        "quantized_kv_start": 0,
+        "prefill_step_size": 128,
+        "context_max_chars": 60000
+      },
+      "kv_bits": "8"
+    },
+    {
+      "started_at": "2026-10-07T18:40:48.023198+00:00",
+      "ended_at": "2026-10-07T18:47:28.405257+00:00",
+      "duration_s": 400.39324670800124,
+      "memory_limits": {
+        "mlx_memory_guideline_bytes": 13958643712,
+        "mlx_wired_limit_bytes": 12884901888,
+        "mlx_free_cache_limit_bytes": 0,
+        "stop_active_mlx_bytes": 13958643712,
+        "stop_peak_rss_bytes": 17179869184,
+        "poll_interval_s": 0.5,
+        "kv_bits": 8,
+        "quantized_kv_start": 0,
+        "prefill_step_size": 128,
+        "context_max_chars": 60000
+      },
+      "kv_bits": "8"
+    },
+    {
+      "started_at": "2026-10-07T18:56:48.854195+00:00",
+      "ended_at": "2026-10-07T19:04:43.507944+00:00",
+      "duration_s": 474.58465066699137,
+      "memory_limits": {
+        "mlx_memory_guideline_bytes": 13958643712,
+        "mlx_wired_limit_bytes": 12884901888,
+        "mlx_free_cache_limit_bytes": 0,
+        "stop_active_mlx_bytes": 13958643712,
+        "stop_peak_rss_bytes": 17179869184,
+        "poll_interval_s": 0.5,
+        "kv_bits": 8,
+        "quantized_kv_start": 0,
+        "prefill_step_size": 128,
+        "context_max_chars": 60000
+      },
+      "kv_bits": "8"
+    },
+    {
+      "started_at": "2026-10-07T19:04:43.820700+00:00",
+      "ended_at": "2026-10-07T19:13:08.460989+00:00",
+      "duration_s": 504.6404066249961,
+      "memory_limits": {
+        "mlx_memory_guideline_bytes": 13958643712,
+        "mlx_wired_limit_bytes": 12884901888,
+        "mlx_free_cache_limit_bytes": 0,
+        "stop_active_mlx_bytes": 13958643712,
+        "stop_peak_rss_bytes": 17179869184,
+        "poll_interval_s": 0.5,
+        "kv_bits": 8,
+        "quantized_kv_start": 0,
+        "prefill_step_size": 128,
+        "context_max_chars": 60000
+      },
+      "kv_bits": "8"
+    },
+    {
+      "started_at": "2026-10-07T19:13:08.773539+00:00",
+      "ended_at": "2026-10-07T19:24:08.537651+00:00",
+      "duration_s": 659.7376598749979,
+      "memory_limits": {
+        "mlx_memory_guideline_bytes": 13958643712,
+        "mlx_wired_limit_bytes": 12884901888,
+        "mlx_free_cache_limit_bytes": 0,
+        "stop_active_mlx_bytes": 13958643712,
+        "stop_peak_rss_bytes": 17179869184,
+        "poll_interval_s": 0.5,
+        "kv_bits": 8,
+        "quantized_kv_start": 0,
+        "prefill_step_size": 128,
+        "context_max_chars": 60000
+      },
+      "kv_bits": "8"
+    },
+    {
+      "started_at": "2026-10-07T19:24:08.840736+00:00",
+      "ended_at": "2026-10-07T19:32:36.617238+00:00",
+      "duration_s": 507.74835616700875,
+      "memory_limits": {
+        "mlx_memory_guideline_bytes": 13958643712,
+        "mlx_wired_limit_bytes": 12884901888,
+        "mlx_free_cache_limit_bytes": 0,
+        "stop_active_mlx_bytes": 13958643712,
+        "stop_peak_rss_bytes": 17179869184,
+        "poll_interval_s": 0.5,
+        "kv_bits": 8,
+        "quantized_kv_start": 0,
+        "prefill_step_size": 128,
+        "context_max_chars": 60000
+      },
+      "kv_bits": "8"
+    }
+  ]
+}

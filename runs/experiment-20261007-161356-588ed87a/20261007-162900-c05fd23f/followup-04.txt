@@ -1,0 +1,13 @@
+Your latest typed-helper source has correct monotone unsigned integer mappings, clamped floating mappings, typed scratch storage, volatile populations, prefix/scatter passes, separate insertion indices and the correct Free allocator ABI. PRESERVE these parts. Return the full corrected file in one code block.
+
+Fix every remaining C89 violation precisely:
+- int32_bucket_index: move the key declaration to the FIRST line of the function body, BEFORE its buckets==1 if. Assign it later. int64_bucket_index: do the same with its uint64_t key. Do not use LL/ULL literals.
+- float_bucket_index, double_bucket_index and long_double_bucket_index: declare the uint32_t index at the FIRST line of EACH helper, before ANY if or other statement. Calculate into it afterwards. Keep the upper-endpoint clamp in all three.
+- lab_sort_float, lab_sort_double and lab_sort_long_double: each must declare uint32_t i at the FIRST line of its body, BEFORE the validity if. Replace every for (uint32_t i = ...) with for (i = ...), reusing that top declaration. No loop initializer may declare a variable anywhere in the file.
+- The shared macro already has all declarations first. Add a count==0 success return directly AFTER the me/count/buckets/data validity guard and BEFORE lab_allocator or any Alloc. This is NOT a buckets==1 return: B=1 must still perform insertion sorting. Check null me before accessing the allocator.
+
+The whole floating input validation must stay BEFORE calling the shared allocating macro. No invalid value may become an unsigned array index. Do not remove or weaken the full validation pass. Keep all original array types and five literal ABI names. Keep allocator as first Free argument and pointer as second, including a void* cast of volatile populations. Never pass a byte count to Free. Keep counter initialization volatile so nm has no _bzero/memset/memcpy/memmove.
+
+This is a compiler-and-empty-case repair, not a new algorithm. Do not reintroduce key_type or floating-to-unsigned storage, inline, C99 syntax, ## names or placeholders. Return the entire file only.
+
+Specific shared-macro order: currently allocator is assigned before the validity if. The initial validity guard must check !me (NOT an uninitialized allocator pointer) plus the count/B/data conditions. After that guard, return success for count==0. Then assign allocator with lab_allocator(me), then check !allocator separately before Alloc calls. Never read allocator before assigning it. The int helper's local key variable is unsigned and its value parameter is signed; move ONLY its declaration above the B==1 if, keeping the XOR assignment below the if. Preserve the floating helper ternary clamps, volatile populations, typed key and buffer, and all four cleanup calls.

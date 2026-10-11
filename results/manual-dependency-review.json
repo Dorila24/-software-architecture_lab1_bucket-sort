@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T17:38:51.063040+00:00",
+  "run": "20261007-161358-173d8373",
+  "source_sha256": "2e729736dabb3e8baa1bdec5cbd0edf6e0d371e2504f87de3f546b7e4156a002",
+  "automated_status": "passed",
+  "request_number": 20,
+  "manual_review_status": "needs_model_correction",
+  "undefined_symbols": [
+    "_bzero",
+    "_lab_allocator"
+  ],
+  "reason": "O2 compiler-generated bzero violates component no-libc contract; frozen automatic symbol filter did not reject bzero",
+  "source_unchanged_by_organizer": true,
+  "metrics_at_review": {
+    "requests": 20,
+    "successful_requests": 20,
+    "failed_requests": 0,
+    "requests_without_usage": 0,
+    "prompt_tokens_known": 247629,
+    "completion_tokens_known": 38936,
+    "total_tokens_known": 286565,
+    "tokens_complete": true,
+    "requests_complete": true,
+    "timing_complete": true,
+    "initial_request_prompt_tokens": 2772,
+    "model_time_s": 3762.0319800000216,
+    "tool_time_s": 0.1535002490199986,
+    "validation_time_s": 13.029821999960404,
+    "active_time_s": 3775.4315952499965,
+    "tool_calls": 20,
+    "repair_cycles": 19,
+    "estimated_cost_known": 0.0,
+    "context_compaction_time_s": 0.018661625013919547
+  },
+  "resolution": {
+    "finished_at": "2026-10-07T18:07:58.558444+00:00",
+    "request_number": 23,
+    "generated_by": "local Qwen via arpo lab-resume",
+    "source_sha256": "251d3699f63d8754de379eb60ff4af347ec369b3ee0da0580c6a5fdd75c546a0",
+    "methods_undefined_symbols": [
+      "_lab_allocator"
+    ],
+    "independent_cases": 1648,
+    "failures": 0,
+    "source_unchanged_by_organizer": true
+  }
+}

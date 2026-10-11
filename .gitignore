@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.pyc
+BuildFiles/
+.sdk/
+.eco/
+.venv/
+models/
+*.o
+*.a
+*.dylib
+.env

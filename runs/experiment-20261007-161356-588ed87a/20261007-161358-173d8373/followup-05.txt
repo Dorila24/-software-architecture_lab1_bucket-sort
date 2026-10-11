@@ -1,0 +1,17 @@
+Correct your last complete source. Most exported methods now use C89 declarations correctly; preserve that syntax. Return the whole corrected file in one code block.
+
+The four remaining compiler errors are SPECIFIC:
+- validate_float: declare uint32_t i at the top and change its for initializer to i = 0, with no type declaration there.
+- validate_double: do the same.
+- validate_long_double: do the same.
+- INT64_MAX expands to a forbidden LL literal on this SDK. Do not use INT64_MAX or other macros with long long literals. Construct maxima from unsigned SDK types and bitwise operations. No inline, C99 for declarations, declarations after statements or long long literals anywhere.
+
+The existing integer mappings are also mathematically wrong. A right shift/XOR of signed values folds negative and positive values together, and the cast to unsigned truncates the 64-bit range. Use the unsigned type of the same width as the input, convert the original signed value to that unsigned type, and XOR the sign-bit mask to obtain a monotonically increasing key. Compute the sign bit by shifting a value already cast to the appropriate unsigned SDK type. When B=1 return bucket zero. Otherwise the interval width is UMAX/B + 1, with UMAX obtained by bitwise NOT of zero in that SAME unsigned type. Divide the unsigned key by that width. Do not use signed subtraction or a 32-bit intermediate for the 64-bit case. Floating mappings must clamp the computed index to B-1, so x=1000000 is valid and never indexes beyond the buckets.
+
+Fix these remaining contract defects too:
+- A valid count=0 returns 0, including null data. Check me and bucket limits before that return. Positive count requires nonnull data before any floating validation reads it. All floating values, including a singleton, must be finite and in the legal interval.
+- Distribution needs THREE separate passes: count all populations, initialize the first offset to zero and compute prefix starts plus initial cursors, then scatter values using a per-bucket cursor. Your current code writes into temp_array[bucket_count[index]] before starts exist; different buckets overwrite each other. Sorting is done only after the complete scatter, over each [start,start+population) region. Copy the original typed values back only after success.
+- On allocation failure, Free only NONNULL successful allocations, then return -2 unchanged. Release every scratch buffer on all successful and error exits. Do not allocate a separate oversized buffer per bucket.
+- Keep ALL FIVE exact ABI signatures. No placeholder methods. Keep the C89 declaration-first structure in every function and every block. Access scratch/copy loops appropriately through volatile pointers if needed to prevent forbidden compiler-generated memset/memcpy. Do not call libc.
+
+Return the full corrected source file. The independent C89/UBSan/ACOM/qsort/error/allocator checks are unchanged.

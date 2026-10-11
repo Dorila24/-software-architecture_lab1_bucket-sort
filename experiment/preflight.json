@@ -1,0 +1,15 @@
+{
+  "scaffold_compiles": true,
+  "unsolved_seed_fails": true,
+  "independent_clients_c89_compile": true,
+  "model_pending": false,
+  "trusted_files_sha256": {
+    "reference.c": "ac7dec57609fbfab65cfa608508665a982722f84027e6baa28a14700753bd057",
+    "benchmark.c": "334e77ddae55fc2312b401740a7c3f02a56e6f30ccd5b386872d99a9b61e89cb",
+    "validate.py": "3d18081c2763b79fe0e23c7ac8a04d84c8e35cd39f0b22ce39e8a6a5e1b218fa",
+    "short.txt": "c0967ee83704fe098824d1c2d519777c7b19dfbf47251483ea1f3d5177a79037",
+    "detailed.txt": "bab4db8fbe9558ef4d821cf24835efabf38d50bf45d82957b348d8412fd0c741"
+  },
+  "legal_maximum_count_test": true,
+  "description": "Historical preflight evidence from the original experiment; checks were frozen before generation."
+}

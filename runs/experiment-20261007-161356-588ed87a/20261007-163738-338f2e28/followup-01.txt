@@ -1,0 +1,21 @@
+Reimplement the complete file from the ORIGINAL fixed contract. Previous unsuccessful source is archived; do not reuse its errors. Return exactly ONE full C89 source code block for BucketMethods.c, with all five methods finished. Use only ArpoMethods.h. The common scaffold already implements lab_allocator: CALL it after validating me; do not define it or invent GetAllocator/pAllocator members.
+
+Use one compact shared macro for the sorting BODY ONLY. It must NOT generate a function definition or construct function names. No ## token pasting. Then write five literal exported functions, each invoking this shared typed body. Exact name and array type pairs:
+lab_sort_int / int32_t
+lab_sort_long / int64_t
+lab_sort_float / float
+lab_sort_double / double
+lab_sort_long_double / long double
+Each returns int16_t ECOCALLMETHOD and takes IEcoLab65* me, its typed data pointer, uint32_t count, uint32_t buckets. int32/int64/long_double are not C types.
+
+ANSI C89: the macro BODY has its own block. Its FIRST lines declare ALL variables: allocator, typed temporary pointer, population/start/cursor pointers, uint32_t loop indices and bucket index, typed insertion key and status. Statements/assignments/validation follow these declarations. Loop initializers are assignments to previously declared indices, such as for (i = 0; i < count; ++i). Every nested block and static helper also declares variables FIRST. No inline, C99 for declarations, mixed declarations/statements, variable-length arrays, LL/ULL literals, standard headers or library calls. Use block comments and 0 for null pointers.
+
+Validate me, count<=1000000, B in1..1024, and data nonnull when count>0 before any data read. A valid empty input returns0 after validating me/B. Integers accept ALL signed32/64 values without a floating-domain restriction. The three floating wrappers enable a whole-array validation pass BEFORE any allocation: every value must be finite in [-1000000,1000000]; x!=x rejects NaN, the bounds reject infinities. Validate even singleton arrays. Invalid input returns-1 unchanged, without allocating or jumping to cleanup of uninitialized pointers.
+
+Integer bucket helpers use unsigned SDK arithmetic of the SAME width as the input. Convert the signed value to that unsigned type and XOR its high-bit mask to form a monotone key. For64-bit C89 constants use ((uint64_t)1 << 63) and ~(uint64_t)0; no large hexadecimal literal, INT64_MAX or LL/ULL suffix. Use analogous typed32-bit expressions. B=1 maps to0; otherwise width=UMAX/B+1, index=unsigned key/width. No signed overflow, 32-bit narrowing of64-bit keys, double conversion for integer storage/comparison, modulo hashing or value reconstruction from keys.
+
+Floating helpers normalize the FIXED legal domain monotonically: add1000000, divide by2000000, multiply by B and convert the nonnegative result to uint32_t. In EACH floating helper declare an index FIRST, calculate into it and CLAMP index>=B to B-1 BEFORE returning. The legal upper endpoint1000000 yields B before clamping! This guard is mandatory for float, double AND long double, including B=1. Never use modulo or a library function for mapping. Typed original values are stored unchanged.
+
+After validation, obtain the real allocator. Allocate a typed temporary array and three uint32_t arrays of length B (populations, starts, cursors) using its Alloc slot. On ANY allocation failure, Free only nonnull successful allocations and return-2 with input unchanged. Before copying back, complete all validation/allocations/distribution/sorting. Initialize populations, count all populations in one pass, initialize starts[0]=0 and prefix starts plus cursors, scatter all original typed values in a separate pass, then sort each bucket region and concatenate. Use separate indices for the insertion outer scan and inner left-moving position; the inner test must stop at the bucket start. Preserve every original value, including signed zeros and neighboring int64 values above2^53. Copy typed values back and Free EVERY scratch allocation on success. C89 volatile loop accesses may prevent forbidden compiler-generated memset/memcpy/memmove; no libc calls.
+
+Keep the five literal ABI wrappers and compact shared body-only macro. Return the complete file, not explanations, patches, alternatives or placeholders. The independent checks are immutable.

@@ -1,0 +1,4 @@
+# Preserve measured source bytes and their SHA256 across Git configurations.
+* -text
+*.docx binary
+*.pdf binary

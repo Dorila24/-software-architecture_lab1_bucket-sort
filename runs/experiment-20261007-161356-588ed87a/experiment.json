@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-07T13:13:56.040292+00:00",
+  "finished_at": "2026-10-07T13:55:35.621242+00:00",
+  "prompts_sha256": {
+    "short": "c0967ee83704fe098824d1c2d519777c7b19dfbf47251483ea1f3d5177a79037",
+    "detailed": "bab4db8fbe9558ef4d821cf24835efabf38d50bf45d82957b348d8412fd0c741"
+  },
+  "runs": [
+    {
+      "path": "20261007-161358-173d8373",
+      "label": "short",
+      "repeat": 1,
+      "source": "variants/short/pair-1/BucketMethods.c",
+      "source_sha256": "251d3699f63d8754de379eb60ff4af347ec369b3ee0da0580c6a5fdd75c546a0"
+    },
+    {
+      "path": "20261007-162321-15f16862",
+      "label": "detailed",
+      "repeat": 1,
+      "source": "variants/detailed/pair-1/BucketMethods.c",
+      "source_sha256": "93e1802eb73eceae642198f422985b0ff927e6355fe3b7a8749b38abfb4ce70c"
+    },
+    {
+      "path": "20261007-162900-c05fd23f",
+      "label": "detailed",
+      "repeat": 2,
+      "source": "variants/detailed/pair-2/BucketMethods.c",
+      "source_sha256": "a2e97ec431473dc9bd0d83eb87a942c18d4ff301b0871eb76a92e8fe24e3e34d"
+    },
+    {
+      "path": "20261007-163738-338f2e28",
+      "label": "short",
+      "repeat": 2,
+      "source": "variants/short/pair-2/BucketMethods.c",
+      "source_sha256": "e6f51cc043cb38e077d0e6cca912f0cfcd6d877ad6033f9acee4f246ce9d9638"
+    },
+    {
+      "path": "20261007-164351-bd72add2",
+      "label": "short",
+      "repeat": 3,
+      "source": "variants/short/pair-3/BucketMethods.c",
+      "source_sha256": "33e2ed06d773d7936dc01cadd930520520f4e454bbcbff9c7e820dd7fffc5ee1"
+    },
+    {
+      "path": "20261007-164952-3d045c8c",
+      "label": "detailed",
+      "repeat": 3,
+      "source": "variants/detailed/pair-3/BucketMethods.c",
+      "source_sha256": "d5a76ceec4fece2c4330a4b89bbf8a88b378294527073ceb4e27ec8de39e399c"
+    }
+  ],
+  "publication_scope": "Publication subset. Numerical sources, all measured usage, saved manual prompts and validation results preserved. No private SDK headers, solver environment, weights or complete model context included."
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "label": "short",
+    "repeat": 1,
+    "source_sha256": "251d3699f63d8754de379eb60ff4af347ec369b3ee0da0580c6a5fdd75c546a0",
+    "distribution": "fixed-domain monotone mapping, population/prefix/cursor/scatter",
+    "integer_mapping": "same-width unsigned conversion XOR sign mask, UMAX/B+1 width, B=1 index0",
+    "floating_mapping": "fixed [-1000000,1000000] normalization and clamp upper endpoint",
+    "scratch": "typed n array and three uint32_t B arrays; volatile population accesses",
+    "insertion_indices": "outer j is decremented and rescans prefix",
+    "invalid_inputs": "all floating values validated before allocating; count/B/null guards",
+    "allocator": "four real Alloc calls and Free of every nonnull allocation",
+    "undefined_symbols": [
+      "_lab_allocator"
+    ],
+    "limits": "No formal proof; finite frozen cases and manual code review"
+  },
+  {
+    "label": "detailed",
+    "repeat": 1,
+    "source_sha256": "93e1802eb73eceae642198f422985b0ff927e6355fe3b7a8749b38abfb4ce70c",
+    "distribution": "fixed-domain monotone mapping, population/prefix/cursor/scatter",
+    "integer_mapping": "same-width unsigned conversion XOR sign mask, UMAX/B+1 width, B=1 index0",
+    "floating_mapping": "fixed [-1000000,1000000] normalization and clamp upper endpoint",
+    "scratch": "typed n array and three uint32_t B arrays; volatile population accesses",
+    "insertion_indices": "separate outer j and inner k",
+    "invalid_inputs": "all floating values validated before allocating; count/B/null guards",
+    "allocator": "four real Alloc calls and Free of every nonnull allocation",
+    "undefined_symbols": [
+      "_lab_allocator"
+    ],
+    "limits": "No formal proof; finite frozen cases and manual code review"
+  },
+  {
+    "label": "detailed",
+    "repeat": 2,
+    "source_sha256": "a2e97ec431473dc9bd0d83eb87a942c18d4ff301b0871eb76a92e8fe24e3e34d",
+    "distribution": "fixed-domain monotone mapping, population/prefix/cursor/scatter",
+    "integer_mapping": "same-width unsigned key XOR sign mask; UMAX/B+1 width, B=1 index0",
+    "floating_mapping": "fixed legal-domain normalization with upper endpoint clamp",
+    "scratch": "typed n array and three uint32_t B arrays, volatile population zero stores/accesses",
+    "data_flow": "scatter originals into typed temp, sort temp bucket regions, copy to data",
+    "insertion_indices": "separate outer j and inner k; k>start before reading k-1",
+    "invalid_inputs": "parameter guards before floating read, whole-array domain validation before Alloc, valid empty success before Alloc",
+    "allocator": "four SDK Alloc calls, cleanup every nonnull buffer, no write before all validation/Alloc success",
+    "undefined_symbols": [
+      "_lab_allocator"
+    ],
+    "limits": "Frozen finite test suite and manual review, not formal proof"
+  },
+  {
+    "label": "short",
+    "repeat": 2,
+    "source_sha256": "e6f51cc043cb38e077d0e6cca912f0cfcd6d877ad6033f9acee4f246ce9d9638",
+    "distribution": "fixed-domain monotone mapping, population/prefix/cursor/scatter",
+    "integer_mapping": "same-width unsigned key XOR sign mask; UMAX/B+1 width, B=1 index0",
+    "floating_mapping": "fixed legal-domain normalization with upper endpoint clamp",
+    "scratch": "typed n array and three uint32_t B arrays, volatile population zero stores/accesses",
+    "data_flow": "copy/count originals into immutable temp, scatter temp to data, sort data bucket regions",
+    "insertion_indices": "separate outer j and inner k; k>start before reading k-1",
+    "invalid_inputs": "parameter guards before floating read, whole-array domain validation before Alloc, valid empty success before Alloc",
+    "allocator": "four SDK Alloc calls, cleanup every nonnull buffer, no write before all validation/Alloc success",
+    "undefined_symbols": [
+      "_lab_allocator"
+    ],
+    "limits": "Frozen finite test suite and manual review, not formal proof"
+  },
+  {
+    "label": "short",
+    "repeat": 3,
+    "source_sha256": "33e2ed06d773d7936dc01cadd930520520f4e454bbcbff9c7e820dd7fffc5ee1",
+    "distribution": "fixed-domain monotone population/prefix/cursor/scatter",
+    "integer_mapping": "same-width unsigned XOR sign bit; UMAX/B+1 width guarded by B1 index0",
+    "floating_mapping": "all three fixed-domain normalized helpers clamp upper index; redundant domain check unreachable after whole-input validation",
+    "scratch": "typed temp and three uint32_t B arrays; volatile population zero stores",
+    "data_flow": "count originals, initialize every cursor from prefix starts, scatter data to temp, sort temp ranges, copy to data",
+    "insertion_indices": "outer i remains forward; separate inner j tests j>start before temp[j-1]",
+    "invalid_inputs": "common body guards me/count/B/data before any floating read; whole-array domain validation before Alloc; valid count0 success before Alloc",
+    "allocator": "four SDK Alloc calls; each nonnull allocation freed on failure and success; input unchanged before all validation/allocation succeed",
+    "undefined_symbols": [
+      "_lab_allocator"
+    ],
+    "limits": "Finite frozen tests and manual review, not formal proof; unused status and k remain"
+  },
+  {
+    "label": "detailed",
+    "repeat": 3,
+    "source_sha256": "d5a76ceec4fece2c4330a4b89bbf8a88b378294527073ceb4e27ec8de39e399c",
+    "distribution": "fixed-domain monotone population/prefix/cursor/scatter",
+    "integer_mapping": "same-width unsigned sign XOR; width UMAX/B+1 and B1 early index0",
+    "floating_mapping": "fixed domain with upper endpoint clamp; mapper unsigned -1 error branch is unreachable because each entire floating input is validated before calling shared body",
+    "scratch": "typed temp plus volatile populations and uint32_t starts/cursors; all cursor values initialized",
+    "data_flow": "scatter data into typed temp, insertion on temp ranges, copy temp to data",
+    "insertion_indices": "separate outer j and inner k, k>start before temp[k-1]",
+    "invalid_inputs": "all three floating wrappers declare i before guards, reject me/count/B/data before any read and validate all values before Alloc; valid count0 returns0; common integer body uses NULL-safe getter then guards",
+    "allocator": "all four allocations must succeed before data write, cleanup every nonnull buffer via Free(allocator,pointer), population cast void*",
+    "undefined_symbols": [
+      "_lab_allocator"
+    ],
+    "limits": "Finite frozen tests and manual review, not formal proof; redundant unreachable mapper status branch remains"
+  }
+]

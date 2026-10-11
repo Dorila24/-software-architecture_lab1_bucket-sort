@@ -1,0 +1,7 @@
+pair,prompt,active_s,input_tokens,output_tokens,generation_http,organizer_followups
+1,short,4266.207459,283673,43827,23,10
+1,detailed,1659.333137,126825,16682,11,4
+2,short,2030.576934,172732,17730,15,5
+2,detailed,2045.152117,160313,19649,13,4
+3,short,3680.567914,286474,36349,26,7
+3,detailed,1843.963813,141033,17956,12,4
