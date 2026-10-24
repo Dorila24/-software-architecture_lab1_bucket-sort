@@ -1,0 +1,13 @@
+Continue this SAME measured ordinary-long repeat3. Your exact actual response8 is retained above. Manager GUID value copy and local system/bus cleanup are now correct. This stage changes ONLY THREE guards. Do NOT attempt reference-count tail or state cleanup changes in this response; those will be corrected separately after these guards are checked.
+
+1. Restore your own original null-out guard BEFORE the current first dereference of out. This EXACT line is from YOUR OWN response5, not new implementation from the organizer:
+```c
+    if (out == 0) return ERR_ECO_POINTER;
+```
+All locals stay at the start of the body; insert that guard immediately BEFORE the existing first output-clear statement. Keep the existing output clear after the guard, so every nonnull out is still cleared before checking system/iid. Do not dereference a null output.
+
+2. In the existing D/Y dependency failure IF, the condition currently tests status EQUAL success AND output null. It must instead test status NOT EQUAL success OR output null. Change only those two comparison/logical operators; keep its existing nonzero error assignment and goto cleanup.
+
+3. Make the SAME condition-operator correction in the existing A/X dependency IF: nonzero status OR null output is failure. Keep its existing error assignment/goto.
+
+That is one restored own guard line and two boolean-condition operator fixes. Every other noncomment token must remain identical to response8, including manager value handling, locals, callback methods/tables, existing tail/cleanup and Lab2 stub. No new comments, no C99 syntax, no Release edits in this step. Return the complete full file with ONLY those guard corrections; full lab acceptance is still pending the next ownership stage. All previous costs remain counted.

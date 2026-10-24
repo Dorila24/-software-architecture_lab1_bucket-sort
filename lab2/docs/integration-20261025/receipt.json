@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-24T21:14:37.815199+00:00",
+  "repository": "https://github.com/Dorila24/-software-architecture_lab1_bucket-sort",
+  "base_commit": "0c08f541e0f47ac544685b93c43f0e0cdd5b0f71",
+  "lab2_directory": "lab2",
+  "assignment_requires_lab1_reuse": true,
+  "assignment_requires_same_git_repository": false,
+  "lab1_original_files_unchanged_excluding_readme_and_manifest": 104,
+  "lab2_prior_published_files_unchanged_excluding_readme_ignore_sums": 642,
+  "lab2_configurations_passed": 18,
+  "baseline_assertions_per_configuration": 28936,
+  "extended_assertions_per_configuration": 39436,
+  "lab1_variants_passed": 6,
+  "lab1_assertions_per_variant": 1648,
+  "ubsan_failures": 0,
+  "report_sha256": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201",
+  "sdk_weights_solver_environment_published": false,
+  "local_browser_demo": {
+    "url": "http://127.0.0.1:8765",
+    "variant": "gost",
+    "repeat": 2,
+    "profiles": [
+      "A",
+      "C"
+    ],
+    "native_demo_passed": true,
+    "extended_checks_passed": true,
+    "source": "tools/serve_demo.py",
+    "screenshot": "docs/figures/local-demo.png",
+    "video_recorded": false
+  }
+}

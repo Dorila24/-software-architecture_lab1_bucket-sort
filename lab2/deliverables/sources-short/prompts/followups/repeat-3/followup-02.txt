@@ -1,0 +1,111 @@
+Continue the SAME measured run. The reference is YOUR response 2 from THIS run. Only comments were removed from this PROMPT REFERENCE to avoid repeating forbidden C99 comments. All noncomment C tokens are unchanged. The organizer has not edited the measured workspace, supplied replacement logic, or imported another run's implementation. Every prior failure and cost remains counted. Generate the full source yourself from this reference and the correction below.
+
+```c
+#include "ReuseContract.h"
+
+typedef struct Lab65State {
+    IEcoLab65 public_lab65;
+    IEcoUnknown private_unknown;
+    IEcoCalculatorX public_x;
+    IEcoCalculatorY public_y;
+    uint32_t local_refs;
+    IEcoUnknown* controller;
+    IEcoSystem1* owned_system;
+    IEcoMemoryAllocator1* owned_allocator;
+    IEcoCalculatorX* inner_x;
+    IEcoCalculatorY* inner_y;
+} Lab65State;
+
+static int16_t lab65_query_interface(IEcoLab65Ptr_t me, const UGUID* riid, voidptr_t* ppv);
+static uint32_t lab65_add_ref(IEcoLab65Ptr_t me);
+static uint32_t lab65_release(IEcoLab65Ptr_t me);
+static int16_t lab65_sort_int(IEcoLab65Ptr_t me, int32_t* data, uint32_t count, uint32_t buckets);
+static int16_t lab65_sort_long(IEcoLab65Ptr_t me, int64_t* data, uint32_t count, uint32_t buckets);
+static int16_t lab65_sort_float(IEcoLab65Ptr_t me, float* data, uint32_t count, uint32_t buckets);
+static int16_t lab65_sort_double(IEcoLab65Ptr_t me, double* data, uint32_t count, uint32_t buckets);
+static int16_t lab65_sort_long_double(IEcoLab65Ptr_t me, long double* data, uint32_t count, uint32_t buckets);
+
+static int16_t unknown_query_interface(IEcoUnknownPtr_t me, const UGUID* riid, voidptr_t* ppv);
+static uint32_t unknown_add_ref(IEcoUnknownPtr_t me);
+static uint32_t unknown_release(IEcoUnknownPtr_t me);
+
+static int16_t x_query_interface(IEcoCalculatorXPtr_t me, const UGUID* riid, voidptr_t* ppv);
+static uint32_t x_add_ref(IEcoCalculatorXPtr_t me);
+static uint32_t x_release(IEcoCalculatorXPtr_t me);
+static int32_t x_addition(IEcoCalculatorXPtr_t me, int16_t a, int16_t b);
+static int16_t x_subtraction(IEcoCalculatorXPtr_t me, int16_t a, int16_t b);
+
+static int16_t y_query_interface(IEcoCalculatorYPtr_t me, const UGUID* riid, voidptr_t* ppv);
+static uint32_t y_add_ref(IEcoCalculatorYPtr_t me);
+static uint32_t y_release(IEcoCalculatorYPtr_t me);
+static int32_t y_multiplication(IEcoCalculatorYPtr_t me, int16_t a, int16_t b);
+static int16_t y_division(IEcoCalculatorYPtr_t me, int16_t a, int16_t b);
+
+static IEcoLab65VTbl lab65_vtbl = {
+    lab65_query_interface,
+    lab65_add_ref,
+    lab65_release,
+    lab65_sort_int,
+    lab65_sort_long,
+    lab65_sort_float,
+    lab65_sort_double,
+    lab65_sort_long_double
+};
+
+static IEcoUnknownVTbl unknown_vtbl = {
+    unknown_query_interface,
+    unknown_add_ref,
+    unknown_release
+};
+
+static IEcoCalculatorXVTbl x_vtbl = {
+    x_query_interface,
+    x_add_ref,
+    x_release,
+    x_addition,
+    x_subtraction
+};
+
+static IEcoCalculatorYVTbl y_vtbl = {
+    y_query_interface,
+    y_add_ref,
+    y_release,
+    y_multiplication,
+    y_division
+};
+
+IEcoMemoryAllocator1* lab_allocator(IEcoLab65* me) {
+    if (me == 0) return 0;
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    return state->owned_allocator;
+}
+
+int16_t ECOCALLMETHOD createEcoLab65(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out == 0) return ERR_ECO_POINTER;
+    *out = 0;
+    if (system == 0 || iid == 0) return ERR_ECO_NOSYSTEM;
+    if (outer != 0 && !IsEqualUGUID(iid, &IID_IEcoUnknown)) return ERR_ECO_NOAGGREGATION;
+     
+    return ERR_ECO_NOINTERFACE;
+}
+
+int16_t ECOCALLMETHOD createEcoLab2(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out == 0) return ERR_ECO_POINTER;
+    *out = 0;
+    if (system == 0 || iid == 0) return ERR_ECO_NOSYSTEM;
+    if (outer != 0) return ERR_ECO_NOAGGREGATION;
+     
+    return ERR_ECO_NOINTERFACE;
+}
+```
+
+Your response2 is INCOMPLETE: it contains21 callback PROTOTYPES and4tables but ZERO callback FUNCTION DEFINITIONS. A declaration ending in a semicolon is NOT an implementation. Finish reason was stop with output1155tokens below max12288, so do not stop early or omit bodies. Keep this SAME run and all prior costs. This stage still intentionally leaves BOTH creator bodies as safe error stubs; complete ALL methods first.
+Keep your existing Lab65State, callback NAMES and FOUR table slot orders. Add ALL21 actual definitions with full braced bodies:8 lab65_* methods,3 unknown_* methods,5 x_* methods,5 y_* methods. Prototypes may remain, but both prototypes AND definitions need ECOCALLMETHOD and exact header receiver/operand/return types. Do not merely repeat prototypes/tables again. Place definitions after the tables (their exact prototypes already precede tables) or before tables; all21must exist in the FULL returned file. lab_allocator must also be real and C89-correct; both exported creators remain safe error stubs.
+
+For EVERY owner-using method: declare owner at function START WITHOUT initializer, then guard original me, THEN assign correct actual field offset. Never compute offset before null me guard or check only derived state after offset. Four QIs FIRST conditionally clear nonnull output, reject null me/iid/out, then recover owner. PUBLIC primary/X/Y QI/AddRef/Release delegate BORROWED controller with that controller as receiver; own X uses public_x offset, Y public_y, primary public_lab65. Null ref methods return0. Never alter private local_refs in public methods.
+PRIVATE Unknown uses private_unknown offset and local_refs. QI Unknown returns own private field and increments local_refs once. QI Lab65/X/Y returns ADDRESS of own corresponding public field, invokes THAT field's typed public AddRef once for its effect, then returns0 STATUS. Unsupported IID fails with cleared output. Never expose stored vendor dependency, or return an AddRef count as QI status.
+Private AddRef increments local count. Private Release decrements; at zero save allocator while state lives, Release inner_x IF NONNULL, inner_y IF NONNULL, owned_system IF NONNULL; then Free state with saved allocator, Release saved allocator and immediately return0. No field reads after Free, no Release of borrowed controller. These nullable checks are REQUIRED for future PARTIAL constructor failure, even though dependencies are nonnull on ordinary success.
+Five sorting wrappers directly call lab_sort_int/long/float/double/long_double with ORIGINAL me/data/count/buckets. Do not duplicate numeric code. lab_allocator null-guards me before owner recovery and returns stored allocator borrowed, with no AddRef. Its local declaration is BEFORE the guard, assignment AFTER guard; no declaration-after-statement.
+X Addition int32_t and Subtraction int16_t directly forward to stored inner_x; Y Multiplication int32_t and Division int16_t forward to inner_y. Dependency is typed receiver, int16_t operands unchanged. Null me returns0 BEFORE owner recovery; optional dependency check only AFTER valid owner assignment. No local arithmetic, QI/ref calls or receiver overwrite.
+Use only existing real pVTbl SDK calls and actual types/IDs. No free IEcoUnknown_* helpers, function-pointer casts, standard headers/libc or dynamic tables. All locals start their block. No line comments even in temporary stubs. Add short actual C89 BLOCK comments explaining borrowed controller/private local lifetime. Use consistent indentation, braced guards, one operation per line.
+Completeness BEFORE emitting: count21 callback DEFINITIONS with bodies, not21 prototypes; all4static typed tables; actual lab_allocator;2safe creator stubs. Total24 REAL FUNCTION DEFINITIONS. Return one FULL fenced C89 file including every body. The unchanged full tests still reject missing constructors/Lab2, so no full acceptance claim.

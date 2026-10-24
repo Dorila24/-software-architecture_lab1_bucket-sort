@@ -1,0 +1,437 @@
+[
+  {
+    "index": 1,
+    "started_at": "2026-10-20T18:29:25.292642+00:00",
+    "duration_s": 200.42660725000314,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12252,
+      "completion_tokens": 2199,
+      "total_tokens": 14451
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T18:32:46.025266+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 1,
+        "accepted": false,
+        "findings": [
+          "Краткий повтор 2 не компилируется: выдуман SdkAbiReference.h, неверные пути Vendor, стандартный stddef.h, несуществующие свободные AddRef/Release.",
+          "Память выделяется через несуществующие Alloc/Free у IEcoUnknown вместо отдельного allocator.",
+          "Таблицы интерфейсов встроены в объект по значению, нет самостоятельных public X/Y обёрток и private ND lifetime.",
+          "createEcoLab65/createEcoLab2 объявлены static вопреки контракту; lab_allocator отсутствует.",
+          "В Lab2 внутренний Lab65 создаётся напрямую без outer, требуемое агрегирование не реализовано."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-01.c",
+    "source_sha256": "1234598aed78cdf7a32fe13b80aeaa04440f2eebc95b2945f755e25c7ff882c4"
+  },
+  {
+    "index": 2,
+    "started_at": "2026-10-20T22:33:27.262910+00:00",
+    "duration_s": 197.66094875000272,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 7469,
+      "completion_tokens": 3033,
+      "total_tokens": 10502
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T22:36:45.275462+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 2,
+        "source_sha256": "e05c6eea80848917a530a25416cce0bd9f9db9c918a787a9cad850c22e472e5f",
+        "accepted": false,
+        "findings": [
+          "Сгенерированы все own Lab65/X/Y/private Unknown methods и4 typed tables; private QI4IID, public controller delegation и destructor сохранены. Оба creator error stubs по этапу.",
+          "Сборку блокируют C99 line comments, валидатор дополнительно запрещает лишний стандартный stddef.h. Null guards не защищают public owner recovery; private offset вычисляется до guards, lab_allocator проверяет уже вычисленный owner.",
+          "Численная часть не изменена. Следующее уточнение использует собственную справочную цитату без комментариев, требует исправить guards/C89/header и сгенерировать реальный Lab65 constructor. Рабочий C организатор не редактирует."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-02.c",
+    "source_sha256": "e05c6eea80848917a530a25416cce0bd9f9db9c918a787a9cad850c22e472e5f"
+  },
+  {
+    "index": 3,
+    "started_at": "2026-10-20T22:59:53.744267+00:00",
+    "duration_s": 252.57087662499544,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 10754,
+      "completion_tokens": 3625,
+      "total_tokens": 14379
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T23:04:06.798853+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 3,
+        "source_sha256": "e73a5215b7e301c561715722455ae2f7194ccafa939a55435d45c2184cb3de89",
+        "accepted": false,
+        "findings": [
+          "Убран запрещённый stddef.h,sort wrappers стали прямыми,реальный constructor использует correct private field/controller и transferaliasesдоdep. Все4tables/typedmethodsсохранены.",
+          "Снова C99 line comments в новом creator и local declarations после guards. Остальные control/arithmetic owner offsets по-прежнему до null guards.",
+          "Constructor удерживает borrowed get_Manager pointer после extension Release вместо valuecopy; при aggregationделаетлишнийouterAddRef, создаваяcycle. Null-successdep goto cleanupможетвернуть0сnullout. Runtimeне выполняется.",
+          "Следующее уточнение удаляет комментарии и17unsafe methodbodies ONLYиз PROMPTREFERENCE,не изменяя рабочий C,и проситQwenперегенерироватьметоды и узко исправитьconstructor."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-03.c",
+    "source_sha256": "e73a5215b7e301c561715722455ae2f7194ccafa939a55435d45c2184cb3de89"
+  },
+  {
+    "index": 4,
+    "started_at": "2026-10-20T23:36:06.192661+00:00",
+    "duration_s": 232.80131116700068,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 9552,
+      "completion_tokens": 3205,
+      "total_tokens": 12757
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T23:39:59.584572+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 4,
+        "source_sha256": "0a019f72e1304a6d1f9012c4377f4cb888b65bcc831bffc9ab35578d79984f36",
+        "accepted": false,
+        "findings": [
+          "УбраныC99comments,ctorlocalgroupперемещённачало,outerAddRefвaggregateубран,null-successdepsдаётошибку. НоmodelУДАЛИЛА5неизменныхsortwrappers:5compileundefinedsymbols.",
+          "Все17ownerinitializersпо-прежнемудоmeguard;publicQIпотерялиearlyconditionaloutputclear,privateQIclearпослеinvalidargguard. DestructorрегрессировалallocatorfieldпослеFree,managerpointerпослеextensionReleaseнеисправлен. Runtimeдополнительноне выполняется.",
+          "СледующаякоррекциЯТОЛЬКОвосстанавливает5собственныхточныхmodelgeneratedwrapperdefsизresponse3вPROMPTreference. ОрганизаторизмеряемыйCнеправитичужойкоднепереносит;guards/lifetimeследующимотдельнымшагом."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-04.c",
+    "source_sha256": "0a019f72e1304a6d1f9012c4377f4cb888b65bcc831bffc9ab35578d79984f36"
+  },
+  {
+    "index": 5,
+    "started_at": "2026-10-21T00:19:28.048502+00:00",
+    "duration_s": 245.35874695800157,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 9853,
+      "completion_tokens": 3499,
+      "total_tokens": 13352
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T00:23:35.295790+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 5,
+        "source_sha256": "c853ea9e7e1859b56c37d2690da86fbf6c2baaff2b182f5cb6ff463f7adb0ae0",
+        "accepted": false,
+        "findings": [
+          "Восстановлены ровно5собственных sort definitions, diffот4содержитТОЛЬКОэти20строк. C89сборкатеперьуспешна,ожидаемыйDemoотказLab2stub.",
+          "Известныепроблемыпредыдущейверсииостались:в17методахoffsetofдоmeguard;QIнеочищаетвыходприNULLiid;privateReleaseразыменовываетstateпослеFree;managerGUIDborrowedпослеextensionRelease. ПрямойruntimeпокаНЕразрешён.",
+          "КонструкторaggND1transferбезouterAR,aliastransferпередD/A,standaloneQIиодинconstructionReleaseужеимеютвернуюсхему. Следующийэтаптолькомеханическиеперестановкиguard/declaration,выходQI,savedallocatorиmanagerVALUEcopy."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-05.c",
+    "source_sha256": "c853ea9e7e1859b56c37d2690da86fbf6c2baaff2b182f5cb6ff463f7adb0ae0"
+  },
+  {
+    "index": 6,
+    "started_at": "2026-10-21T01:31:36.170612+00:00",
+    "duration_s": 256.491318583001,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 10289,
+      "completion_tokens": 3585,
+      "total_tokens": 13874
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T01:35:56.934206+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 6,
+        "source_sha256": "efc09c93cf7358959bd3567b8001202188ba6c7902a3b00a196d8a0691e027bc",
+        "accepted": false,
+        "findings": [
+          "Все17 owner declarations теперь стоят перед guards, owner assignment после guards. Private QI безопасно очищает выход; privateRelease сохраняет allocator до Free и больше не читает освобождённое состояние. ManagerGUID копируется по значению до Release extension.",
+          "Но public_Lab65_QueryInterface/public_X_QueryInterface/public_Y_QueryInterface всё ещё возвращают ошибку при NULL iid без очистки nonnull output. Остальная архитектура Lab65 при ручном разборе корректна; Lab2 пока stub.",
+          "Следующее узкое уточнение меняет только порядок безопасной очистки выхода в трёх публичных QI, сохраняя всё остальное. Выполняется прямая независимая диагностика, её затраты учитываются.",
+          "Неизменный клиент A/C выполнил по17 100 утверждений:12 нарушений null_iid_clears_output и2 ожидаемых missingLab2 отказа. Живые выделения0, environment_refs1, memory_refs1; UBSan ошибок не показал."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-06.c",
+    "source_sha256": "efc09c93cf7358959bd3567b8001202188ba6c7902a3b00a196d8a0691e027bc"
+  },
+  {
+    "index": 7,
+    "started_at": "2026-10-21T09:36:57.292312+00:00",
+    "duration_s": 261.9534587090001,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 9998,
+      "completion_tokens": 3639,
+      "total_tokens": 13637
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T09:41:19.788413+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 7,
+        "source_sha256": "f26ecc7d576227fbde5b39b8f810e5fbb037c5fc9204fb4cb002b2398ca48c39",
+        "accepted": false,
+        "findings": [
+          "Изменены ровно три публичных QI: условная очистка ppv теперь до guards, что исправляет установленное ранее поведение NULL iid. Остальные некомментные токены прежнего ответа сохранены.",
+          "Но Qwen добавила три запрещённых комментария // Conditional clearing of output. Строгая C89 сборка отклонена. Дополнительные A/C диагностические сборки также остановились на этой компиляционной ошибке, runtime не выполнялся; их0.612481751с сохранены в затратах.",
+          "Следующее уточнение меняет только комментарии: удаляет три C99 line comments и добавляет короткие настоящие block comments о borrowed controller/private ownership. Методы, таблицы и оба creators остаются прежними; полный Lab2 пока не реализован."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-07.c",
+    "source_sha256": "f26ecc7d576227fbde5b39b8f810e5fbb037c5fc9204fb4cb002b2398ca48c39"
+  },
+  {
+    "index": 8,
+    "started_at": "2026-10-21T10:24:21.213147+00:00",
+    "duration_s": 256.0968653750001,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 10043,
+      "completion_tokens": 3643,
+      "total_tokens": 13686
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T10:28:37.862276+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 8,
+        "source_sha256": "83283cb52fb87c5ac27c98f2385b6382a6c182c0372f4fda51e4f778fa30e382",
+        "accepted": false,
+        "findings": [
+          "Все некомментные токены полностью совпадают с ответом7. Три прежних C99 комментария удалены, но два новых ownership комментария снова записаны через line comments, поэтому строгая C89 сборка всё ещё отклонена.",
+          "Следующее уточнение содержит явный пример СИНТАКСИСА block comment из двух delimiters и требует сохранить существующие комментарии модели только в таком синтаксисе. Готовая реализация или ручная правка C не добавляется; численные методы и логика не меняются."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-08.c",
+    "source_sha256": "83283cb52fb87c5ac27c98f2385b6382a6c182c0372f4fda51e4f778fa30e382"
+  },
+  {
+    "index": 9,
+    "started_at": "2026-10-21T11:11:29.710088+00:00",
+    "duration_s": 247.0572251250005,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 10063,
+      "completion_tokens": 3645,
+      "total_tokens": 13708
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T11:15:38.697429+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 9,
+        "source_sha256": "47370c2f28040237d11c027e4874b578ccfffa623ca6b73c4d6301c3e9a1a96c",
+        "accepted": false,
+        "findings": [
+          "Комментарий теперьC89 block; все noncomment tokens совпадают с собственным ответом8.",
+          "Прямая неизменная A/C диагностика:по17100assertions, только2ожидаемых missingLab2 failures,live0/envRefs1/memRefs1,UBSanclean. Lab65 квалифицирован, всяработа ещё не принята.",
+          "Следующее продолжение генерирует полный Lab2 поверх неизменной собственной квалифицированной реализации Lab65; никакой код другого повтора не передаётся."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-09.c",
+    "source_sha256": "47370c2f28040237d11c027e4874b578ccfffa623ca6b73c4d6301c3e9a1a96c"
+  },
+  {
+    "index": 10,
+    "started_at": "2026-10-21T11:51:59.097684+00:00",
+    "duration_s": 461.12343362499996,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 11746,
+      "completion_tokens": 6975,
+      "total_tokens": 18721
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T11:59:40.760549+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 10,
+        "source_sha256": "6eb62b7f553b7805184093751e1f97aa8ea5a0caafbb1a6904ef8addcf86e550",
+        "accepted": false,
+        "findings": [
+          "Full Lab2 introduced with duplicate X/Y callback/table names and nonexistent pVtbl. Lab2 fails canonical identity, aggregate exposure, unsupported outer rejection and construction cleanup. Qualified Lab65 preserved. Next renames only Lab2 symbols and repairs its controls/constructor."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-10.c",
+    "source_sha256": "6eb62b7f553b7805184093751e1f97aa8ea5a0caafbb1a6904ef8addcf86e550"
+  },
+  {
+    "index": 11,
+    "started_at": "2026-10-21T14:02:35.180618+00:00",
+    "duration_s": 451.2011655839997,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 13654,
+      "completion_tokens": 6525,
+      "total_tokens": 20179
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T14:10:06.922258+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 11,
+        "source_sha256": "55241d09322649449ccfad25d241a4a97163f2683924d4d4d5b63b2164db9a2c",
+        "accepted": false,
+        "findings": [
+          "Ten distinct Lab2 callback names and two tables now compile without symbol collisions; all six X/Y controls correctly delegate to primary. Full qualified Lab65 prefix preserved.",
+          "Primary Lab2 QI still contains nonexistent pVtbl and omits aggregate Lab65; standalone construction still leaves initial ref on success. No runtime because compilation failed. Next masks only primary QI body and publication tail from own prompt, preserving all other code; requests same-run regeneration and ownership comment."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-11.c",
+    "source_sha256": "55241d09322649449ccfad25d241a4a97163f2683924d4d4d5b63b2164db9a2c"
+  },
+  {
+    "index": 12,
+    "started_at": "2026-10-21T14:40:27.639268+00:00",
+    "duration_s": 435.60862433299917,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12756,
+      "completion_tokens": 6452,
+      "total_tokens": 19208
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T14:47:45.469099+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 12,
+        "source_sha256": "e89fbb7b3fbe9d04ad138fb42332ba83756f0fae1a55d8965fca7932486b5c8e",
+        "accepted": false,
+        "findings": [
+          "Primary QI now has correct five-interface set and direct aggregated Lab65 result; X/Y each add exactly one outer reference through their typed controls. Old nonexistent pVtbl gone; all other methods unchanged.",
+          "Publication tail removes unreachable aggregation branch and drops initial reference, clears local state and reaches bus cleanup, but accidentally omits final requested-IID QI; returns success with null output. Added comment incorrectly calls owned private Unknown borrowed. Demo correctly rejects; next restores exact own11 QI line and corrects ownership comment."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-12.c",
+    "source_sha256": "e89fbb7b3fbe9d04ad138fb42332ba83756f0fae1a55d8965fca7932486b5c8e"
+  },
+  {
+    "index": 13,
+    "started_at": "2026-10-21T15:08:46.576887+00:00",
+    "duration_s": 448.2029083749985,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12931,
+      "completion_tokens": 6503,
+      "total_tokens": 19434
+    },
+    "error": null,
+    "validation_passed": true,
+    "validation_at": "2026-10-21T15:16:20.946726+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 13,
+        "source_sha256": "e346cd39ad265d9e930ea6c2d95ef150e090ca6e64aa35e8cd9f3f1b7f325c70",
+        "accepted": false,
+        "findings": [
+          "Full A/C suites pass28936/0, live0/env1/mem1, UBSan clean. Correct final requested-IID QI restored before dropping initial ref; extra failure branch goes to shared cleanup, success drops once then clears local state. Qualified Lab65 prefix tokens equal own9 after added CID header/comments normalization.",
+          "Full Lab2 review: three embedded public interfaces, canonical primary Unknown, constant5 set, six typed controls use correct Lab2State offsets/primary functions, direct private-inner QI for Lab65 without extra AddRef, oneE.Y then sameE.QIX, actual bus aggregates65 using typed canonical outer/IIDUnknown. All typed callbacks use ECOCALLMETHOD; lab_allocator is fixed plain-C helper.",
+          "Both creators copy manager GUID before extension release, clear transferred system/allocator aliases before dependencies, balance construction/temporary refs and partial failure cleanup. Both destructors save allocator, release owned interfaces/system, Free state before final allocator Release and immediately return. No forbidden libc found in manual source/symbol screening; no formal proof implied.",
+          "Readability has meaningful names, focused typed wrappers and consistent C89. Two comments still need model correction: owned private Unknown incorrectly described as borrowed controller, and process-history note Restore exact line from response11 is not a purpose comment. Request comments-only; no functional change needed."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-13.c",
+    "source_sha256": "e346cd39ad265d9e930ea6c2d95ef150e090ca6e64aa35e8cd9f3f1b7f325c70"
+  },
+  {
+    "index": 14,
+    "started_at": "2026-10-21T15:35:28.300451+00:00",
+    "duration_s": 448.6410973750026,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12896,
+      "completion_tokens": 6515,
+      "total_tokens": 19411
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T15:43:00.491860+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 14,
+        "source_sha256": "8527eee201e1b9d37602af9545bb34f2a703b59e144014cc6778f1828ffb7c55",
+        "accepted": false,
+        "findings": [
+          "Corrected private-inner ownership comment and removed process-history note as requested.",
+          "Unrequested one-word functional regression in lab2_Y_Release: offsetof uses Lab65State instead of its own Lab2State, while cast remains Lab2State. All other executable tokens equal passing13. Revalidation failed; next quotes exact own13 assignment to restore only that structure type while preserving correct comments."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-14.c",
+    "source_sha256": "8527eee201e1b9d37602af9545bb34f2a703b59e144014cc6778f1828ffb7c55"
+  },
+  {
+    "index": 15,
+    "started_at": "2026-10-21T16:13:36.103531+00:00",
+    "duration_s": 444.8509553749973,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12913,
+      "completion_tokens": 6514,
+      "total_tokens": 19427
+    },
+    "error": null,
+    "validation_passed": true,
+    "validation_at": "2026-10-21T16:21:06.936978+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212925-cba220d8",
+        "request": 15,
+        "source_sha256": "005bc251e58c59af9676619e204fd4181b4152556f43fdf9e9a07c9c7dc01cd0",
+        "accepted": true,
+        "findings": [
+          "Full A/C suites pass28936/0, live0/env1/mem1, UBSan clean. Correct final requested-IID QI restored before dropping initial ref; extra failure branch goes to shared cleanup, success drops once then clears local state. Qualified Lab65 prefix tokens equal own9 after added CID header/comments normalization.",
+          "Full Lab2 review: three embedded public interfaces, canonical primary Unknown, constant5 set, six typed controls use correct Lab2State offsets/primary functions, direct private-inner QI for Lab65 without extra AddRef, oneE.Y then sameE.QIX, actual bus aggregates65 using typed canonical outer/IIDUnknown. All typed callbacks use ECOCALLMETHOD; lab_allocator is fixed plain-C helper.",
+          "Both creators copy manager GUID before extension release, clear transferred system/allocator aliases before dependencies, balance construction/temporary refs and partial failure cleanup. Both destructors save allocator, release owned interfaces/system, Free state before final allocator Release and immediately return. No forbidden libc found in manual source/symbol screening; no formal proof implied.",
+          "Response14 corrected both comments but introduced one Lab65State offset regression in Lab2 Y Release. Response15 changes exactly that one structure type back to Lab2State; all executable tokens equal own fully reviewed/passed response13. Full unchanged A/C checks each28936/0, live0/environment1/memory1 and UBSan clean.",
+          "Readability passed: meaningful names, consistent C89, short typed methods and accurate comments for borrowed public controller and owned private inner Unknown; process-history comment removed. No manual workspace edits."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-15.c",
+    "source_sha256": "005bc251e58c59af9676619e204fd4181b4152556f43fdf9e9a07c9c7dc01cd0"
+  }
+]

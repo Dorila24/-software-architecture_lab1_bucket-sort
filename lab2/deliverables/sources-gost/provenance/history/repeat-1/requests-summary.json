@@ -1,0 +1,436 @@
+[
+  {
+    "index": 1,
+    "started_at": "2026-10-20T18:12:02.050767+00:00",
+    "duration_s": 265.23042158300086,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 15515,
+      "completion_tokens": 2895,
+      "total_tokens": 18410
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T18:16:27.565393+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 1,
+        "accepted": false,
+        "findings": [
+          "ТЗ ГОСТ не привело к первичной приёмке: включён Markdown как C, неверные пути Vendor заголовков, запрещённые malloc/free, C99 комментарии и объявления.",
+          "Vtable встроена по значению вместо указателя, отдельные структуры используют отсутствующие поля.",
+          "Агрегирование возвращает supplied outer вместо приватного ND Unknown; внешнее управление публичными ссылками не реализовано.",
+          "Слоты численной сортировки и публичные X/Y обёртки не завершены."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-01.c",
+    "source_sha256": "e630c2ed8fa61916274a394da1279bb4f4240ca7069fc45fb1dde3d041496fa2"
+  },
+  {
+    "index": 2,
+    "started_at": "2026-10-20T18:51:08.824469+00:00",
+    "duration_s": 382.6899839999969,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 17652,
+      "completion_tokens": 4294,
+      "total_tokens": 21946
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T18:57:31.905653+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 2,
+        "source_sha256": "bfecfebcafb5a91d5cd966c830033068f040ecc6dee5ea4dc418d5a340765a63",
+        "accepted": false,
+        "findings": [
+          "Появились собственные X/Y обёртки и пять сортировочных слотов, но сборка отклонена: static экспортов, C99 объявления и выдуманная ERR_ECO_ALLOCATOR_FAILURE.",
+          "Таблицы выделяются запрещённым malloc. Контроллер outer не сохраняется, публичные ссылки изменяют локальный счётчик. ND QI(Unknown) увеличивает счётчик дважды.",
+          "Система, шина и allocator освобождаются неполно; после Alloc повторно заменяется allocator. Lab2 остаётся временной заглушкой."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-02.c",
+    "source_sha256": "bfecfebcafb5a91d5cd966c830033068f040ecc6dee5ea4dc418d5a340765a63"
+  },
+  {
+    "index": 3,
+    "started_at": "2026-10-20T20:26:09.290468+00:00",
+    "duration_s": 187.85872495799413,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 11182,
+      "completion_tokens": 2281,
+      "total_tokens": 13463
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T20:29:17.684960+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 3,
+        "source_sha256": "3a291e7421565f8e729e64b597944d9bb8c941a4c406c1c715d52a809f60181c",
+        "accepted": false,
+        "findings": [
+          "Создана требуемая двухинтерфейсная промежуточная структура Lab65 с controller и private Unknown. Однако вызовы SDK заменены выдуманными свободными функциями IEcoUnknown_*, IEcoInterfaceBus1_* и прямыми Alloc/Free полями.",
+          "В private QI(Lab65) выдана бессмысленная цепочка вложенных pVtbl вместо AddRef публичного интерфейса; статуса успеха нет.",
+          "Сохранились объявления после guard, преждевременная передача алиасов относительно отказов и утечки bus на успехе. Сборка отклонена; вариант не принят."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-03.c",
+    "source_sha256": "3a291e7421565f8e729e64b597944d9bb8c941a4c406c1c715d52a809f60181c"
+  },
+  {
+    "index": 4,
+    "started_at": "2026-10-20T20:34:22.509055+00:00",
+    "duration_s": 202.94108333300392,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12395,
+      "completion_tokens": 2343,
+      "total_tokens": 14738
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T20:37:45.968546+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 4,
+        "source_sha256": "98f822a1d55471afbc4411eb908b056006e5066fbd37f1c9e1050359dbaee91b",
+        "accepted": false,
+        "findings": [
+          "Выдуманные свободные функции заменены реальными pVTbl вызовами. ND QI теперь вызывает AddRef публичного Lab65 и возвращает нулевой статус.",
+          "Сборка всё ещё отклонена: в typed receiver остались IEcoUnknown* cast, Free вызван напрямую у allocator, придуман GID_IEcoSystem1, семь объявлений после guard.",
+          "Утечки bus на успехе и двойные владельцы system/allocator на ошибках создания ещё не исправлены. Независимые X/Y и Lab2 пока отсутствуют."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-04.c",
+    "source_sha256": "98f822a1d55471afbc4411eb908b056006e5066fbd37f1c9e1050359dbaee91b"
+  },
+  {
+    "index": 5,
+    "started_at": "2026-10-20T20:42:26.774808+00:00",
+    "duration_s": 200.60311812500004,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12182,
+      "completion_tokens": 2338,
+      "total_tokens": 14520
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T20:45:47.876217+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 5,
+        "source_sha256": "9b7d1cc4545951cb36313c35337e4ce239fc47fb319b3c974f9fcecc37cf0961",
+        "accepted": false,
+        "findings": [
+          "Вложенные блоки устранили семь ошибок C89, GID_IEcoSystem исправлен, destructor Free/Release и receiver калькуляторов корректны.",
+          "Остались пять неправильных IEcoUnknown* cast в creator. Модель также удалила очистку выхода в обоих QI; последующая функциональная правка обязательна.",
+          "Передача локальных владеющих алиасов всё ещё запаздывает до успешного получения обеих зависимостей; bus на успехе не освобождается. Runtime этой версии не выполнялся."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-05.c",
+    "source_sha256": "9b7d1cc4545951cb36313c35337e4ce239fc47fb319b3c974f9fcecc37cf0961"
+  },
+  {
+    "index": 6,
+    "started_at": "2026-10-20T20:51:00.295823+00:00",
+    "duration_s": 196.35317766699882,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 11968,
+      "completion_tokens": 2299,
+      "total_tokens": 14267
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T20:54:18.571230+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 6,
+        "source_sha256": "3d5ce7014d0f8f9ea162d7dc7619508ad52bbc8c9942c7d2b5cd2835318e0d64",
+        "accepted": false,
+        "findings": [
+          "Все ошибочные receiver casts удалены; компонент компилируется в C89. Демонстрационный клиент ожидаемо отклоняет временную заглушку Lab2.",
+          "Независимый runtime пока не запускается: creator не проверяет system=NULL, оба QI не очищают выходы, локальные владеющие алиасы очищаются слишком поздно, allocator cleanup вызывает Free вместо Release и bus на успехе утекает.",
+          "Следующее уточнение исправляет эти конкретные свойства, сохраняя текущую двухинтерфейсную структуру."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-06.c",
+    "source_sha256": "3d5ce7014d0f8f9ea162d7dc7619508ad52bbc8c9942c7d2b5cd2835318e0d64"
+  },
+  {
+    "index": 7,
+    "started_at": "2026-10-20T20:57:31.762099+00:00",
+    "duration_s": 202.0683290829984,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12180,
+      "completion_tokens": 2363,
+      "total_tokens": 14543
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T21:00:55.893550+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 7,
+        "source_sha256": "6a3baedf7f143f6b055e39e96934c7d7a39e8f16261b5e24c0a40d0574f790e8",
+        "accepted": false,
+        "findings": [
+          "Оба успешных выхода creator теперь Release bus; локальный allocator cleanup заменён на Release; добавлена проверка system и C89 комментарий о borrowed controller.",
+          "Выходные указатели ошибочно очищаются внутри guard, где ppv/out может быть NULL. Очищение локальных owning алиасов всё ещё после обеих calculator queries; double Release при отказе сохраняется.",
+          "Необязательное изменение порядка получения D и A не устранило передачу владения. Runtime этой версии не выполнялся; следующее уточнение ограничено безопасностью выходных указателей."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-07.c",
+    "source_sha256": "6a3baedf7f143f6b055e39e96934c7d7a39e8f16261b5e24c0a40d0574f790e8"
+  },
+  {
+    "index": 8,
+    "started_at": "2026-10-20T21:08:05.914788+00:00",
+    "duration_s": 195.96341404199484,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12118,
+      "completion_tokens": 2379,
+      "total_tokens": 14497
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T21:11:23.789703+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 8,
+        "source_sha256": "8a6c89c845280357e20eed99ead9dc0eb39174e9c2b810d4484cc3dd3748f839",
+        "accepted": false,
+        "findings": [
+          "Условная очистка ppv/out теперь до invalid-argument guard: null output не разыменовывается, null IID очищает nonnull target. C89 и прежние исправления SDK сохранены.",
+          "Оба local owning aliases всё ещё очищаются после D/A queries, что не соответствует владению при отказе. Подготовлено узкое уточнение для переноса ровно двух присваиваний; runtime ещё не подтверждён."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-08.c",
+    "source_sha256": "8a6c89c845280357e20eed99ead9dc0eb39174e9c2b810d4484cc3dd3748f839"
+  },
+  {
+    "index": 9,
+    "started_at": "2026-10-20T21:19:23.364194+00:00",
+    "duration_s": 196.30598937500326,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12068,
+      "completion_tokens": 2379,
+      "total_tokens": 14447
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T21:22:41.565533+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 9,
+        "source_sha256": "98098c6e7299c727d7c51c0c0ccd275dbf297c19be23ed8b61faaa83ebb3fa0d",
+        "accepted": false,
+        "findings": [
+          "Точные два присваивания local owning aliases перемещены после state initialization и до D/A QueryComponent, остальные C токены сохранены.",
+          "Неизменный независимый клиент в A/C выполняет15813 утверждений;47 отказов связаны с намеренно отсутствующими public X/Y и Lab2. Выделения0, environment_refs=1, memory_refs=1, UBSan без ошибок.",
+          "Это подтверждённая промежуточная база, а не полная приёмка; следующее уточнение добавляет own X/Y с controller delegation."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-09.c",
+    "source_sha256": "98098c6e7299c727d7c51c0c0ccd275dbf297c19be23ed8b61faaa83ebb3fa0d"
+  },
+  {
+    "index": 10,
+    "started_at": "2026-10-20T21:30:59.326213+00:00",
+    "duration_s": 268.68768958299916,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12547,
+      "completion_tokens": 3578,
+      "total_tokens": 16125
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T21:35:29.970217+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 10,
+        "source_sha256": "adf3239bb9ed49d9eeaa65649eca025f2fe2dd87d34c6ff8e21cc2901cb8518d",
+        "accepted": false,
+        "findings": [
+          "Добавлены все десять корректно типизированных собственных X/Y методов, две статические плоские таблицы и их инициализация до запросов зависимостей. Public control wrappers делегируют controller; арифметика напрямую вызывает inner_x/inner_y. C89 компиляция проходит.",
+          "Модель не расширила private QueryInterface: он по-прежнему распознаёт только Unknown и Lab65. Новые own X/Y пока недостижимы. Следующее узкое уточнение добавляет две ветви с own-field address, public AddRef и нулевым статусом."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-10.c",
+    "source_sha256": "adf3239bb9ed49d9eeaa65649eca025f2fe2dd87d34c6ff8e21cc2901cb8518d"
+  },
+  {
+    "index": 11,
+    "started_at": "2026-10-20T21:39:10.656165+00:00",
+    "duration_s": 283.6228075830004,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 13305,
+      "completion_tokens": 3692,
+      "total_tokens": 16997
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T21:43:56.175881+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 11,
+        "source_sha256": "94dcf698c0a64eebcf41fa4635c0e1de366890c1e02bbc70c7103282b09fc946",
+        "accepted": false,
+        "findings": [
+          "Добавлены ровно две недостающие private QI ветви own X/Y с правильными field address, typed public AddRef и статусом0. Остальной код сохранён.",
+          "Полный неизменённый клиент в обоих профилях выполняет17100 утверждений с только2 отказами отсутствующего Lab2; live0, refs1/1, UBSan без ошибок. Lab65 квалифицирован для следующего этапа, но вся работа не принята."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-11.c",
+    "source_sha256": "94dcf698c0a64eebcf41fa4635c0e1de366890c1e02bbc70c7103282b09fc946"
+  },
+  {
+    "index": 12,
+    "started_at": "2026-10-20T21:47:45.955211+00:00",
+    "duration_s": 470.154188833003,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 15115,
+      "completion_tokens": 6385,
+      "total_tokens": 21500
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T21:55:36.648250+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 12,
+        "source_sha256": "4a8533d8da365f4ede1ed8c2247df95b1cb06c3b793683d71e4fb59a4a477728",
+        "accepted": false,
+        "findings": [
+          "Полный файл содержит проверенный Lab65 и новый Lab2; сохранены отдельно owned E X/Y, private IEcoUnknown* агрегата и общий cleanup.",
+          "Три compile ошибки: повторно определены общие public_x/y_vtbl и отсутствует common-prefix cast outer к IEcoUnknown*.",
+          "Ручная проверка до runtime выявила более важную ABI ошибку: Lab2State не содержит embedded public X/Y, QI возвращает primary Lab2 для X/Y, все десять Lab2 X/Y методов используют offsetof primary вместо собственных интерфейсов. Коррекция исправляет поля/таблицы/смещения, а не только компиляцию."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-12.c",
+    "source_sha256": "4a8533d8da365f4ede1ed8c2247df95b1cb06c3b793683d71e4fb59a4a477728"
+  },
+  {
+    "index": 13,
+    "started_at": "2026-10-20T21:59:33.666246+00:00",
+    "duration_s": 495.9983155410009,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 16641,
+      "completion_tokens": 6439,
+      "total_tokens": 23080
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T22:07:50.209773+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 13,
+        "source_sha256": "d16ff9bf9cf7c6d20ca42cbf1994f26681061393780eacfc041597c182d06add",
+        "accepted": false,
+        "findings": [
+          "Добавлены embedded own X/Y, исправлены все десять Lab2 owner offsets, QI выдаёт адреса own fields; отдельные таблицы и их инициализация корректны. Ручной анализ Lab2 показывает правильное владение E X/Y, приватным Unknown Lab65 и системой/allocator, возврат QI65 без лишнего AddRef.",
+          "Остались две ошибки сборки: модель добавила запрещённые // комментарии и не применила common-prefix cast аргумента outer к IEcoUnknown*. В следующей справочной цитате удаляются только комментарии; исходник не исправляется организатором."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-13.c",
+    "source_sha256": "d16ff9bf9cf7c6d20ca42cbf1994f26681061393780eacfc041597c182d06add"
+  },
+  {
+    "index": 14,
+    "started_at": "2026-10-20T22:11:31.471316+00:00",
+    "duration_s": 488.5448590840024,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 16150,
+      "completion_tokens": 6433,
+      "total_tokens": 22583
+    },
+    "error": null,
+    "validation_passed": true,
+    "validation_at": "2026-10-20T22:19:45.908171+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 14,
+        "source_sha256": "213c485dbb83fbdf70169d48a914464742a3ff6399faeaa79f484e92d2e44e2a",
+        "accepted": false,
+        "independent_tests_passed": true,
+        "findings": [
+          "Полная функциональная приёмка пройдена: 28936 утверждений на профиль A/C,0 ошибок,0 живых выделений,refs1/1; EcoMain демонстрация корректна. Все 38 функций и7 статических таблиц сохранены.",
+          "Ручной разбор: Lab65 public control делегирует borrowed controller, private Unknown локальный; Lab2 own X/Y используют свои offsets, один включённый E даёт X/Y, private inner Unknown Lab65 без публичного цикла. QI65 возвращает внутренний QI без лишнего AddRef. Поля таблиц и cleanup правильны, численный файл неизменен.",
+          "Префикс Lab65 отличается от собственной квалифицированной версии11 только дополнительным include IdEcoLab65.h. Остальные noncomment C tokens сохранены. GetVersion содержит безвредную неиспользуемую локальную state.",
+          "Модель вновь не добавила ни одного ownership комментария. Архитектура одобрена, но финальная читаемость требует двух коротких block комментариев через ту же модель; организатор не редактирует исходник."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-14.c",
+    "source_sha256": "213c485dbb83fbdf70169d48a914464742a3ff6399faeaa79f484e92d2e44e2a"
+  },
+  {
+    "index": 15,
+    "started_at": "2026-10-20T22:36:59.905578+00:00",
+    "duration_s": 508.52313512499677,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 16111,
+      "completion_tokens": 6496,
+      "total_tokens": 22607
+    },
+    "error": null,
+    "validation_passed": true,
+    "validation_at": "2026-10-20T22:45:34.690079+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-211201-98f1f599",
+        "request": 15,
+        "source_sha256": "059a2cfde8e68f40b56f644c18e35bd844c36235fcb6faaa14c12f1729a6b1d1",
+        "accepted": true,
+        "independent_tests_passed": true,
+        "findings": [
+          "Добавлены4 корректных block комментария о borrowed controller, private inner Unknown и Free до allocator Release. Все noncomment C tokens идентичны прошедшему полный ручной архитектурный разбор ответу14.",
+          "Полные неизменные A/C проверки повторно пройдены:28936 утверждений каждый профиль,0 ошибок,live0,refs1/1,UBSan чист. Читаемость одобрена: смысловые имена, последовательные C89 блоки, отдельные typed wrappers, явные фазы владения и cleanup. Есть безвредный неиспользуемый state local в GetVersion.",
+          "Первый подробный ГОСТ повтор готов:15 API попыток,14 уточнений,263723 точных токена,wrapper4572.955820626s плюс8.682938251s прямой диагностики."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-15.c",
+    "source_sha256": "059a2cfde8e68f40b56f644c18e35bd844c36235fcb6faaa14c12f1729a6b1d1"
+  }
+]

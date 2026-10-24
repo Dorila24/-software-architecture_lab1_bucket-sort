@@ -1,0 +1,225 @@
+{
+  "docx_sha256": "eeee99e9d64b4e5053fa7a9061232ee4f5ac4334dce7b420b02d206598888645",
+  "matches_reviewed_docx": true,
+  "page_count": 31,
+  "render_comparison": [
+    {
+      "page": 1,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "1a0768ed1717cbd76afcb49826dbd50ef8d437afd77d2250f3a1ac7cfd29fa41"
+    },
+    {
+      "page": 2,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "d2d65fc6866932e15c848a1beb0965c341e2499a447a84efc98ac5914eda5e15"
+    },
+    {
+      "page": 3,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "c035fda60da7807d44f0c7ce4bbb36270719ff6d12b91d008dc0536072199271"
+    },
+    {
+      "page": 4,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "16de26424dd70d4b55428a76b9fbd1090889d62c2fbb0cd712bbea3514f9e929"
+    },
+    {
+      "page": 5,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "5224560c8a14e35069e70b33e4dba8ceba7d10953dd2b0ceb2cf760aaf0daf68"
+    },
+    {
+      "page": 6,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "f706411430597d46b167a3e348cf7d7ec783337d1abeff67276bf2e7bbc6b08b"
+    },
+    {
+      "page": 7,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "0be033ecfeaf3bdd8179bab6cc07305de2014c929b489831ac917046993a6eac"
+    },
+    {
+      "page": 8,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "4cd7d750f8858a3d9b5d89f2286d10b504daab04c71654935398f4eff920379e"
+    },
+    {
+      "page": 9,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "eb9fdf9724e0707977f98f8732d95978d68c2cf03e940ef013ef84a8c420f251"
+    },
+    {
+      "page": 10,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "304c244ab754041edc18bd4df5e201eda5b700d4cb7eac80e9dc63e9812f40a3"
+    },
+    {
+      "page": 11,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "ffeb76920d8bfb2eae3b41a96021744eb300319d57f4f367a9ca8be10ccb02f8"
+    },
+    {
+      "page": 12,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "bd44c3f678dac4275c852925db1c87644d67ccb52b1f8edcdbf61d550c7efeac"
+    },
+    {
+      "page": 13,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "ff57ebf7832d548b5e10429d8fb8745c3adde88c988d211781b0ebeb49fc74c0"
+    },
+    {
+      "page": 14,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "ccbe711bef31146c0305310d89881c4094ee66faff0cb509836a55ac4b2f4412"
+    },
+    {
+      "page": 15,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "008eafa6a503d756b732c99a93829d5d5f57328fddab8a2ae56f167872a27c22"
+    },
+    {
+      "page": 16,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "af7f4531213e00a6e3cac9dafe13863b6e431061268aa1e6d84675a37680a979"
+    },
+    {
+      "page": 17,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "546e361afb0a659af45d189c3822384b16270d1a71e0b371b5540118875bebdf"
+    },
+    {
+      "page": 18,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "9590402c86492d1707943eaedd72ea21825bc14620b1e34b011aff335bf33d22"
+    },
+    {
+      "page": 19,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "eaba86b89e2aef96d4deedd1d1ad22d0a283eb598fe7858db2fed869dfcc1e4c"
+    },
+    {
+      "page": 20,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "819d8a215b1efbe3187b5565ad41420a005b38b1fdb41b149339b9140a98ab81"
+    },
+    {
+      "page": 21,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "c24472fae18f644cb908b21358209f017ecfb1ec74937d4c9afd7839d93c9178"
+    },
+    {
+      "page": 22,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "8644c1fc0c3a6226347ca0b42c8230be7a61dde65d82f912f6b0dcf2835c9758"
+    },
+    {
+      "page": 23,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "c224223ac2107d2f7241b47fd7f6f84e978d4ad1f6c37bd7ebdd1dacc45276c0"
+    },
+    {
+      "page": 24,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "b1f4e2ef217ecb16fab9e90a4d737a34446b2a9256cb49663e84b2d06b6300db"
+    },
+    {
+      "page": 25,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "5c4ae88c64fc134e536e1fe79e52eee71023bb01ba69429d317abe7476b8e2d9"
+    },
+    {
+      "page": 26,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "b3c42a76eb0afecf9f90e230100c46b30490a13ada0a4ace82891a7eebf3be8c"
+    },
+    {
+      "page": 27,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "ea7ea984ef1dcac02ad14a3e17586f0e85aba71cb67b38b0620118a56e180381"
+    },
+    {
+      "page": 28,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "02d04003b69552241e6ad62400d7fe92bfc8510bf6ee74dc3ca6656ff00181ee"
+    },
+    {
+      "page": 29,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "0904fde247ea3980b7d18f1897efa877a30fc124e83dcf717bd0a99b4d97572b"
+    },
+    {
+      "page": 30,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "03f0a514b218fd4d558b67e14bfdde68cf9030516910ca75dfc9ea7c61d67218"
+    },
+    {
+      "page": 31,
+      "matches_previous_reviewed_pixels": false,
+      "new_png_sha256": "d9bc135101ae6c709608763b89f75fe3e666b675863b7e282b49f6d4a2099d15"
+    }
+  ],
+  "headings": [
+    "Включение и агрегирование компонентов ACOM",
+    "1 Постановка и связь с первой работой",
+    "2 Объекты и интеграция ACOM",
+    "3 Алгоритм и сложность",
+    "4 Независимые проверки и численные результаты",
+    "5 Организация генерации и учёт затрат",
+    "6 История исправлений и анализ полноты",
+    "Короткий промпт повтор 1",
+    "Техническое задание по ГОСТ повтор 1",
+    "Обычный длинный промпт повтор 1",
+    "Техническое задание по ГОСТ повтор 2",
+    "Обычный длинный промпт повтор 2",
+    "Короткий промпт повтор 2",
+    "Обычный длинный промпт повтор 3",
+    "Короткий промпт повтор 3",
+    "Техническое задание по ГОСТ повтор 3",
+    "7 Применение ГОСТ и сравнение с обычным длинным текстом",
+    "8 Измерения готового компонента",
+    "9 Выводы и ограничения",
+    "10 Файлы и воспроизводимость",
+    "Источники",
+    "Приложение Тексты исходных промптов",
+    "Короткий промпт",
+    "Техническое задание по ГОСТ"
+  ],
+  "tables": 15,
+  "figures": 2,
+  "equations": 2,
+  "author_group_filled": true,
+  "placeholder_matches": [],
+  "broken_internal_anchors": [],
+  "track_insertions": 0,
+  "track_deletions": 0,
+  "comments_anchors": 0,
+  "table_header_repeat_flags": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "exact_height_rows": 0,
+  "sections": [
+    {
+      "width_mm": 210.0,
+      "height_mm": 297.0,
+      "left_mm": 23.0,
+      "right_mm": 20.0,
+      "top_mm": 20.0,
+      "bottom_mm": 20.0
+    }
+  ]
+}

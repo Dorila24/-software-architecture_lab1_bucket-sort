@@ -1,0 +1,69 @@
+Continue the SAME measured attempt after the failed initial response. Do not reuse the invalid first prototype: generate a complete correct Lab65 and a safe temporary Lab2 error stub. All costs remain counted. Final acceptance still requires both objects, but we check Lab65 before adding Lab2. Generate the implementation yourself; no completed lab implementation is supplied.
+
+IMPORTANT SDK FACTS: Include ReuseContract.h, which already includes the required real headers. SdkAbiReference.md is documentation ONLY: NEVER #include it. Never include Vendor/... paths; existing headers are addressed by their simple filenames. Never redefine a CID/IID, SDK type, macro or error. Real table names are IEcoUnknownVTbl, IEcoLab65VTbl, IEcoCalculatorXVTbl, IEcoCalculatorYVTbl; table-pointer member is pVTbl. Do not use malloc/free or any standard header. Never use a system pointer as an allocator or bus by casting it. Get GID_IEcoSystem through QI, then bus through system QI, allocator through bus QueryComponent.
+
+An ORIGINAL teacher example of PUBLIC delegation follows. These three functions are copied from the read-only CalculatorB dependency, not from another experiment or a finished Lab65. Notice that public methods do NOT modify the object's local counter. Apply this delegation rule to ALL NINE public methods (Lab65, X, Y), with independently correct owner recovery for each field. Only private nondelegating Unknown methods use the local count. The teacher example's X is its first field; your X/Y offsets depend on YOUR layout. Use one clear Lab65 state with public Lab65 first, own X, own Y, private ND Unknown, then state fields, to simplify reasoning.
+
+```c
+static int16_t ECOCALLMETHOD CEcoCalculatorB_QueryInterface( IEcoCalculatorXPtr_t me,  const UGUID* riid,  voidptr_t* ppv) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)me;
+
+    
+    if (me == 0 || ppv == 0) {
+        return ERR_ECO_POINTER;
+    }
+
+    return pCMe->m_pIUnkOuter->pVTbl->QueryInterface(pCMe->m_pIUnkOuter, riid, ppv);
+}
+
+
+static uint32_t ECOCALLMETHOD CEcoCalculatorB_AddRef( IEcoCalculatorXPtr_t me) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)me;
+
+    
+    if (me == 0 ) {
+        return -1; 
+    }
+
+    return pCMe->m_pIUnkOuter->pVTbl->AddRef(pCMe->m_pIUnkOuter);
+}
+
+
+static uint32_t ECOCALLMETHOD CEcoCalculatorB_Release( IEcoCalculatorXPtr_t me) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)me;
+
+    
+    if (me == 0 ) {
+        return -1; 
+    }
+
+    return pCMe->m_pIUnkOuter->pVTbl->Release(pCMe->m_pIUnkOuter);
+}
+```
+
+Use the fixed contract, with this mandatory checklist. Every item is needed, not optional:
+
+A. Four interface fields in ONE Lab65 state: IEcoLab65, own IEcoCalculatorX, own IEcoCalculatorY, and a private IEcoUnknown. Local count, allocator, system, borrowed controlling Unknown, owned contained A/C X and D Y. Distinguish owned dependency pointers from own interface fields. Static vtables, no colliding Vendor globals. Use meaningful field/function names. Every interface pointer returned to a caller is the ADDRESS of its field inside the state.
+
+B. There must be separate correctly typed functions for EACH interface, not one Lab65 function inserted everywhere. Lab65 public QI/AddRef/Release take IEcoLab65*. Own X QI/AddRef/Release take IEcoCalculatorX* and recover the state from the X field offset. Own Y QI/AddRef/Release take IEcoCalculatorY* and recover from Y offset. Each of these NINE methods delegates to the stored controlling IEcoUnknown*. Never cast function pointers to hide a mismatch. The private ND Unknown three methods take IEcoUnknown*, recover from the ND field's actual offset, and only use the local counter. Validate a null interface BEFORE doing pointer subtraction. offsetof is already available through SDK includes. Do not include standard headers yourself.
+
+C. Implement all FOUR arithmetic methods: X Addition and Subtraction call the owned A/C X with that dependency pointer; Y Multiplication and Division call the owned D Y with that dependency pointer. Operands int16_t; Addition/Multiplication return int32_t, Subtraction/Division int16_t. NO null table slots or local arithmetic. The Lab65 vtable has all FIVE sorting methods, forwarding to the existing lab_sort_* functions. Implement lab_allocator with its exact supplied signature, returning null for null me and otherwise its borrowed allocator.
+
+D. All QI methods clear a nonnull output FIRST and validate iid before the SDK IsEqualUGUID macro. Public QI delegates to controller. ND QI recognizes Unknown, Lab65, X, Y: Unknown returns its own ND field and increments the local count; a public result returns the selected OWN field address and calls that returned interface's delegating AddRef with THAT FIELD ADDRESS. ND Release destroys at local zero. Keep all counter domains separate. Public Release may destroy the object indirectly: do not read its fields after calling the controller's Release.
+
+E. createEcoLab65 clears out before other validation and rejects null system/iid/out. Nonnull outer permits ONLY IID_IEcoUnknown. Obtain actual system using GID_IEcoSystem, then actual bus using QI; never cast an unrelated interface. Default manager CID is a UGUID VALUE initialized from CID_EcoMemoryManager1. If the optional bus extension succeeds, copy the VALUE returned by get_Manager BEFORE releasing the extension. Acquire allocator through QueryComponent and allocate state. Initialize both dependency pointers to zero, all interface tables, local count=1, system/allocator references, and the controller BEFORE any dependency query. Borrow the supplied outer without AddRef; without outer use the ADDRESS of own private ND field as controller. QueryComponent(CID_EcoCalculatorA, outer NULL, IID_IEcoCalculatorX) and QueryComponent(CID_EcoCalculatorD, outer NULL, IID_IEcoCalculatorY). These are containment dependencies, not aggregates. Vendor factories already run Init inside Alloc: never call Init again.
+
+F. Successful aggregate creation directly returns private ND Unknown with its one local construction reference. Successful standalone creation obtains requested interface through the private ND QI, then releases the private initial construction reference, leaving ONE owned output. Unsupported requested IID must destroy the unpublished object and clear output. Release the bus on EVERY exit after acquisition. Dependency failures must destroy all initialized state and acquired interfaces. First object allocation failure must Release allocator, bus and system. Use declared SDK error names; ERR_ECO_GET_COMPONENT DOES NOT EXIST: use ERR_ECO_NOINTERFACE for failed dependencies if needed.
+
+G. Destroy: save allocator; release owned contained X/Y and owned system; free state through saved allocator; Release saved allocator. Never access state after Free. Do not AddRef or Release the borrowed outer. Do not leak initial local reference or create an ownership cycle.
+
+H. Strict C89 for every function: declarations first in EACH block. Declare a state pointer before the null guard, initialize it AFTER the guard. This applies to lab_allocator and owner recovery methods too. No //, omitted code, placeholder slots, incompatible function signatures or invented errors. Put helper declarations before their first use. Short comments must explain private local vs public controlling lifetime and owned vs borrowed resources.
+
+I. createEcoLab2 is ONLY the existing-signature TEMPORARY ERROR STUB: clear nonnull output; invalid args fail; any outer returns ERR_ECO_NOAGGREGATION; otherwise ERR_ECO_NOINTERFACE. No Lab2 object implementation in THIS response. Final full acceptance will still require Lab2 after we independently check Lab65.
+
+Before returning verify that your source actually implements B/C/D rather than merely declaring them. Return exactly one complete fenced C block, no prose. Do not repeat the previous invalid source. All original costs and failures remain measured.
+
+
+Crucial final check: there must be ZERO increments/decrements of local refCount inside PUBLIC Lab65/X/Y QI/AddRef/Release; all those methods delegate to controlling Unknown. Only private ND QI/AddRef/Release and initialization change local refCount. No IID branch in public QI bypasses the controller. Obtain standalone output from PRIVATE ND QI and drop construction reference. Aggregate creation returns PRIVATE ND directly; it does not call outer QI. Comments explain this difference and the borrowed controller. No omitted arithmetic, no NULL slots, no full Lab2 yet. Return complete C89 code, all declarations at block starts. Do not include this teacher example unchanged as a second component; implement your own Lab65.
+
+The vtables are FLAT arrays of function pointers, not a nested parent vtable. IEcoLab65VTbl has 8 slots: its own correctly typed QI, AddRef, Release, then the 5 sorting methods in ABI order. IEcoCalculatorXVTbl has 5 slots: its own correctly typed QI/AddRef/Release then Addition/Subtraction; Y has its own 3 reference methods then Multiplication/Division. Private IEcoUnknownVTbl has exactly 3 functions. An interface struct contains a POINTER to its matching table. Never put &someUnknownTable in a slot that expects a function, and never embed a vtable by value as an interface. Use the exact existing SDK declarations; do not invent new types.

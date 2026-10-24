@@ -1,0 +1,3 @@
+REUSE_CHECK cases=28936 failures=0 mock_live=0 environment_refs=1 memory_refs=1
+REUSE_BUILD_OK profile=C
+Build artifacts: /private/tmp/acom-audit-20261024-t67c55jx/ordinary-control/.build/repeat-1-C/BuildFiles/Standalone

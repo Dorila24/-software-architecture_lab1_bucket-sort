@@ -1,0 +1,8 @@
+{
+  "source": "runs/experiment-20261020-acom-gost/experiment.json",
+  "requests": 1,
+  "prompt_tokens": 32,
+  "completion_tokens": 2,
+  "duration_s": 0.6453043750007055,
+  "included_in_measurements": false
+}

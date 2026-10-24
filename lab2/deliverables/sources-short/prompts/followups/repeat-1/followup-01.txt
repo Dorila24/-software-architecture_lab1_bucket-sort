@@ -1,0 +1,207 @@
+Continue this SAME measured attempt. The initial response failed the actual SDK and ownership contract. We will complete the two objects in stages within this run, preserving every request and failure. In THIS response implement Lab65 fully and keep createEcoLab2 as a safe temporary error stub (clear output, reject outer, otherwise fail). Final acceptance will still require both objects.
+
+Below is an ORIGINAL TEACHER EXAMPLE of this SDK's aggregation pattern, already present in read-only Vendor. It is not a completed Lab65 solution and comes from no other experiment. Only block comments and blank lines are removed. Do not modify Vendor, copy its weak cleanup or retain its borrowed manager CID after Release. Our contract requires a manager UGUID VALUE copied before Release and full failure cleanup.
+
+
+Original Vendor/Eco.CalculatorB/HeaderFiles/CEcoCalculatorB.h:
+#ifndef __C_ECO_CALCULATOR_B_H__
+#define __C_ECO_CALCULATOR_B_H__
+#include "IEcoCalculatorX.h"
+#include "IEcoSystem1.h"
+#include "IdEcoMemoryManager1.h"
+typedef struct CEcoCalculatorB {
+    IEcoCalculatorXVTbl* m_pVTblIX;
+    IEcoUnknownVTbl* m_pVTblINondelegatingUnk;
+    uint32_t m_cRef;
+    IEcoMemoryAllocator1* m_pIMem;
+    IEcoSystem1* m_pISys;
+    IEcoUnknown* m_pIUnkOuter;
+} CEcoCalculatorB, *CEcoCalculatorBPtr;
+int16_t ECOCALLMETHOD initCEcoCalculatorB( IEcoCalculatorXPtr_t me,  IEcoUnknown *pIUnkSystem);
+int16_t ECOCALLMETHOD createCEcoCalculatorB( IEcoUnknown* pIUnkSystem,  IEcoUnknown* pIUnkOuter,  IEcoCalculatorXPtr_t* ppIX);
+void ECOCALLMETHOD deleteCEcoCalculatorB( IEcoCalculatorXPtr_t pIX);
+#endif
+
+Original Vendor/Eco.CalculatorB/SourceFiles/CEcoCalculatorB.c:
+#include "IEcoSystem1.h"
+#include "IEcoInterfaceBus1.h"
+#include "IEcoInterfaceBus1MemExt.h"
+#include "CEcoCalculatorB.h"
+static int16_t ECOCALLMETHOD CEcoCalculatorB_QueryInterface( IEcoCalculatorXPtr_t me,  const UGUID* riid,  voidptr_t* ppv) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)me;
+    if (me == 0 || ppv == 0) {
+        return ERR_ECO_POINTER;
+    }
+    return pCMe->m_pIUnkOuter->pVTbl->QueryInterface(pCMe->m_pIUnkOuter, riid, ppv);
+}
+static uint32_t ECOCALLMETHOD CEcoCalculatorB_AddRef( IEcoCalculatorXPtr_t me) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)me;
+    if (me == 0 ) {
+        return -1;
+    }
+    return pCMe->m_pIUnkOuter->pVTbl->AddRef(pCMe->m_pIUnkOuter);
+}
+static uint32_t ECOCALLMETHOD CEcoCalculatorB_Release( IEcoCalculatorXPtr_t me) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)me;
+    if (me == 0 ) {
+        return -1;
+    }
+    return pCMe->m_pIUnkOuter->pVTbl->Release(pCMe->m_pIUnkOuter);
+}
+static int32_t ECOCALLMETHOD CEcoCalculatorB_Addition( IEcoCalculatorXPtr_t me,  int16_t a,  int16_t b) {
+    int32_t result = 0;
+    if (me == 0 ) {
+        return -1;
+    }
+    result = a + b;
+    return result;
+}
+static int16_t ECOCALLMETHOD CEcoCalculatorB_Subtraction( IEcoCalculatorXPtr_t me,  int16_t a,  int16_t b) {
+    int16_t result = 0;
+    if (me == 0 ) {
+        return -1;
+    }
+    result = a - b;
+    return result;
+}
+static int16_t ECOCALLMETHOD CEcoCalculatorB_NondelegatingQueryInterface(IEcoUnknownPtr_t me,  const UGUID* riid,  voidptr_t* ppv) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)((uint64_t)me - sizeof(IEcoUnknownPtr_t));
+    if (me == 0 || ppv == 0) {
+        return ERR_ECO_POINTER;
+    }
+    if ( IsEqualUGUID(riid, &IID_IEcoCalculatorX) ) {
+        *ppv = &pCMe->m_pVTblIX;
+        ((IEcoUnknown*)(*ppv))->pVTbl->AddRef((IEcoUnknown*)(*ppv));
+    }
+    else if ( IsEqualUGUID(riid, &IID_IEcoUnknown) ) {
+        *ppv = &pCMe->m_pVTblINondelegatingUnk;
+        ++pCMe->m_cRef;
+    }
+    else {
+        *ppv = 0;
+        return ERR_ECO_NOINTERFACE;
+    }
+    return ERR_ECO_SUCCESES;
+}
+static uint32_t ECOCALLMETHOD CEcoCalculatorB_NondelegatingAddRef( IEcoUnknownPtr_t me) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)((uint64_t)me - sizeof(IEcoUnknownPtr_t));
+    if (me == 0 ) {
+        return -1;
+    }
+    return ++pCMe->m_cRef;
+}
+static uint32_t ECOCALLMETHOD CEcoCalculatorB_NondelegatingRelease( IEcoUnknownPtr_t me) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)((uint64_t)me - sizeof(IEcoUnknownPtr_t));
+    if (me == 0 ) {
+        return -1;
+    }
+    --pCMe->m_cRef;
+    if ( pCMe->m_cRef == 0 ) {
+        deleteCEcoCalculatorB((IEcoCalculatorX*)pCMe);
+        return 0;
+    }
+    return pCMe->m_cRef;
+}
+int16_t ECOCALLMETHOD initCEcoCalculatorB(IEcoCalculatorXPtr_t me,  IEcoUnknownPtr_t pIUnkSystem) {
+    if (me == 0 ) {
+        return ERR_ECO_POINTER;
+    }
+    return ERR_ECO_SUCCESES;
+}
+IEcoCalculatorXVTbl g_x9322111622484742AE0682819447843DVTblB = {
+    CEcoCalculatorB_QueryInterface,
+    CEcoCalculatorB_AddRef,
+    CEcoCalculatorB_Release,
+    CEcoCalculatorB_Addition,
+    CEcoCalculatorB_Subtraction
+};
+IEcoUnknownVTbl g_x000000000000000000000000000000AAVTblB = {
+    CEcoCalculatorB_NondelegatingQueryInterface,
+    CEcoCalculatorB_NondelegatingAddRef,
+    CEcoCalculatorB_NondelegatingRelease
+};
+int16_t ECOCALLMETHOD createCEcoCalculatorB( IEcoUnknown* pIUnkSystem,  IEcoUnknown* pIUnkOuter,  IEcoCalculatorXPtr_t* ppIX) {
+    CEcoCalculatorB* pCMe = 0;
+    int16_t result = ERR_ECO_POINTER;
+    IEcoSystem1* pISys = 0;
+    IEcoInterfaceBus1* pIBus = 0;
+    IEcoInterfaceBus1MemExt* pIMemExt = 0;
+    IEcoMemoryAllocator1* pIMem = 0;
+    UGUID* rcid = (UGUID*)&CID_EcoMemoryManager1;
+    if (ppIX == 0 || pIUnkSystem == 0) {
+        return result;
+    }
+    result = pIUnkSystem->pVTbl->QueryInterface(pIUnkSystem, &GID_IEcoSystem, (voidptr_t*)&pISys);
+    if (result != 0 || pISys == 0) {
+        return ERR_ECO_NOSYSTEM;
+    }
+    result = pISys->pVTbl->QueryInterface(pISys, &IID_IEcoInterfaceBus1, (voidptr_t*)&pIBus);
+    if (result != 0 || pIBus == 0) {
+        pISys->pVTbl->Release(pISys);
+        return ERR_ECO_NOBUS;
+    }
+    result = pIBus->pVTbl->QueryInterface(pIBus, &IID_IEcoInterfaceBus1MemExt, (void**)&pIMemExt);
+    if (result == 0 && pIMemExt != 0) {
+        rcid = (UGUID*)pIMemExt->pVTbl->get_Manager(pIMemExt);
+        pIMemExt->pVTbl->Release(pIMemExt);
+    }
+    result = pIBus->pVTbl->QueryComponent(pIBus, rcid, 0, &IID_IEcoMemoryAllocator1, (voidptr_t*) &pIMem);
+    if (result != 0 || pIMem == 0) {
+        pIBus->pVTbl->Release(pIBus);
+        pISys->pVTbl->Release(pISys);
+        return ERR_ECO_GET_MEMORY_ALLOCATOR;
+    }
+    pCMe = (CEcoCalculatorB*)pIMem->pVTbl->Alloc(pIMem, sizeof(CEcoCalculatorB));
+    if (pCMe == 0) {
+        pIBus->pVTbl->Release(pIBus);
+        pISys->pVTbl->Release(pISys);
+        return ERR_ECO_OUTOFMEMORY;
+    }
+    pCMe->m_pISys = pISys;
+    pCMe->m_pIMem = pIMem;
+    pCMe->m_cRef = 1;
+    pCMe->m_pVTblIX = &g_x9322111622484742AE0682819447843DVTblB;
+    pCMe->m_pVTblINondelegatingUnk = &g_x000000000000000000000000000000AAVTblB;
+    pCMe->m_pIUnkOuter = 0;
+    if (pIUnkOuter != 0) {
+        pCMe->m_pIUnkOuter = pIUnkOuter;
+    } else {
+        pCMe->m_pIUnkOuter = (IEcoUnknown*)&pCMe->m_pVTblINondelegatingUnk;
+    }
+    *ppIX = (IEcoCalculatorX*)&pCMe->m_pVTblINondelegatingUnk;
+    pIBus->pVTbl->Release(pIBus);
+    return ERR_ECO_SUCCESES;
+}
+void ECOCALLMETHOD deleteCEcoCalculatorB( IEcoCalculatorXPtr_t pIX) {
+    CEcoCalculatorB* pCMe = (CEcoCalculatorB*)pIX;
+    IEcoMemoryAllocator1* pIMem = 0;
+    if (pIX != 0 ) {
+        pIMem = pCMe->m_pIMem;
+        if ( pCMe->m_pISys != 0 ) {
+            pCMe->m_pISys->pVTbl->Release(pCMe->m_pISys);
+        }
+        pIMem->pVTbl->Free(pIMem, pCMe);
+        pIMem->pVTbl->Release(pIMem);
+    }
+}
+Continue the SAME measured run. Your full two-object rewrites keep mixing containment, aggregation and interface addresses. We will repair the task in TWO STAGES within this run, accounting for every request. THIS RESPONSE: implement Eco.Lab65 completely and correctly. Temporarily provide createEcoLab2 only as a safe C89 error stub with the existing exact signature (clear out; reject outer with ERR_ECO_NOAGGREGATION; otherwise ERR_ECO_NOINTERFACE). Do not generate Lab2 state, methods or virtual tables in this response. We will ask you to complete Lab2 next. Final acceptance will still require BOTH objects and the unchanged full tests; this intermediate stage is not a final solution.
+
+Write the FULL Reuse.c yourself. Focus on this one object's exact invariants:
+
+Lab65 has FOUR distinct interface fields/tables: public Lab65, own public X, own public Y, and private nondelegating Unknown. Each interface value is the ADDRESS OF its vtable-pointer FIELD inside the object, not the vtable pointer value. Recover the owner with the correct offset for that particular field. A vtable is already a table: it does not have another pVTbl member.
+
+All three public interfaces' QI/AddRef/Release delegate to the stored controlling IEcoUnknown*. With no outer, this controller points to Lab65's own private ND Unknown field; with outer it is exactly the borrowed outer. Do not AddRef the outer on construction. Do not replace delegation by direct local increments in the public methods, even when a local increment appears simpler.
+
+The private ND QueryInterface recognizes Unknown, Lab65, X and Y. Unknown returns the private ND field address and increases the LOCAL counter. For a PUBLIC interface it returns that interface field address and calls its PUBLIC delegating AddRef, so an aggregated public interface retains the outer controller. Private ND AddRef/Release only manage local lifetime. Never pass the first Lab65 field address to a function that expects the private ND field address. The private ND QI remains local; public QI goes through the controller.
+
+CONTAINMENT dependencies for Lab65: create A/C using bus QueryComponent with CID_EcoCalculatorA, outer NULL, IID_IEcoCalculatorX; create D with CID_EcoCalculatorD, outer NULL, IID_IEcoCalculatorY. These are ordinary independently owned interfaces. DO NOT aggregate A or D and DO NOT ask them for private Unknown. Public own X forwards to owned A/C X; public own Y forwards to owned D Y. Returning raw inner interfaces or locally recomputing arithmetic is forbidden. Use the exact int16_t/int32_t signatures from headers. Five public sorting slots call the existing lab_sort_* methods. lab_allocator returns null for null me, otherwise the owner's borrowed allocator, with no AddRef.
+
+Factory behavior: clear a nonnull out before other checks. Reject null system/iid/out. If outer is supplied, only IID_IEcoUnknown is allowed; other IIDs return ERR_ECO_NOAGGREGATION. Obtain actual system via GID_IEcoSystem, actual bus via QI, and allocator via QueryComponent. Copy the optional manager UGUID VALUE before releasing its extension. Allocate the object through that allocator and initialize every owned pointer and interface table before acquiring dependencies. No recursive creation of Lab65 itself.
+
+Start with one local construction reference. Aggregate creation returns the private ND Unknown and that one reference. Standalone creation obtains the requested interface through private ND QI and balances the original local construction reference, so exactly one client reference remains. Unsupported creation IID destroys the unpublished object locally. Every failure releases all earlier acquired inner interfaces and environment references. First object Alloc failure also releases the acquired allocator.
+
+When local references reach zero, save allocator in a local variable, Release owned X/Y and system references, Free the object using the saved allocator, then Release the saved allocator. NEVER read pCMe fields after Free. Release every acquired bus reference on all exits. No extra reference cycle, leaked initial reference, double free or partial output.
+
+C89 declarations before statements; static correctly typed vtables; no standard headers, libc, Windows macros or redefinitions. Existing SDK error names only. NULL output must return an error without dereferencing it; validate iid before IsEqualUGUID. Include the existing headers as needed, never invent declarations. Return one complete C block with the entire single-object implementation plus the temporary Lab2 error stub. You generate the implementation; the organizer does not patch it.
+
+Additional precise reminders from the frozen contract: private ND QI returns an ADDRESS of the selected public interface field and calls public AddRef with THAT RETURNED INTERFACE ADDRESS, never the owner base address for X/Y. Public methods recover their owner from their own field offset and delegate to the controlling Unknown. All QI entry points validate iid before IsEqualUGUID, clear a nonnull output first, and never dereference null out. A and D are CONTAINED with outer NULL and requested X/Y; do not aggregate them. Do not call lab_allocator(NULL) to acquire the allocator; obtain the real allocator through actual system/bus APIs as described in the contract. Do not cast system to bus/allocator. Start every block with its declarations or use a fresh nested block after guards, exactly as the shared C89 syntax example shows. Add concise comments on borrowed controller and owned dependencies. Return only the full generated Reuse.c for Lab65 plus the temporary Lab2 error stub; no other files and no illustrative toy function.

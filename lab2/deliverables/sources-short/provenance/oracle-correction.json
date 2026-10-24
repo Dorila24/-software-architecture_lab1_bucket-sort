@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-20T15:11:44.272562+00:00",
+  "old_client_sha256": "0dd2937b99f274c8a42a864a9438c56f17faa6cf34efd2b5fd153f9b26a51b38",
+  "new_client_sha256": "62016ef1492630e7c8ca83f47cf5b8695583c99f529c95226c1d366c5e5f2869",
+  "removed": "redundant Factory.Init after Factory.Alloc",
+  "acceptance_requirements_changed": false,
+  "old_series_preserved": "labs/acom-reuse-lab2/runs/experiment-20261020-acom-gost",
+  "reason": "Trusted mock bus called Factory.Init after Factory.Alloc, but the original teacher factories already call Init internally; second Init receives a requested Y pointer and aborts in D. Reference defect, not a valid model failure."
+}

@@ -1,0 +1,9 @@
+Continue the SAME measured run, using your exact last assistant source. All previous costs remain counted.
+
+Repair ONLY createEcoLab65 of your exact response9, return the ENTIRE source in one c block. Keep all methods, tables and createEcoLab2 unchanged.
+1. The optional extension's manager pointer is borrowed. Replace the manager local with an owned UGUID value initialized from CID_EcoMemoryManager1 and a separate borrowed pointer. Copy the nonnull returned GUID value BEFORE releasing ext. QueryComponent uses the address of that copied value. Do not retain the extension's pointer.
+2. After the two assignments transferring local_system and allocator into state, immediately clear BOTH local aliases to zero, before any dependency acquisition. Later cleanup must not release transferred references twice.
+3. In the aggregate branch AFTER publishing the private Unknown and BEFORE goto cleanup, clear ONLY the local state pointer to zero. This transfers the initial reference to the caller and prevents shared cleanup from destroying the returned object. Do not AddRef or Release in that branch.
+4. For standalone publication, the existing shared cleanup already drops the construction reference exactly once after unknown_query_interface. Retain that behavior on success AND failure; do not add another Release. Prior dependency failure also uses this same release.
+5. Preserve all null-output and aggregation guards and initializations. Failed mandatory system/bus/allocator/dependency queries must go to cleanup with a nonzero status. Ensure a success-with-null dependency cannot return success: set a nonzero error before cleanup. Keep declarations at the start of blocks.
+Add one meaningful ANSI C89 block comment about the borrowed controller and one about the ownership transfer. No C99 line comments.

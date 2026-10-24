@@ -1,0 +1,17 @@
+Continue the SAME measured run, not a new attempt. Your exact response14 is retained as the preceding assistant message. Its full A-profile independent suite runs28936 assertions but reports4 reference-balance failures. The real demo works. Your response14 fixed the control methods but did NOT add the two requested local-reference cleanup blocks in createEcoLab2.
+
+Make ONLY the following correction: in createEcoLab2 cleanup, immediately AFTER the existing unconditional state!=0 lab2_release block and BEFORE the existing bus cleanup, restore the missing separate local_system and allocator cleanup blocks. Both aliases are cleared when transferred to state, so these blocks release ONLY still-owned locals before transfer. They must run independently of status and of one another, on every exit. Do not add another state Release or change its current condition. Do not change any other function, method, comment, declaration, table, or expression.
+
+For reference, these EXACT two blocks already appear in YOUR OWN createEcoLab65 response14 in THIS SAME run. Reuse their existing form and names for the missing local references of createEcoLab2:
+
+```c
+    if (local_system != 0) {
+        local_system->pVTbl->Release(local_system);
+    }
+
+    if (allocator != 0) {
+        allocator->pVTbl->Release(allocator);
+    }
+```
+
+Preserve the existing bus cleanup after them. Leave the entire qualified Lab65 prefix unchanged. Return the complete updated SourceFiles/Reuse.c through the same single-file protocol, without ellipses, explanations, or C99 comments. This must be the full unchanged response14 with only those two missing cleanup blocks added in createEcoLab2.

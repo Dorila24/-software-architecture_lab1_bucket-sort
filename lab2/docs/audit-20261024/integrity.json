@@ -1,0 +1,88 @@
+{
+  "all_nine_pass": true,
+  "seed_hash_matches": true,
+  "frozen_files": 179,
+  "rows": [
+    {
+      "variant": "short",
+      "repeat": 1,
+      "sha256": "aea0b1fcda4374f39e92a6acb333b99b71de78a1ac72b8e2463747eea17b6ac9",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    },
+    {
+      "variant": "detailed",
+      "repeat": 1,
+      "sha256": "059a2cfde8e68f40b56f644c18e35bd844c36235fcb6faaa14c12f1729a6b1d1",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    },
+    {
+      "variant": "ordinary",
+      "repeat": 1,
+      "sha256": "e755593350942590a81bf0c4894053b088def75c5f3c6c70acb284b64c02f81b",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    },
+    {
+      "variant": "detailed",
+      "repeat": 2,
+      "sha256": "20948764fb7ec745d205795dd5a6538d21b94bb3157016113bec0556114fa7ae",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    },
+    {
+      "variant": "ordinary",
+      "repeat": 2,
+      "sha256": "636dbc1b5a0bbf28cc16c3f4e6902c4d91a6ff49e606eea98145d56f1c80af81",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    },
+    {
+      "variant": "short",
+      "repeat": 2,
+      "sha256": "005bc251e58c59af9676619e204fd4181b4152556f43fdf9e9a07c9c7dc01cd0",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    },
+    {
+      "variant": "ordinary",
+      "repeat": 3,
+      "sha256": "7ee025d927875fa8de34038faea604443e54799be9921c00ae08cf566da04e87",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    },
+    {
+      "variant": "short",
+      "repeat": 3,
+      "sha256": "c9721c7a0f400580610376aca190a229ffcad04c6e934592739e09eae0542d3d",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    },
+    {
+      "variant": "detailed",
+      "repeat": 3,
+      "sha256": "9f72405e65fe409b0ad12c3d8d822c788a379a464ab1bba82e6b48c3a75dc9b7",
+      "matches_qwen": true,
+      "frozen_unchanged": true,
+      "status": "passed",
+      "usage_reconciled": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+Continue this SAME measured run using your exact response13. Restore ONE COMPLETE local cleanup TAIL, not just one condition. Your response12 lost allocator cleanup; response13 restored allocator but accidentally lost system cleanup. All three owned local references need independent Releases. Return the ENTIRE complete source file in one c block and preserve ALL other tokens. All prior costs stay counted.
+
+The following is the EXACT complete local cleanup tail from YOUR OWN response11 in THIS run. It is a quotation of your prior generated code, with no modifications and no other run implementation. It contains THREE independent cleanup blocks and the final return:
+
+```c
+    if (local_system != 0) {
+        local_system->pVTbl->Release(local_system);
+    }
+
+    if (local_bus != 0) {
+        local_bus->pVTbl->Release(local_bus);
+    }
+
+    if (local_allocator != 0) {
+        local_allocator->pVTbl->Release(local_allocator);
+    }
+
+    return status;
+```
+
+In createEcoLab65, REPLACE ONLY the section AFTER the existing state/private-Unknown cleanup block and BEFORE the closing creator brace with that EXACT quoted tail, retaining ALL THREE local_system, local_bus and local_allocator cleanup blocks. Do not replace the private state cleanup itself: it MUST remain the current Lab65Private_Release on address of private_unknown. Do not call the borrowed controller Release.
+
+Check all acquisition states before emitting: bus-query failure still owns local_system; allocator-query failure still owns local_system and local_bus; state-allocation failure owns all three locals; after transfer local_system/local_allocator are zero and the state destructor owns them; aggregate publication clears ONLY local state and reaches local_bus cleanup. Therefore NONE of the three local cleanup blocks may be omitted, swapped into another condition, merged or duplicated.
+
+Keep your correct output guard ordering, GUID value copy, initialized fields, cleared transfer aliases, private state Release, aggregate state-null plus goto cleanup, and standalone one initial-ref release. Do not rewrite any method, table, other creator, guard, comment or declaration. No extra changes or new comments. Preserve every existing C89 comment. The only desired functional difference from response13 is restoring missing local_system cleanup; the quoted whole tail makes that exact requirement explicit.

@@ -1,0 +1,302 @@
+#include "ReuseContract.h"
+
+typedef struct {
+    IEcoLab65 public_lab65;
+    IEcoUnknown private_unknown;
+    IEcoCalculatorX public_x;
+    IEcoCalculatorY public_y;
+    uint32_t local_refs;
+    IEcoUnknown* controller;
+    IEcoSystem1* owned_system;
+    IEcoMemoryAllocator1* owned_allocator;
+    IEcoCalculatorX* inner_x;
+    IEcoCalculatorY* inner_y;
+} Lab65State;
+
+int16_t ECOCALLMETHOD public_Lab65_QueryInterface(IEcoLab65Ptr_t me, const UGUID* riid, voidptr_t* ppv) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (me == NULL || riid == NULL || ppv == NULL) return ERR_ECO_POINTER;
+    return state->controller->pVTbl->QueryInterface(state->controller, riid, ppv);
+}
+
+uint32_t ECOCALLMETHOD public_Lab65_AddRef(IEcoLab65Ptr_t me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (me == NULL) return 0;
+    return state->controller->pVTbl->AddRef(state->controller);
+}
+
+uint32_t ECOCALLMETHOD public_Lab65_Release(IEcoLab65Ptr_t me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (me == NULL) return 0;
+    return state->controller->pVTbl->Release(state->controller);
+}
+
+int16_t ECOCALLMETHOD public_X_QueryInterface(IEcoCalculatorXPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (me == NULL || riid == NULL || ppv == NULL) return ERR_ECO_POINTER;
+    return state->controller->pVTbl->QueryInterface(state->controller, riid, ppv);
+}
+
+uint32_t ECOCALLMETHOD public_X_AddRef(IEcoCalculatorXPtr_t me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (me == NULL) return 0;
+    return state->controller->pVTbl->AddRef(state->controller);
+}
+
+uint32_t ECOCALLMETHOD public_X_Release(IEcoCalculatorXPtr_t me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (me == NULL) return 0;
+    return state->controller->pVTbl->Release(state->controller);
+}
+
+int16_t ECOCALLMETHOD public_Y_QueryInterface(IEcoCalculatorYPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (me == NULL || riid == NULL || ppv == NULL) return ERR_ECO_POINTER;
+    return state->controller->pVTbl->QueryInterface(state->controller, riid, ppv);
+}
+
+uint32_t ECOCALLMETHOD public_Y_AddRef(IEcoCalculatorYPtr_t me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (me == NULL) return 0;
+    return state->controller->pVTbl->AddRef(state->controller);
+}
+
+uint32_t ECOCALLMETHOD public_Y_Release(IEcoCalculatorYPtr_t me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (me == NULL) return 0;
+    return state->controller->pVTbl->Release(state->controller);
+}
+
+int16_t ECOCALLMETHOD private_Unknown_QueryInterface(IEcoUnknownPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, private_unknown));
+    if (me == NULL || riid == NULL || ppv == NULL) return ERR_ECO_POINTER;
+    *ppv = NULL;
+    if (IsEqualUGUID(riid, &IID_IEcoUnknown)) {
+        *ppv = &state->private_unknown;
+        state->local_refs++;
+        return ERR_ECO_SUCCESS;
+    }
+    if (IsEqualUGUID(riid, &IID_IEcoLab65)) {
+        *ppv = &state->public_lab65;
+        state->public_lab65.pVTbl->AddRef(&state->public_lab65);
+        return ERR_ECO_SUCCESS;
+    }
+    if (IsEqualUGUID(riid, &IID_IEcoCalculatorX)) {
+        *ppv = &state->public_x;
+        state->public_x.pVTbl->AddRef(&state->public_x);
+        return ERR_ECO_SUCCESS;
+    }
+    if (IsEqualUGUID(riid, &IID_IEcoCalculatorY)) {
+        *ppv = &state->public_y;
+        state->public_y.pVTbl->AddRef(&state->public_y);
+        return ERR_ECO_SUCCESS;
+    }
+    return ERR_ECO_NOINTERFACE;
+}
+
+uint32_t ECOCALLMETHOD private_Unknown_AddRef(IEcoUnknownPtr_t me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, private_unknown));
+    if (me == NULL) return 0;
+    return ++state->local_refs;
+}
+
+uint32_t ECOCALLMETHOD private_Unknown_Release(IEcoUnknownPtr_t me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, private_unknown));
+    if (me == NULL) return 0;
+    if (--state->local_refs == 0) {
+        if (state->inner_x != NULL) {
+            state->inner_x->pVTbl->Release(state->inner_x);
+        }
+        if (state->inner_y != NULL) {
+            state->inner_y->pVTbl->Release(state->inner_y);
+        }
+        if (state->owned_system != NULL) {
+            state->owned_system->pVTbl->Release(state->owned_system);
+        }
+        state->owned_allocator->pVTbl->Free(state->owned_allocator, state);
+        state->owned_allocator->pVTbl->Release(state->owned_allocator);
+        return 0;
+    }
+    return state->local_refs;
+}
+
+IEcoMemoryAllocator1* lab_allocator(IEcoLab65* me) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (me == NULL) return NULL;
+    return state->owned_allocator;
+}
+
+int32_t ECOCALLMETHOD public_X_Addition(IEcoCalculatorXPtr_t me, int16_t a, int16_t b) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (me == NULL) return 0;
+    return state->inner_x->pVTbl->Addition(state->inner_x, a, b);
+}
+
+int16_t ECOCALLMETHOD public_X_Subtraction(IEcoCalculatorXPtr_t me, int16_t a, int16_t b) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (me == NULL) return 0;
+    return state->inner_x->pVTbl->Subtraction(state->inner_x, a, b);
+}
+
+int32_t ECOCALLMETHOD public_Y_Multiplication(IEcoCalculatorYPtr_t me, int16_t a, int16_t b) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (me == NULL) return 0;
+    return state->inner_y->pVTbl->Multiplication(state->inner_y, a, b);
+}
+
+int16_t ECOCALLMETHOD public_Y_Division(IEcoCalculatorYPtr_t me, int16_t a, int16_t b) {
+    Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (me == NULL) return 0;
+    return state->inner_y->pVTbl->Division(state->inner_y, a, b);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortInt(IEcoLab65Ptr_t me, int32_t* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_int(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortLong(IEcoLab65Ptr_t me, int64_t* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_long(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortFloat(IEcoLab65Ptr_t me, float* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_float(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortDouble(IEcoLab65Ptr_t me, double* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_double(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortLongDouble(IEcoLab65Ptr_t me, long double* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_long_double(me, data, count, buckets);
+}
+
+static IEcoLab65VTbl public_Lab65_vtbl = {
+    public_Lab65_QueryInterface,
+    public_Lab65_AddRef,
+    public_Lab65_Release,
+    public_Lab65_SortInt,
+    public_Lab65_SortLong,
+    public_Lab65_SortFloat,
+    public_Lab65_SortDouble,
+    public_Lab65_SortLongDouble
+};
+
+static IEcoCalculatorXVTbl public_X_vtbl = {
+    public_X_QueryInterface,
+    public_X_AddRef,
+    public_X_Release,
+    public_X_Addition,
+    public_X_Subtraction
+};
+
+static IEcoCalculatorYVTbl public_Y_vtbl = {
+    public_Y_QueryInterface,
+    public_Y_AddRef,
+    public_Y_Release,
+    public_Y_Multiplication,
+    public_Y_Division
+};
+
+static IEcoUnknownVTbl private_Unknown_vtbl = {
+    private_Unknown_QueryInterface,
+    private_Unknown_AddRef,
+    private_Unknown_Release
+};
+
+int16_t ECOCALLMETHOD createEcoLab65(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    IEcoSystem1* owned_system = NULL;
+    IEcoInterfaceBus1* bus = NULL;
+    IEcoInterfaceBus1MemExt* extension = NULL;
+    IEcoMemoryAllocator1* owned_allocator = NULL;
+    Lab65State* state = NULL;
+    UGUID memory_manager_cid = CID_EcoMemoryManager1;
+    const UGUID* manager_cid = &memory_manager_cid;
+    int16_t status = ERR_ECO_SUCCESS;
+
+    if (out == NULL) return ERR_ECO_POINTER;
+    *out = NULL;
+    if (system == NULL || iid == NULL) return ERR_ECO_POINTER;
+
+    if (outer != NULL && !IsEqualUGUID(iid, &IID_IEcoUnknown)) return ERR_ECO_NOAGGREGATION;
+
+    status = system->pVTbl->QueryInterface(system, &GID_IEcoSystem, (voidptr_t*)&owned_system);
+    if (status != ERR_ECO_SUCCESS) goto cleanup;
+
+    status = owned_system->pVTbl->QueryInterface(owned_system, &IID_IEcoInterfaceBus1, (voidptr_t*)&bus);
+    if (status != ERR_ECO_SUCCESS) goto cleanup;
+
+    status = bus->pVTbl->QueryInterface(bus, &IID_IEcoInterfaceBus1MemExt, (voidptr_t*)&extension);
+    if (status == ERR_ECO_SUCCESS) {
+        manager_cid = extension->pVTbl->get_Manager(extension);
+        extension->pVTbl->Release(extension);
+    }
+
+    status = bus->pVTbl->QueryComponent(bus, manager_cid, NULL, &IID_IEcoMemoryAllocator1, (voidptr_t*)&owned_allocator);
+    if (status != ERR_ECO_SUCCESS) goto cleanup;
+
+    state = (Lab65State*)owned_allocator->pVTbl->Alloc(owned_allocator, sizeof(Lab65State));
+    if (state == NULL) {
+        status = ERR_ECO_OUTOFMEMORY;
+        goto cleanup;
+    }
+
+    state->public_lab65.pVTbl = &public_Lab65_vtbl;
+    state->private_unknown.pVTbl = &private_Unknown_vtbl;
+    state->public_x.pVTbl = &public_X_vtbl;
+    state->public_y.pVTbl = &public_Y_vtbl;
+    state->local_refs = 1;
+    state->controller = (outer != NULL) ? outer : (IEcoUnknown*)&state->private_unknown;
+    state->owned_system = owned_system;
+    state->owned_allocator = owned_allocator;
+    state->inner_x = NULL;
+    state->inner_y = NULL;
+
+    owned_system = NULL;
+    owned_allocator = NULL;
+
+    status = bus->pVTbl->QueryComponent(bus, &CID_EcoCalculatorD, NULL, &IID_IEcoCalculatorY, (voidptr_t*)&state->inner_y);
+    if (status != ERR_ECO_SUCCESS || state->inner_y == NULL) {
+        status = ERR_ECO_NOINTERFACE;
+        goto cleanup;
+    }
+
+    status = bus->pVTbl->QueryComponent(bus, &CID_EcoCalculatorA, NULL, &IID_IEcoCalculatorX, (voidptr_t*)&state->inner_x);
+    if (status != ERR_ECO_SUCCESS || state->inner_x == NULL) {
+        status = ERR_ECO_NOINTERFACE;
+        goto cleanup;
+    }
+
+    if (outer != NULL) {
+        *out = &state->private_unknown;
+        bus->pVTbl->Release(bus);
+        return ERR_ECO_SUCCESS;
+    }
+
+    status = private_Unknown_QueryInterface((IEcoUnknown*)&state->private_unknown, iid, out);
+    state->controller->pVTbl->Release(state->controller);
+    bus->pVTbl->Release(bus);
+    return status;
+
+cleanup:
+    if (state != NULL) {
+        private_Unknown_Release((IEcoUnknown*)&state->private_unknown);
+    }
+    if (owned_system != NULL) {
+        owned_system->pVTbl->Release(owned_system);
+    }
+    if (owned_allocator != NULL) {
+        owned_allocator->pVTbl->Release(owned_allocator);
+    }
+    if (bus != NULL) {
+        bus->pVTbl->Release(bus);
+    }
+    return status;
+}
+
+int16_t ECOCALLMETHOD createEcoLab2(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out == NULL) return ERR_ECO_POINTER;
+    *out = NULL;
+    if (system == NULL || iid == NULL) return ERR_ECO_POINTER;
+    if (outer != NULL) return ERR_ECO_NOAGGREGATION;
+    return ERR_ECO_NOINTERFACE;
+}

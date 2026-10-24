@@ -1,0 +1,12 @@
+{
+  "substantive_paragraph_count": 19,
+  "bodies_equal_in_order": true,
+  "token_difference_initial_context": 222,
+  "prompt_sha256": {
+    "short.txt": "2add72a8c648bc1e21547ef88d4104c838fcbc4365b980ee8937c1682a621c91",
+    "detailed.txt": "bb18bc731a587a5e0cc1a190f90dbf8f8f1ee0ee8176fab57285d820db585ad0",
+    "ordinary-long.txt": "e87c86f8d47c3d175a74d358f282f1430b70d0fa5695c593df3021ef2ab7de4e"
+  },
+  "study_order_from": "runs/experiment-20261020-v2-acom-gost/experiment.json",
+  "note": "Derived audit only; prompts and study plan unchanged."
+}

@@ -1,0 +1,256 @@
+Continue this SAME measured run. The following is YOUR response 3 from THIS run, with ONLY the selected erroneous function bodies REMOVED. All signatures and all other noncomment code remain unchanged. C comments were also removed from this PROMPT REFERENCE only, preserving all noncomment C tokens before body omission. The organizer supplied no replacement implementation. Complete the omitted functions yourself and return the entire full source file. Costs of every earlier response remain counted.
+
+```c
+#include "ReuseContract.h"
+
+typedef struct {
+    IEcoLab65 public_lab65;
+    IEcoUnknown private_unknown;
+    IEcoCalculatorX public_x;
+    IEcoCalculatorY public_y;
+    uint32_t local_refs;
+    IEcoUnknown* controller;
+    IEcoSystem1* owned_system;
+    IEcoMemoryAllocator1* owned_allocator;
+    IEcoCalculatorX* inner_x;
+    IEcoCalculatorY* inner_y;
+} Lab65State;
+
+int16_t ECOCALLMETHOD public_Lab65_QueryInterface(IEcoLab65Ptr_t me, const UGUID* riid, voidptr_t* ppv) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+uint32_t ECOCALLMETHOD public_Lab65_AddRef(IEcoLab65Ptr_t me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+uint32_t ECOCALLMETHOD public_Lab65_Release(IEcoLab65Ptr_t me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortInt(IEcoLab65Ptr_t me, int32_t* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_int(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortLong(IEcoLab65Ptr_t me, int64_t* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_long(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortFloat(IEcoLab65Ptr_t me, float* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_float(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortDouble(IEcoLab65Ptr_t me, double* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_double(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_Lab65_SortLongDouble(IEcoLab65Ptr_t me, long double* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_long_double(me, data, count, buckets);
+}
+
+int16_t ECOCALLMETHOD public_X_QueryInterface(IEcoCalculatorXPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+uint32_t ECOCALLMETHOD public_X_AddRef(IEcoCalculatorXPtr_t me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+uint32_t ECOCALLMETHOD public_X_Release(IEcoCalculatorXPtr_t me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int32_t ECOCALLMETHOD public_X_Addition(IEcoCalculatorXPtr_t me, int16_t a, int16_t b) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int16_t ECOCALLMETHOD public_X_Subtraction(IEcoCalculatorXPtr_t me, int16_t a, int16_t b) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int16_t ECOCALLMETHOD public_Y_QueryInterface(IEcoCalculatorYPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+uint32_t ECOCALLMETHOD public_Y_AddRef(IEcoCalculatorYPtr_t me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+uint32_t ECOCALLMETHOD public_Y_Release(IEcoCalculatorYPtr_t me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int32_t ECOCALLMETHOD public_Y_Multiplication(IEcoCalculatorYPtr_t me, int16_t a, int16_t b) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int16_t ECOCALLMETHOD public_Y_Division(IEcoCalculatorYPtr_t me, int16_t a, int16_t b) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int16_t ECOCALLMETHOD private_Unknown_QueryInterface(IEcoUnknownPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+uint32_t ECOCALLMETHOD private_Unknown_AddRef(IEcoUnknownPtr_t me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+uint32_t ECOCALLMETHOD private_Unknown_Release(IEcoUnknownPtr_t me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+IEcoMemoryAllocator1* lab_allocator(IEcoLab65* me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+static IEcoLab65VTbl public_Lab65_vtbl = {
+    public_Lab65_QueryInterface,
+    public_Lab65_AddRef,
+    public_Lab65_Release,
+    public_Lab65_SortInt,
+    public_Lab65_SortLong,
+    public_Lab65_SortFloat,
+    public_Lab65_SortDouble,
+    public_Lab65_SortLongDouble
+};
+
+static IEcoCalculatorXVTbl public_X_vtbl = {
+    public_X_QueryInterface,
+    public_X_AddRef,
+    public_X_Release,
+    public_X_Addition,
+    public_X_Subtraction
+};
+
+static IEcoCalculatorYVTbl public_Y_vtbl = {
+    public_Y_QueryInterface,
+    public_Y_AddRef,
+    public_Y_Release,
+    public_Y_Multiplication,
+    public_Y_Division
+};
+
+static IEcoUnknownVTbl private_Unknown_vtbl = {
+    private_Unknown_QueryInterface,
+    private_Unknown_AddRef,
+    private_Unknown_Release
+};
+
+int16_t ECOCALLMETHOD createEcoLab65(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out == NULL) return ERR_ECO_POINTER;
+    *out = NULL;
+    if (system == NULL || iid == NULL) return ERR_ECO_POINTER;
+
+    IEcoSystem1* owned_system = NULL;
+    IEcoInterfaceBus1* bus = NULL;
+    IEcoInterfaceBus1MemExt* extension = NULL;
+    IEcoMemoryAllocator1* owned_allocator = NULL;
+    Lab65State* state = NULL;
+    UGUID memory_manager_cid = CID_EcoMemoryManager1;
+    const UGUID* manager_cid = &memory_manager_cid;
+    int16_t status = ERR_ECO_SUCCESS;
+
+     
+    *out = NULL;
+    if (outer != NULL && !IsEqualUGUID(iid, &IID_IEcoUnknown)) return ERR_ECO_NOAGGREGATION;
+
+     
+    status = system->pVTbl->QueryInterface(system, &GID_IEcoSystem, (voidptr_t*)&owned_system);
+    if (status != ERR_ECO_SUCCESS) goto cleanup;
+
+    status = owned_system->pVTbl->QueryInterface(owned_system, &IID_IEcoInterfaceBus1, (voidptr_t*)&bus);
+    if (status != ERR_ECO_SUCCESS) goto cleanup;
+
+    status = bus->pVTbl->QueryInterface(bus, &IID_IEcoInterfaceBus1MemExt, (voidptr_t*)&extension);
+    if (status == ERR_ECO_SUCCESS) {
+        manager_cid = extension->pVTbl->get_Manager(extension);
+        extension->pVTbl->Release(extension);
+    }
+
+    status = bus->pVTbl->QueryComponent(bus, manager_cid, NULL, &IID_IEcoMemoryAllocator1, (voidptr_t*)&owned_allocator);
+    if (status != ERR_ECO_SUCCESS) goto cleanup;
+
+     
+    state = (Lab65State*)owned_allocator->pVTbl->Alloc(owned_allocator, sizeof(Lab65State));
+    if (state == NULL) {
+        status = ERR_ECO_OUTOFMEMORY;
+        goto cleanup;
+    }
+
+     
+    state->public_lab65.pVTbl = &public_Lab65_vtbl;
+    state->private_unknown.pVTbl = &private_Unknown_vtbl;
+    state->public_x.pVTbl = &public_X_vtbl;
+    state->public_y.pVTbl = &public_Y_vtbl;
+    state->local_refs = 1;
+    state->controller = (outer != NULL) ? outer : (IEcoUnknown*)&state->private_unknown;
+    state->owned_system = owned_system;
+    state->owned_allocator = owned_allocator;
+    state->inner_x = NULL;
+    state->inner_y = NULL;
+
+     
+    owned_system = NULL;
+    owned_allocator = NULL;
+
+     
+    status = bus->pVTbl->QueryComponent(bus, &CID_EcoCalculatorD, NULL, &IID_IEcoCalculatorY, (voidptr_t*)&state->inner_y);
+    if (status != ERR_ECO_SUCCESS || state->inner_y == NULL) goto cleanup;
+
+    status = bus->pVTbl->QueryComponent(bus, &CID_EcoCalculatorA, NULL, &IID_IEcoCalculatorX, (voidptr_t*)&state->inner_x);
+    if (status != ERR_ECO_SUCCESS || state->inner_x == NULL) goto cleanup;
+
+     
+    if (outer != NULL) {
+        *out = &state->private_unknown;
+        state->controller->pVTbl->AddRef(state->controller);
+        bus->pVTbl->Release(bus);
+        return ERR_ECO_SUCCESS;
+    }
+
+    status = private_Unknown_QueryInterface((IEcoUnknown*)&state->private_unknown, iid, out);
+    state->controller->pVTbl->Release(state->controller);
+    bus->pVTbl->Release(bus);
+    return status;
+
+cleanup:
+    if (state != NULL) {
+        private_Unknown_Release((IEcoUnknown*)&state->private_unknown);
+    }
+    if (owned_system != NULL) {
+        owned_system->pVTbl->Release(owned_system);
+    }
+    if (owned_allocator != NULL) {
+        owned_allocator->pVTbl->Release(owned_allocator);
+    }
+    if (bus != NULL) {
+        bus->pVTbl->Release(bus);
+    }
+    return status;
+}
+
+int16_t ECOCALLMETHOD createEcoLab2(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out == NULL) return ERR_ECO_POINTER;
+    *out = NULL;
+    if (system == NULL || iid == NULL) return ERR_ECO_POINTER;
+    if (outer != NULL) return ERR_ECO_NOAGGREGATION;
+    return ERR_ECO_NOINTERFACE;
+}
+```
+
+Continue the SAME run. The reference quotes YOUR response3 with ONLY seventeen unsafe method bodies omitted. No replacement logic is supplied, no actual workspace edit was made. Regenerate those methods yourself; keep the own struct, five sorting methods, four typed tables and real constructor structure. Return ONE COMPLETE C89 file, not fragments. Lab2 remains an intentional safe error stub for this stage.
+
+All omitted method bodies must follow this order: declare owner pointer at function START WITHOUT recovering it; check null arguments; only AFTER rejecting null me assign owner with byte subtraction and offsetof of the ACTUAL receiving field. No pointer arithmetic on null. Use own public_lab65 for primary, own public_x for X, public_y for Y, private_unknown for private controls.
+FOUR QIs: FIRST clear output if output is nonnull, THEN reject null me OR null iid OR null output, THEN recover owner. Each PUBLIC Lab65/X/Y QI delegates to BORROWED controller's actual pVTbl with controller receiver. PUBLIC AddRef/Release likewise delegate; no local count change. Null reference methods return0.
+PRIVATE QI handles exactly Unknown, Lab65, X, Y: Unknown returns private field and increments local_refs once. Public branches return ADDRESS of the corresponding OWN public field, invoke THAT field's typed AddRef once solely for its ownership effect, then return0 STATUS. Do not return AddRef count or expose stored vendor pointers. Unsupported IID fails with output already null. Private AddRef/Release use local_refs. At zero save allocator, Release owned inner_x/inner_y/system if nonnull, Free object through saved allocator, Release saved allocator and immediately return0. NEVER access state after Free, and never Release borrowed controller. On nonzero count return it while object is live.
+FOUR arithmetic wrappers: X Addition int32_t and Subtraction int16_t DIRECTLY call stored inner_x; Y Multiplication int32_t and Division int16_t call inner_y. The dependency is the typed receiver, both int16_t operands unchanged. Null me returns0 before owner recovery. No local arithmetic, QI or ref changes. lab_allocator rejects null me before owner recovery and returns stored allocator BORROWED without AddRef; its exact header signature is external, not static.
+
+FIVE NARROW constructor corrections, preserving its otherwise useful phases:
+1. Move EVERY local declaration in createEcoLab65 to the very START of the OUTERMOST body BEFORE every null/aggregation guard or assignment. All locals remain visible in cleanup. No declaration after statements. All comments in complete output must be real C89 BLOCK comments; never use line comments, including phase headings. The reference comment removal was only a prompt transformation, not an implementation edit.
+2. get_Manager returns a BORROWED GUID pointer owned by extension. COPY its UGUID VALUE into memory_manager_cid WHILE extension is alive; only then Release extension. QueryComponent memory manager receives ADDRESS of that copied local VALUE. Do not keep/use the borrowed pointer after extension Release. A null get_Manager retains the default VALUE. Optional unavailable extension also retains default. Do not dereference a null manager pointer.
+3. For aggregated success, return ADDRESS of private_unknown and TRANSFER its initial local_refs1. REMOVE the AddRef on controller in that branch. Stored outer is BORROWED; retaining a public controller reference here creates a cycle and is forbidden. Do not increment local_refs either. Temporary bus is released once before return.
+4. Standalone success or unsupported requested IID: use your PRIVATE QueryInterface with ADDRESS of private_unknown; capture its status. Drop exactly ONE construction reference using PRIVATE Release with that SAME private field address. A successful QI already owns the output reference; a failed QI destroys object by this one Release. Then release temporary bus and return captured status without accessing possibly destroyed state or cleaning it again. Prefer explicit private Release rather than calling borrowed controller for construction ownership.
+5. After EACH dependency, if status is0 but returned inner pointer is null, set a NONZERO failure status before cleanup. Any dependency failure releases the object's construction reference through private destructor ONCE, plus still-owned locals and bus. Never return0 with null out and never manually release a dependency that is still owned by the state. Keep transfer of system/allocator aliases immediately after state initialization, before either dependency call.
+
+Readability: braced multi-line guards, one operation per line, meaningful short block comments for borrowed controller and private local lifetime. Preserve four typed tables, all five unchanged sorting wrappers, exact exported signatures and safe Lab2 stub. All actual C must be generated by you. Return the COMPLETE single C89 file; tests remain frozen and still reject missing Lab2 until the next stage.

@@ -1,0 +1,265 @@
+[
+  {
+    "index": 1,
+    "started_at": "2026-10-20T18:24:46.821304+00:00",
+    "duration_s": 277.89634124999793,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 15293,
+      "completion_tokens": 2903,
+      "total_tokens": 18196
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T18:29:25.044125+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 1,
+        "accepted": false,
+        "findings": [
+          "Обычный длинный повтор 2 содержит запрещённые string.h, malloc/free, C99 объявления и //; в SDK вызовах используется неверный pVtbl.",
+          "В собственной структуре IUnknown счётчик помещён перед vtable-pointer, что нарушает ABI интерфейса.",
+          "Публичные таблицы Lab65/Lab2 сформированы, но в объекте сохранена другая Unknown-only таблица; фактический интерфейс не имеет нужных слотов.",
+          "Нет управления внешним контроллером и надлежащего private ND для агрегата; внутренний Lab65 создаётся без outer.",
+          "lab_allocator заново запрашивает окружение и возвращает владеющую ссылку вместо заимствованного allocator; это расходится с контрактом."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-01.c",
+    "source_sha256": "a0efb7736bcbcf26133e6073f10714098353ecf6df57568de7dd2bae1d56f903"
+  },
+  {
+    "index": 2,
+    "started_at": "2026-10-20T22:29:30.600910+00:00",
+    "duration_s": 236.01986900000338,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 10510,
+      "completion_tokens": 3150,
+      "total_tokens": 13660
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T22:33:27.132965+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 2,
+        "source_sha256": "4200d4cd245022672bd480d8454288aac77ae75dbf2357691916f1bba399fa26",
+        "accepted": false,
+        "findings": [
+          "Сгенерированы4 embedded интерфейса, все typed methods и4 static tables; private QI4branches вызывает returned public AddRef и возвращает0. Обе creator пока error stubs.",
+          "Две ошибки C89: result в private QI и owner в lab_allocator объявлены после операторов. Кроме того, owner offsets вычисляются до null guards.",
+          "Private destructor не освобождает inner_x/inner_y/system, а после Free читает allocator из уже освобождённого state. Runtime не запускается. Следующее уточнение исправляет cleanup/guards/C89 и генерирует real Lab65 constructor через модель."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-02.c",
+    "source_sha256": "4200d4cd245022672bd480d8454288aac77ae75dbf2357691916f1bba399fa26"
+  },
+  {
+    "index": 3,
+    "started_at": "2026-10-20T22:54:33.966611+00:00",
+    "duration_s": 319.1460400829965,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 13952,
+      "completion_tokens": 4060,
+      "total_tokens": 18012
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T22:59:53.650189+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 3,
+        "source_sha256": "49025734ed2641a6240332d452f46e371b4ebcaf9fb267b5da5c974eb904527b",
+        "accepted": false,
+        "findings": [
+          "Private destructor теперь освобождает inner_x/inner_y/system, сохраняет allocator и не читает state после Free. Sort wrappers стали прямыми. Constructor использует correct private field/controller и transfer aliases до зависимостей; manager GUID копируется до extension Release.",
+          "Остались2 C89 ошибки: constructor local group после guards, lab_allocator owner после guard. Во всех остальных control/arithmetic methods сохранилась owner-offset арифметика до null guards.",
+          "Constructor при ошибке X вручную Releases inner_y, не очищает поле, затем общий Private Release повторно Releases ту же зависимость. При status0/null dependency не устанавливается ошибка. Unsafe runtime не выполняется. Следующее уточнение удаляет17 ошибочных method bodies только из справочной цитаты, просит модель заново сгенерировать guards/методы и узко исправить constructor."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-03.c",
+    "source_sha256": "49025734ed2641a6240332d452f46e371b4ebcaf9fb267b5da5c974eb904527b"
+  },
+  {
+    "index": 4,
+    "started_at": "2026-10-20T23:14:33.092469+00:00",
+    "duration_s": 297.69001916699926,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 12663,
+      "completion_tokens": 3885,
+      "total_tokens": 16548
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T23:19:31.331490+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 4,
+        "source_sha256": "0f2f266790f470f360ff363e083136fedbc3b6e6e690d61c81e40a7544e232d5",
+        "accepted": false,
+        "findings": [
+          "Несмотря на удалённые17body из справочной цитаты модель заново сгенерировала те же owner initializers перед guards; переменные переименованыpCMe->state, но безопасный порядок не получен. Две C89 ошибки constructor/lab_allocator сохраняются.",
+          "Private destructor регрессировал: allocator снова читается через state послеFree. Constructor двойной ReleaseinnerYне устранён; нулевому output dependencies теперь назначается ненулевой статус. Runtime не запускается.",
+          "Проверен ФАКТИЧЕСКИЙ HTTPpayload request4:4messages, focusedABI/system18448chars,originalordinaryprompt10171,archivenote440,maskedownreference/correction13427. СтарыхmethodbodiesилиpCMeinitializersвpayloadнет. Это не скрытаяпереписка/подстановкаобёртки; модель повторяет unsafeпаттерн.",
+          "Следующее узкое уточнение просит только3 механических исправления declaration/guard ordering, ctorlocalsstart, savedallocatorinPrivateR. Constructor dependencycleanup отдельно исправляется на следующем шаге."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-04.c",
+    "source_sha256": "0f2f266790f470f360ff363e083136fedbc3b6e6e690d61c81e40a7544e232d5"
+  },
+  {
+    "index": 5,
+    "started_at": "2026-10-20T23:45:22.081915+00:00",
+    "duration_s": 336.8331618749944,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 13549,
+      "completion_tokens": 4182,
+      "total_tokens": 17731
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T23:51:00.998622+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 5,
+        "source_sha256": "325530040d8c9612427139b6099e4944f655dda5d3a54a564a450d27940fbeb5",
+        "accepted": false,
+        "findings": [
+          "Узкая механическая коррекция сработала: все17owner declarationsбезинициализаторов,guardsoriginalme/riid/outputдоoffset,creatorвнешниелокальныеобъявленияперемещеныначало;C89компилируется. PrivateRсохраняетallocatorидоступапослеFreeбольшенет.",
+          "Модель добавила лишнийunusedowner иERR_ECO_POINTERreturnв5sortwrappers:нужно вернутьточнуюпередачу встарую numericfuncчтобысохранитьnull-statusконтрактбезальтернативы.",
+          "Constructorпо-прежнемувручнуюReleaseinnerYнаошибкеX/ветвиошибкиDипотомPrivateRделаетповторныйRelease. Этоизвестныйследующийэтап;дополнительнаяruntimeдиагностикаещёнезапускается. Послеузкогоудаленияэтих2ручныхReleaseможнопроверитьполныйLab65."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-05.c",
+    "source_sha256": "325530040d8c9612427139b6099e4944f655dda5d3a54a564a450d27940fbeb5"
+  },
+  {
+    "index": 6,
+    "started_at": "2026-10-21T00:28:52.252291+00:00",
+    "duration_s": 308.0142686249965,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 13816,
+      "completion_tokens": 3887,
+      "total_tokens": 17703
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T00:34:02.323724+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 6,
+        "source_sha256": "d904cd16d9078b86d97ddf2a16922403e780e13a87fdb15cc1ebdbed12de6160",
+        "accepted": false,
+        "findings": [
+          "Только5sortwrapperлишнихguardsи2ручныхinnerYReleaseудалены;остальнойкоднеизменен. ПолныйLab65квалифицированнезависимымклиентом:17100утвержденийпоA/C,лишь2ожидаемыхmissingLab2отказа,live0refs1/1,UBSanчисто.",
+          "Ручнойразборподтвердилcontroller/NDUnknownразделение,4privateQIветки,ownXYoffsets,constructionrefcases,managerVALUEcopy,раннийaliastransfer,однократнуюочисткузависимостейисохранённыйallocator.",
+          "Этоещёнеполнаялабораторная:Lab2stub. ВследующемполнoмLab2ответетакжеисправитьневерныйкомментарийSafe temporary error stubsпередреальнымLab65constructorиобъяснитьborrowedcontroller."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-06.c",
+    "source_sha256": "d904cd16d9078b86d97ddf2a16922403e780e13a87fdb15cc1ebdbed12de6160"
+  },
+  {
+    "index": 7,
+    "started_at": "2026-10-21T01:41:33.136469+00:00",
+    "duration_s": 542.4171666670009,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 14941,
+      "completion_tokens": 7352,
+      "total_tokens": 22293
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T01:50:36.103316+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 7,
+        "source_sha256": "a554dbc86d870e27ca97e8f37728a04ec9b51bfc8d9d497be3d705975e4f53da",
+        "accepted": false,
+        "findings": [
+          "Lab2 с тремя собственными интерфейсами, десятью правильными типизированными X/Y-обёртками и тремя таблицами добавлен. Один E создаётся по Y, X получается через QI того же E; Lab65 создаётся с nonnull canonical outer и private Unknown.",
+          "Но модель добавила три лишних Lab2Private метода, ошибочно считая адрес поля-указателя owned_inner_unknown встроенным интерфейсом. Primary QI возвращает этот адрес как Unknown и не поддерживает Lab65; primary Release только уменьшает счётчик без очистки. Конструктор на отказе вызывает ошибочный private helper с IEcoUnknown** — compiler type error.",
+          "Следующий этап удаляет только три лишних Lab2Private определения и заново получает primary QI/Release с правильной идентичностью, прямым innerQI для Lab65 и полноценным destructor. На отказе конструктора используется primaryRelease; десять X/Y методов/создание зависимостей и весь квалифицированный Lab65 сохраняются. Runtime до исправления не допускается."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-07.c",
+    "source_sha256": "a554dbc86d870e27ca97e8f37728a04ec9b51bfc8d9d497be3d705975e4f53da"
+  },
+  {
+    "index": 8,
+    "started_at": "2026-10-21T09:47:15.150750+00:00",
+    "duration_s": 570.5095207090001,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 17097,
+      "completion_tokens": 6941,
+      "total_tokens": 24038
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T09:56:49.449783+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 8,
+        "source_sha256": "56a971fe1586d9026630d2352743b258849b10b7ac2157a2fefdcaff0de4d9ee",
+        "accepted": false,
+        "findings": [
+          "Три ошибочных Lab2Private helper удалены. Primary QI теперь возвращает собственный canonical Unknown и настоящий inner Lab65; primaryRelease выполняет полный destructor; creator failure использует primaryRelease. Два корректных ownership block comments добавлены; квалифицированный Lab65 не изменён по смыслу.",
+          "Но Qwen самовольно изменила owner offset в одном Lab2X_AddRef с Lab2State на Lab65State. Остальные девять Lab2 X/Y методов сохранили правильные собственные offsets. Demo проходит, независимый UBSan клиент выявляет misaligned interface access/addref_release_pair и останавливается.",
+          "Следующее уточнение меняет только имя структуры в offsetof внутри Lab2X_AddRef; остальные noncomment tokens сохраняются. Прямая дополнительная runtime диагностика до исправления не запускается. Для следующего полного ответа явно увеличивается доступный бюджет времени на1800с; модель/параметры/проверки не меняются."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-08.c",
+    "source_sha256": "56a971fe1586d9026630d2352743b258849b10b7ac2157a2fefdcaff0de4d9ee"
+  },
+  {
+    "index": 9,
+    "started_at": "2026-10-21T10:34:27.110806+00:00",
+    "duration_s": 565.2594367920001,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 16378,
+      "completion_tokens": 6940,
+      "total_tokens": 23318
+    },
+    "error": null,
+    "validation_passed": true,
+    "validation_at": "2026-10-21T10:43:58.511392+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-212446-4628c000",
+        "request": 9,
+        "source_sha256": "636dbc1b5a0bbf28cc16c3f4e6902c4d91a6ff49e606eea98145d56f1c80af81",
+        "accepted": true,
+        "findings": [
+          "Исправлен ровно один offsetof type; все остальные токены собственного ответа8 сохранены.",
+          "Полные A/C проверки пройдены:28936assertions/profile, failures0,live0,envRefs1,memRefs1; UBSan ошибок нет.",
+          "Ручная архитектура, реальный одинE/aggregate Lab65/privateUnknown, типизированные callbacks, владение и читаемость проверены. Все23 Lab65 функции совпадают с собственной квалифицированной версией6. Источник принят; новых запросов к этой попытке не требуется."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-09.c",
+    "source_sha256": "636dbc1b5a0bbf28cc16c3f4e6902c4d91a6ff49e606eea98145d56f1c80af81"
+  }
+]

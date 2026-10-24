@@ -1,0 +1,257 @@
+Continue this SAME measured run. The following is YOUR response 5 from THIS run, with ONLY the selected erroneous function bodies REMOVED. All signatures and all other code remain unchanged. The organizer supplied no replacement implementation. Complete the omitted functions yourself and return the entire full source file. Costs of every earlier response remain counted.
+
+```c
+#include "ReuseContract.h"
+
+typedef struct {
+    IEcoLab65 public_lab65;
+    IEcoUnknown private_unknown;
+    uint32_t local_refs;
+    IEcoUnknown* controller; /* borrowed controller, do not release */
+    IEcoSystem1* owned_system;
+    IEcoMemoryAllocator1* owned_allocator;
+    IEcoCalculatorX* inner_x;
+    IEcoCalculatorY* inner_y;
+} Lab65State;
+
+static int16_t ECOCALLMETHOD Lab65_QueryInterface(IEcoLab65Ptr_t me, const UGUID* riid, voidptr_t* ppv) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+static uint32_t ECOCALLMETHOD Lab65_AddRef(IEcoLab65Ptr_t me) {
+    Lab65State* state;
+    if (me == 0) {
+        return -1;
+    }
+    state = (Lab65State*)me;
+    if (state->controller == 0) {
+        return -1;
+    }
+    return state->controller->pVTbl->AddRef(state->controller);
+}
+
+static uint32_t ECOCALLMETHOD Lab65_Release(IEcoLab65Ptr_t me) {
+    Lab65State* state;
+    if (me == 0) {
+        return -1;
+    }
+    state = (Lab65State*)me;
+    if (state->controller == 0) {
+        return -1;
+    }
+    return state->controller->pVTbl->Release(state->controller);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortInt(IEcoLab65Ptr_t me, int32_t* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_int(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortLong(IEcoLab65Ptr_t me, int64_t* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_long(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortFloat(IEcoLab65Ptr_t me, float* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_float(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortDouble(IEcoLab65Ptr_t me, double* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_double(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortLongDouble(IEcoLab65Ptr_t me, long double* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_long_double(me, data, count, buckets);
+}
+
+static IEcoLab65VTbl public_lab65_vtbl = {
+    Lab65_QueryInterface,
+    Lab65_AddRef,
+    Lab65_Release,
+    Lab65_SortInt,
+    Lab65_SortLong,
+    Lab65_SortFloat,
+    Lab65_SortDouble,
+    Lab65_SortLongDouble
+};
+
+static int16_t ECOCALLMETHOD Private_QueryInterface(IEcoUnknownPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+static uint32_t ECOCALLMETHOD Private_AddRef(IEcoUnknownPtr_t me) {
+    Lab65State* state;
+    if (me == 0) {
+        return -1;
+    }
+    state = (Lab65State*)((char*)me - offsetof(Lab65State, private_unknown));
+    state->local_refs++;
+    return state->local_refs;
+}
+
+static uint32_t ECOCALLMETHOD Private_Release(IEcoUnknownPtr_t me) {
+    Lab65State* state;
+    if (me == 0) {
+        return -1;
+    }
+    state = (Lab65State*)((char*)me - offsetof(Lab65State, private_unknown));
+    state->local_refs--;
+    if (state->local_refs == 0) {
+        IEcoMemoryAllocator1* allocator = state->owned_allocator;
+        if (state->inner_x != 0) {
+            state->inner_x->pVTbl->Release(state->inner_x);
+        }
+        if (state->inner_y != 0) {
+            state->inner_y->pVTbl->Release(state->inner_y);
+        }
+        if (state->owned_system != 0) {
+            state->owned_system->pVTbl->Release(state->owned_system);
+        }
+        allocator->pVTbl->Free(allocator, state);
+        allocator->pVTbl->Release(allocator);
+        return 0;
+    }
+    return state->local_refs;
+}
+
+static IEcoUnknownVTbl private_unknown_vtbl = {
+    Private_QueryInterface,
+    Private_AddRef,
+    Private_Release
+};
+
+IEcoMemoryAllocator1* lab_allocator(IEcoLab65* me) {
+    if (me == 0) {
+        return 0;
+    }
+    {
+        Lab65State* state = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+        return state->owned_allocator;
+    }
+}
+
+int16_t ECOCALLMETHOD createEcoLab65(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    int16_t status = 0;
+    IEcoSystem1* owned_system = 0;
+    IEcoInterfaceBus1* bus = 0;
+    IEcoMemoryAllocator1* owned_allocator = 0;
+    IEcoInterfaceBus1MemExt* mem_ext = 0;
+    Lab65State* state = 0;
+    UGUID manager_id = CID_EcoMemoryManager1;
+    const UGUID* manager_ptr = 0;
+
+    if (out != 0) {
+        *out = 0;
+    }
+    if (system == 0 || iid == 0 || out == 0) {
+        return ERR_ECO_POINTER;
+    }
+    if (outer != 0 && !IsEqualUGUID(iid, &IID_IEcoUnknown)) {
+        return ERR_ECO_NOAGGREGATION;
+    }
+
+    status = system->pVTbl->QueryInterface(system, &GID_IEcoSystem, (voidptr_t*)&owned_system);
+    if (status != 0) {
+        return status;
+    }
+
+    status = owned_system->pVTbl->QueryInterface(owned_system, &IID_IEcoInterfaceBus1, (voidptr_t*)&bus);
+    if (status != 0) {
+        owned_system->pVTbl->Release(owned_system);
+        return status;
+    }
+
+    status = bus->pVTbl->QueryInterface(bus, &IID_IEcoInterfaceBus1MemExt, (voidptr_t*)&mem_ext);
+    if (status == 0) {
+        manager_ptr = mem_ext->pVTbl->get_Manager(mem_ext);
+        if (manager_ptr != 0) {
+            manager_id = *manager_ptr;
+        }
+        mem_ext->pVTbl->Release(mem_ext);
+    }
+
+    status = bus->pVTbl->QueryComponent(bus, &manager_id, 0, &IID_IEcoMemoryAllocator1, (voidptr_t*)&owned_allocator);
+    if (status != 0) {
+        bus->pVTbl->Release(bus);
+        owned_system->pVTbl->Release(owned_system);
+        return status;
+    }
+
+    state = (Lab65State*)owned_allocator->pVTbl->Alloc(owned_allocator, sizeof(Lab65State));
+    if (state == 0) {
+        owned_allocator->pVTbl->Release(owned_allocator);
+        bus->pVTbl->Release(bus);
+        owned_system->pVTbl->Release(owned_system);
+        return ERR_ECO_OUTOFMEMORY;
+    }
+
+    state->public_lab65.pVTbl = &public_lab65_vtbl;
+    state->private_unknown.pVTbl = &private_unknown_vtbl;
+    state->local_refs = 1;
+    state->controller = (outer != 0) ? outer : &state->private_unknown;
+    state->owned_system = owned_system;
+    state->owned_allocator = owned_allocator;
+    state->inner_x = 0;
+    state->inner_y = 0;
+
+    owned_system = 0;
+    owned_allocator = 0;
+
+    status = bus->pVTbl->QueryComponent(bus, &CID_EcoCalculatorA, 0, &IID_IEcoCalculatorX, (voidptr_t*)&state->inner_x);
+    if (status != 0) {
+        goto cleanup;
+    }
+
+    status = bus->pVTbl->QueryComponent(bus, &CID_EcoCalculatorD, 0, &IID_IEcoCalculatorY, (voidptr_t*)&state->inner_y);
+    if (status != 0) {
+        goto cleanup;
+    }
+
+    bus->pVTbl->Release(bus);
+    if (outer != 0) {
+        *out = &state->private_unknown;
+        return 0;
+    }
+
+    status = Private_QueryInterface(&state->private_unknown, iid, out);
+    if (status != 0) {
+        goto cleanup;
+    }
+
+    Private_Release(&state->private_unknown);
+    return status;
+
+cleanup:
+    if (state != 0) {
+        Private_Release(&state->private_unknown);
+    }
+    if (owned_allocator != 0) {
+        owned_allocator->pVTbl->Release(owned_allocator);
+    }
+    if (owned_system != 0) {
+        owned_system->pVTbl->Release(owned_system);
+    }
+    if (bus != 0) {
+        bus->pVTbl->Release(bus);
+    }
+    return status;
+}
+
+int16_t ECOCALLMETHOD createEcoLab2(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out == 0) {
+        return ERR_ECO_POINTER;
+    }
+    *out = 0;
+    if (system == 0 || iid == 0) {
+        return ERR_ECO_POINTER;
+    }
+    if (outer != 0) {
+        return ERR_ECO_NOAGGREGATION;
+    }
+    return ERR_ECO_NOINTERFACE;
+}
+```
+
+The two QI bodies were omitted because your last answer kept their bugs. Regenerate BOTH bodies yourself, keep all other methods and constructor structure. This is the same run.
+BOTH public Lab65 QI and Private QI MUST FIRST clear output IF output is nonnull; THEN reject null me OR null riid OR null output. Never write through null output, never call IsEqualUGUID on null riid, and never recover owner offset before null me guard. C89 owner declaration comes before guards; assignment follows guards. Public Lab65 QI delegates directly to stored controller.
+Private QI: Unknown returns address of private_unknown, increments local_refs once, returns status ZERO. Lab65 returns address of public_lab65, calls that public interface AddRef ONCE solely for its ownership SIDE EFFECT, then returns status ZERO. AddRef returns a uint32_t REFERENCE COUNT, never an HRESULT or status. Do NOT assign AddRef result to any local status and do NOT test it against0. Every supported QI returns0 with a nonnull matching pointer. Unsupported IID returns ERR_ECO_NOINTERFACE with output already null. Own X/Y will be added in the next stage, not this response.
+ONE constructor ownership correction: immediately after the bus Release currently located before the outer/nonouter success branch, clear the local bus alias to null, because cleanup can be reached if standalone QI fails. The existing pointer stays nonnull after Release and cleanup currently Releases it a second time. Keep exactly ONE construction Private_Release for each standalone success/failure path. Aggregated success transfers its initial reference without decrement.
+In all four public/private AddRef/Release methods change null-receiver error return to0 (uint32_t counts, not negative errors). Preserve the qualified acquisition/alias transfer/destructor code; do not duplicate or omit functions. Keep the complete Lab65 methods/tables, real createEcoLab65 and safe createEcoLab2 stub. Add one concise C89 block comment explaining private local lifetime; never use line comments. Output one FULL C89 file.

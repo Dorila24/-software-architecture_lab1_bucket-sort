@@ -1,0 +1,131 @@
+Continue this SAME measured run. The following is YOUR response 9 from THIS run, with ONLY the selected erroneous function bodies REMOVED. All signatures and all other code remain unchanged. The organizer supplied no replacement implementation. Complete the omitted functions yourself and return the entire full source file. Costs of every earlier response remain counted.
+
+```c
+#include "ReuseContract.h"
+
+typedef struct {
+    IEcoLab65 public_lab65;
+    IEcoUnknown private_unknown;
+    uint32_t local_refs;
+    IEcoUnknown* controller;
+    IEcoSystem1* owned_system;
+    IEcoMemoryAllocator1* owned_allocator;
+    IEcoCalculatorX* inner_x;
+    IEcoCalculatorY* inner_y;
+} Lab65State;
+
+static int16_t ECOCALLMETHOD Lab65_QueryInterface(IEcoLab65Ptr_t me, const UGUID* riid, voidptr_t* ppv) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+static uint32_t ECOCALLMETHOD Lab65_AddRef(IEcoLab65Ptr_t me) {
+    Lab65State* state = (Lab65State*) ((char_t*)me - offsetof(Lab65State, public_lab65));
+    if (state->controller == NULL) return 0;
+    return state->controller->pVTbl->AddRef(state->controller);
+}
+
+static uint32_t ECOCALLMETHOD Lab65_Release(IEcoLab65Ptr_t me) {
+    Lab65State* state = (Lab65State*) ((char_t*)me - offsetof(Lab65State, public_lab65));
+    if (state->controller == NULL) return 0;
+    return state->controller->pVTbl->Release(state->controller);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortInt(IEcoLab65Ptr_t me, int32_t* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_int(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortLong(IEcoLab65Ptr_t me, int64_t* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_long(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortFloat(IEcoLab65Ptr_t me, float* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_float(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortDouble(IEcoLab65Ptr_t me, double* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_double(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortLongDouble(IEcoLab65Ptr_t me, long double* data, uint32_t count, uint32_t buckets) {
+    return lab_sort_long_double(me, data, count, buckets);
+}
+
+static IEcoLab65VTbl Lab65_Vtbl = {
+    Lab65_QueryInterface,
+    Lab65_AddRef,
+    Lab65_Release,
+    Lab65_SortInt,
+    Lab65_SortLong,
+    Lab65_SortFloat,
+    Lab65_SortDouble,
+    Lab65_SortLongDouble
+};
+
+static int16_t ECOCALLMETHOD Unknown_QueryInterface(IEcoUnknownPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+static uint32_t ECOCALLMETHOD Unknown_AddRef(IEcoUnknownPtr_t me) {
+    Lab65State* state = (Lab65State*) ((char_t*)me - offsetof(Lab65State, private_unknown));
+    state->local_refs++;
+    return state->local_refs;
+}
+
+static uint32_t ECOCALLMETHOD Unknown_Release(IEcoUnknownPtr_t me) {
+    Lab65State* state = (Lab65State*) ((char_t*)me - offsetof(Lab65State, private_unknown));
+    if (--state->local_refs == 0) {
+        IEcoMemoryAllocator1* allocator = state->owned_allocator;
+        IEcoCalculatorX* inner_x = state->inner_x;
+        IEcoCalculatorY* inner_y = state->inner_y;
+        IEcoSystem1* owned_system = state->owned_system;
+
+        if (inner_x != NULL) inner_x->pVTbl->Release(inner_x);
+        if (inner_y != NULL) inner_y->pVTbl->Release(inner_y);
+        if (owned_system != NULL) owned_system->pVTbl->Release(owned_system);
+
+        allocator->pVTbl->Free(allocator, state);
+        allocator->pVTbl->Release(allocator);
+        return 0;
+    }
+    return state->local_refs;
+}
+
+static IEcoUnknownVTbl Unknown_Vtbl = {
+    Unknown_QueryInterface,
+    Unknown_AddRef,
+    Unknown_Release
+};
+
+IEcoMemoryAllocator1* ECOCALLMETHOD lab_allocator(IEcoLab65* me) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int16_t ECOCALLMETHOD createEcoLab65(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    /* TODO: regenerate this function body in ANSI C89. */
+}
+
+int16_t ECOCALLMETHOD createEcoLab2(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out != NULL) *out = NULL;
+    if (system == NULL || iid == NULL || out == NULL) return ERR_ECO_POINTER;
+    if (outer != NULL) return ERR_ECO_NOAGGREGATION;
+    return ERR_ECO_NOINTERFACE;
+}
+```
+
+Regenerate the FOUR omitted functions in C89. Keep the existing two-interface state and the unchanged five sort wrappers and Lab2 error stub. Other code is your own previous output.
+
+C89 rule for all four regenerated functions: the FIRST lines after the opening brace are ALL local variable declarations. Declare pointer locals initialized to zero there. Only AFTER the last declaration may any output clearing, null guard, owner calculation, QueryInterface, Alloc or assignment occur. Do not put declarations after an early-return guard. No FAILED/SUCCEEDED macros or standard headers.
+
+Lab65_QueryInterface: declare owner pointer first; clear nonnull output; reject null me/iid/out; recover owner from public_lab65; delegate EVERY request to controller and return its status. No local IID branches.
+
+Unknown_QueryInterface: declare owner pointer first; clear nonnull output; reject null me/iid/out; recover owner from private_unknown. Unknown returns its private field and increases local_refs ONCE. Lab65 returns its own public_lab65 field and calls its public AddRef ONCE. On either successful branch return STATUS ZERO, never the reference count returned by AddRef. All other IIDs, including temporarily X/Y, fail with null output. This is still the temporary base stage.
+
+lab_allocator: declare owner pointer first; return null for null me; otherwise recover owner from public_lab65 and return the borrowed owned_allocator, no AddRef.
+
+createEcoLab65: declare ALL locals first, including system/bus/extension/allocator/state pointers, mutable UGUID manager value, const UGUID* temporary manager pointer, int16_t status. Then validate and clear arguments and implement the exact frozen construction contract. Reject outer plus any IID except Unknown with ERR_ECO_NOAGGREGATION. Acquire actual System by GID_IEcoSystem, bus by System QI, optional manager extension by BUS QI, copy manager VALUE before releasing extension, allocator by QueryComponent, then state by Alloc. Use hr==0 success, hr!=0 failure.
+
+The existing state starts with one private construction reference. Initialize all fields before any dependency query, with controller pointing to borrowed outer or own private_unknown. Transfer acquired System/Allocator references into owned_system/owned_allocator and CLEAR their local owning variables after transfer. The local bus remains owned locally and is always Released. Create A/C X and D Y by QueryComponent with outer NULL. On failed construction, release an initialized state once using its private Release; release only local references not transferred. No double Release and no leak.
+
+Aggregate success returns its private_unknown directly with the initial one local reference and status zero. Standalone output comes from PRIVATE QI for requested iid; then release the initial private reference exactly once on both success and unsupported iid. No object access after releasing a potentially final reference. Release bus before every final return. Failure leaves output null. If a state exists, its private destructor owns and releases System/Allocator; do not release them again through stale aliases.
+
+Return one complete source file, not only the four functions. Include concise ownership comments. Do not add public X/Y or Lab2 yet. The full unchanged tests still intentionally reject the incomplete stages; we are fixing the C89 base and reference ownership first.

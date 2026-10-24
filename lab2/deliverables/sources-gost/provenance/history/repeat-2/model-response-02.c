@@ -1,0 +1,234 @@
+#include "ReuseContract.h"
+
+typedef struct Lab65State {
+    IEcoLab65 public_lab65;
+    IEcoUnknown private_unknown;
+    IEcoCalculatorX public_x;
+    IEcoCalculatorY public_y;
+    uint32_t local_refs;
+    IEcoUnknown* controller;
+    IEcoSystem1* owned_system;
+    IEcoMemoryAllocator1* owned_allocator;
+    IEcoCalculatorX* inner_x;
+    IEcoCalculatorY* inner_y;
+} Lab65State;
+
+static int16_t ECOCALLMETHOD Lab65_QueryInterface(IEcoLab65Ptr_t me, const UGUID* riid, voidptr_t* ppv) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (ppv == NULL) return ERR_ECO_POINTER;
+    *ppv = NULL;
+    if (pCMe->controller == NULL) return ERR_ECO_NOINTERFACE;
+    return pCMe->controller->pVTbl->QueryInterface(pCMe->controller, riid, ppv);
+}
+
+static uint32_t ECOCALLMETHOD Lab65_AddRef(IEcoLab65Ptr_t me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (pCMe->controller == NULL) return 0;
+    return pCMe->controller->pVTbl->AddRef(pCMe->controller);
+}
+
+static uint32_t ECOCALLMETHOD Lab65_Release(IEcoLab65Ptr_t me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (pCMe->controller == NULL) return 0;
+    return pCMe->controller->pVTbl->Release(pCMe->controller);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortInt(IEcoLab65Ptr_t me, int32_t* data, uint32_t count, uint32_t buckets) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (pCMe->owned_allocator == NULL) return ERR_ECO_NOINTERFACE;
+    return lab_sort_int(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortLong(IEcoLab65Ptr_t me, int64_t* data, uint32_t count, uint32_t buckets) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (pCMe->owned_allocator == NULL) return ERR_ECO_NOINTERFACE;
+    return lab_sort_long(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortFloat(IEcoLab65Ptr_t me, float* data, uint32_t count, uint32_t buckets) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (pCMe->owned_allocator == NULL) return ERR_ECO_NOINTERFACE;
+    return lab_sort_float(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortDouble(IEcoLab65Ptr_t me, double* data, uint32_t count, uint32_t buckets) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (pCMe->owned_allocator == NULL) return ERR_ECO_NOINTERFACE;
+    return lab_sort_double(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65_SortLongDouble(IEcoLab65Ptr_t me, long double* data, uint32_t count, uint32_t buckets) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (pCMe->owned_allocator == NULL) return ERR_ECO_NOINTERFACE;
+    return lab_sort_long_double(me, data, count, buckets);
+}
+
+static int16_t ECOCALLMETHOD Lab65X_QueryInterface(IEcoCalculatorXPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (ppv == NULL) return ERR_ECO_POINTER;
+    *ppv = NULL;
+    if (pCMe->controller == NULL) return ERR_ECO_NOINTERFACE;
+    return pCMe->controller->pVTbl->QueryInterface(pCMe->controller, riid, ppv);
+}
+
+static uint32_t ECOCALLMETHOD Lab65X_AddRef(IEcoCalculatorXPtr_t me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (pCMe->controller == NULL) return 0;
+    return pCMe->controller->pVTbl->AddRef(pCMe->controller);
+}
+
+static uint32_t ECOCALLMETHOD Lab65X_Release(IEcoCalculatorXPtr_t me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (pCMe->controller == NULL) return 0;
+    return pCMe->controller->pVTbl->Release(pCMe->controller);
+}
+
+static int32_t ECOCALLMETHOD Lab65X_Addition(IEcoCalculatorXPtr_t me, int16_t a, int16_t b) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (pCMe->inner_x == NULL) return 0;
+    return pCMe->inner_x->pVTbl->Addition(pCMe->inner_x, a, b);
+}
+
+static int16_t ECOCALLMETHOD Lab65X_Subtraction(IEcoCalculatorXPtr_t me, int16_t a, int16_t b) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_x));
+    if (pCMe->inner_x == NULL) return 0;
+    return pCMe->inner_x->pVTbl->Subtraction(pCMe->inner_x, a, b);
+}
+
+static int16_t ECOCALLMETHOD Lab65Y_QueryInterface(IEcoCalculatorYPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (ppv == NULL) return ERR_ECO_POINTER;
+    *ppv = NULL;
+    if (pCMe->controller == NULL) return ERR_ECO_NOINTERFACE;
+    return pCMe->controller->pVTbl->QueryInterface(pCMe->controller, riid, ppv);
+}
+
+static uint32_t ECOCALLMETHOD Lab65Y_AddRef(IEcoCalculatorYPtr_t me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (pCMe->controller == NULL) return 0;
+    return pCMe->controller->pVTbl->AddRef(pCMe->controller);
+}
+
+static uint32_t ECOCALLMETHOD Lab65Y_Release(IEcoCalculatorYPtr_t me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (pCMe->controller == NULL) return 0;
+    return pCMe->controller->pVTbl->Release(pCMe->controller);
+}
+
+static int32_t ECOCALLMETHOD Lab65Y_Multiplication(IEcoCalculatorYPtr_t me, int16_t a, int16_t b) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (pCMe->inner_y == NULL) return 0;
+    return pCMe->inner_y->pVTbl->Multiplication(pCMe->inner_y, a, b);
+}
+
+static int16_t ECOCALLMETHOD Lab65Y_Division(IEcoCalculatorYPtr_t me, int16_t a, int16_t b) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_y));
+    if (pCMe->inner_y == NULL) return 0;
+    return pCMe->inner_y->pVTbl->Division(pCMe->inner_y, a, b);
+}
+
+static int16_t ECOCALLMETHOD Lab65Private_QueryInterface(IEcoUnknownPtr_t me, const UGUID* riid, voidptr_t* ppv) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, private_unknown));
+    if (ppv == NULL) return ERR_ECO_POINTER;
+    *ppv = NULL;
+    if (me == NULL || riid == NULL || ppv == NULL) return ERR_ECO_POINTER;
+    if (IsEqualUGUID(riid, &IID_IEcoUnknown)) {
+        *ppv = &pCMe->private_unknown;
+        pCMe->local_refs++;
+        return ERR_ECO_SUCCESS;
+    }
+    if (IsEqualUGUID(riid, &IID_IEcoLab65)) {
+        *ppv = &pCMe->public_lab65;
+        pCMe->public_lab65.pVTbl->AddRef(&pCMe->public_lab65);
+        return ERR_ECO_SUCCESS;
+    }
+    if (IsEqualUGUID(riid, &IID_IEcoCalculatorX)) {
+        *ppv = &pCMe->public_x;
+        pCMe->public_x.pVTbl->AddRef(&pCMe->public_x);
+        return ERR_ECO_SUCCESS;
+    }
+    if (IsEqualUGUID(riid, &IID_IEcoCalculatorY)) {
+        *ppv = &pCMe->public_y;
+        pCMe->public_y.pVTbl->AddRef(&pCMe->public_y);
+        return ERR_ECO_SUCCESS;
+    }
+    return ERR_ECO_NOINTERFACE;
+}
+
+static uint32_t ECOCALLMETHOD Lab65Private_AddRef(IEcoUnknownPtr_t me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, private_unknown));
+    if (me == NULL) return 0;
+    pCMe->local_refs++;
+    return pCMe->local_refs;
+}
+
+static uint32_t ECOCALLMETHOD Lab65Private_Release(IEcoUnknownPtr_t me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, private_unknown));
+    if (me == NULL) return 0;
+    if (pCMe->local_refs > 0) pCMe->local_refs--;
+    if (pCMe->local_refs == 0) {
+        IEcoMemoryAllocator1* allocator = pCMe->owned_allocator;
+        if (pCMe->inner_x) pCMe->inner_x->pVTbl->Release(pCMe->inner_x);
+        if (pCMe->inner_y) pCMe->inner_y->pVTbl->Release(pCMe->inner_y);
+        if (pCMe->owned_system) pCMe->owned_system->pVTbl->Release(pCMe->owned_system);
+        if (allocator) allocator->pVTbl->Free(allocator, pCMe);
+        if (allocator) allocator->pVTbl->Release(allocator);
+    }
+    return pCMe->local_refs;
+}
+
+static IEcoMemoryAllocator1* ECOCALLMETHOD lab_allocator(IEcoLab65* me) {
+    Lab65State* pCMe = (Lab65State*)((char*)me - offsetof(Lab65State, public_lab65));
+    if (pCMe->owned_allocator == NULL) return NULL;
+    return pCMe->owned_allocator;
+}
+
+static int16_t ECOCALLMETHOD createEcoLab65(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out == NULL) return ERR_ECO_POINTER;
+    *out = NULL;
+    if (system == NULL || iid == NULL) return ERR_ECO_POINTER;
+    if (outer != NULL && !IsEqualUGUID(iid, &IID_IEcoUnknown)) return ERR_ECO_NOAGGREGATION;
+    return ERR_ECO_NOINTERFACE;
+}
+
+static int16_t ECOCALLMETHOD createEcoLab2(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+    if (out == NULL) return ERR_ECO_POINTER;
+    *out = NULL;
+    if (system == NULL || iid == NULL) return ERR_ECO_POINTER;
+    if (outer != NULL) return ERR_ECO_NOAGGREGATION;
+    return ERR_ECO_NOINTERFACE;
+}
+
+static IEcoLab65VTbl lab65_vtbl = {
+    Lab65_QueryInterface,
+    Lab65_AddRef,
+    Lab65_Release,
+    Lab65_SortInt,
+    Lab65_SortLong,
+    Lab65_SortFloat,
+    Lab65_SortDouble,
+    Lab65_SortLongDouble
+};
+
+static IEcoCalculatorXVTbl lab65x_vtbl = {
+    Lab65X_QueryInterface,
+    Lab65X_AddRef,
+    Lab65X_Release,
+    Lab65X_Addition,
+    Lab65X_Subtraction
+};
+
+static IEcoCalculatorYVTbl lab65y_vtbl = {
+    Lab65Y_QueryInterface,
+    Lab65Y_AddRef,
+    Lab65Y_Release,
+    Lab65Y_Multiplication,
+    Lab65Y_Division
+};
+
+static IEcoUnknownVTbl lab65_private_vtbl = {
+    Lab65Private_QueryInterface,
+    Lab65Private_AddRef,
+    Lab65Private_Release
+};
+

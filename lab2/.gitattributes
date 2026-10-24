@@ -1,0 +1,6 @@
+# Hash-verified experiment files must keep their exact bytes on every checkout.
+* -text
+*.docx binary
+*.zip binary
+*.png binary
+*.a binary

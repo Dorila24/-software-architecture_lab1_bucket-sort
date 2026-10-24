@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.pyc
+.build/
+.check-logs/
+.venv/
+.eco/
+.tools/
+.cache/
+.sdk/
+models/
+*.safetensors
+*.gguf
+*.dylib
+
+# Required static student component archives are deliverables.
+!*.a

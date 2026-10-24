@@ -1,0 +1,11 @@
+Continue this SAME measured run using your exact response12. It fixed the primary QI but omitted ONE essential publication call. Make only the following two edits and return the ENTIRE full source in one c code block. Keep every other executable token unchanged. All prior costs remain counted.
+
+1. In createEcoLab2, after the successful QueryComponent for CID_EcoLab65 and its existing error guard, and immediately BEFORE the final public_Lab2_Release call, restore this EXACT line from YOUR OWN response11 in THIS run. It is an unchanged quotation of your prior generated code, not new implementation from the organizer or another variant:
+
+```c
+    status = public_Lab2_QueryInterface((IEcoLab2Ptr_t)&state->public_lab2, iid, out);
+```
+
+This QI publishes the caller interface and acquires its client reference before you drop the construction reference. Keep the following existing Release, local-state-null and shared cleanup exactly as they are. Capture the QI status in the existing status variable and return it through the existing cleanup return. Without this restored line, the function destroys the object and returns success with null output. Do NOT change the now-correct primary QI or six X/Y delegates.
+
+2. The comment beside Lab2State owned_inner_unknown is WRONG: this pointer owns the PRIVATE nondelegating Unknown of the aggregated Lab65; it is not the borrowed controller. Correct ONLY that comment to explain private ownership and avoidance of a public-inner/outer reference cycle. The Lab65 controller field itself remains borrowed with its existing correct comment. Use a meaningful ANSI C89 BLOCK comment (slash-star ... star-slash), not a line comment or a generic syntax placeholder. No other changes, no extra reference operation. Preserve all frozen ABI names, the qualified Lab65, one E, arithmetic forwarders and every table.

@@ -1,0 +1,7 @@
+Continue the SAME measured ordinary-long repeat1. Your exact actual response14 is retained above. The four new forward declarations are now correct and compilation/demo pass. Preserve all FOUR declarations and every existing function/table/constructor/comment.
+
+Only TWO wrong structure-type identifiers remain. Inside the existing functions Lab2Y_AddRef AND Lab2Y_Release, the receiver is the OWN public_y embedded in Lab2State. In each function you accidentally changed the owner offset to offsetof(Lab65State, public_y). Change the STRUCTURE TYPE inside those TWO existing offsetof expressions back to Lab2State, retaining public_y, receiver, cast and primary Lab2 AddRef/Release call unchanged.
+
+All other Lab2 X/Y methods already use their correct own Lab2State offsets; do not change them. Real Lab65 X/Y methods intentionally use Lab65State; do not change those. In particular preserve Lab2Y_QueryInterface's already correct Lab2State owner recovery. Do not remove the four new declarations or arithmetic definitions.
+
+The ONLY two noncomment C-token changes in this step must be those two structure-type identifiers in Lab2Y_AddRef and Lab2Y_Release. No body rewrite, new expression, prototype, table entry, constructor, reference change or comment. No line comments. Return the COMPLETE entire source with those two changes, not a patch and not the unchanged source. The organizer supplies no implementation from another run. All previous failures, including the successful declaration repair followed by the Y-offset regression, remain counted.

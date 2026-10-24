@@ -1,0 +1,50 @@
+{
+  "standard": "ГОСТ 19.201-78",
+  "gost_file": "detailed.txt",
+  "control_file": "ordinary-long.txt",
+  "all_substantive_paragraphs_identical": true,
+  "substantive_paragraph_count": 19,
+  "difference": "ГОСТ title, required section headings and subsection numbering; the control flattens the same substantive paragraphs without headings. This isolates formatting in a small fixed experiment rather than comparing different sets of requirements.",
+  "main_pairs": 3,
+  "additional_control_runs": 3,
+  "seeds_by_repeat": [
+    42,
+    43,
+    44
+  ],
+  "order": [
+    [
+      "short",
+      "detailed",
+      "ordinary"
+    ],
+    [
+      "ordinary",
+      "short",
+      "detailed"
+    ],
+    [
+      "detailed",
+      "ordinary",
+      "short"
+    ]
+  ],
+  "actual_study_orders": [
+    [
+      "short",
+      "detailed",
+      "ordinary"
+    ],
+    [
+      "detailed",
+      "ordinary",
+      "short"
+    ],
+    [
+      "ordinary",
+      "short",
+      "detailed"
+    ]
+  ],
+  "prospective_order_amendment": "experiment.json plan_amendments; repeats 2/3 unstarted"
+}

@@ -1,0 +1,14 @@
+{
+  "source_commit": "7f1664b0489bcea6d5b211807ea5cb0ce0e1068e",
+  "source_modified": false,
+  "build_adaptations": [
+    "ERR_ECO_SUCCESES defined as SDK ERR_ECO_SUCCESS",
+    "Disable // comment and missing-final-newline diagnostics only for teacher vendor files",
+    "Rename three CalculatorC linker symbols to avoid a collision with CalculatorA; public CIDs and ABI unchanged"
+  ],
+  "known_supplier_issues": [
+    "A and C share the same published CID: run independent registry profiles A/C, never register both simultaneously.",
+    "D and C return their Y interface as Unknown from Y, while X returns X. A raw public X/Y pair therefore violates canonical Unknown identity. Keep these vendor objects private behind the model-generated containment wrappers; independently test canonical identity of every public student interface.",
+    "Vendor arithmetic has no division-by-zero contract; independent valid-domain tests restrict divisor to nonzero and difference/quotient to int16 range."
+  ]
+}

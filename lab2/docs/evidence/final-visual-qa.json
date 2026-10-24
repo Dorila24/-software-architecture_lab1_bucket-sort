@@ -1,0 +1,299 @@
+{
+  "at": "2026-10-24T07:50:27.150206+00:00",
+  "all_pages_inspected": true,
+  "passed": true,
+  "page_count": 31,
+  "docx_sha256": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201",
+  "renderer": "documents26.1022.11436/render_docx.py; bundled Python; macOS renderer",
+  "render_directory": "organizer/audit-20261024/render-final",
+  "method": "All 31 pages of the fresh pre-edit render inspected at original resolution in this audit. After the one-word editorial correction, all 30 unchanged pages verified RGB pixel-identical; revised page21 directly inspected at original resolution.",
+  "verified": [
+    "All pages readable with no clipping or overlap",
+    "All 15 tables repeat header rows and have no fixed row height",
+    "Two diagrams and two equations legible",
+    "Author and group filled; no placeholders, tracked changes or comments",
+    "Internal navigation anchors resolve",
+    "Historical measurements and initial prompts unchanged"
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "final_png": "organizer/audit-20261024/render-final/page-1.png",
+      "png_sha256": "1a0768ed1717cbd76afcb49826dbd50ef8d437afd77d2250f3a1ac7cfd29fa41",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-1.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 2,
+      "final_png": "organizer/audit-20261024/render-final/page-2.png",
+      "png_sha256": "d2d65fc6866932e15c848a1beb0965c341e2499a447a84efc98ac5914eda5e15",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-2.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 3,
+      "final_png": "organizer/audit-20261024/render-final/page-3.png",
+      "png_sha256": "c035fda60da7807d44f0c7ce4bbb36270719ff6d12b91d008dc0536072199271",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-3.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 4,
+      "final_png": "organizer/audit-20261024/render-final/page-4.png",
+      "png_sha256": "16de26424dd70d4b55428a76b9fbd1090889d62c2fbb0cd712bbea3514f9e929",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-4.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 5,
+      "final_png": "organizer/audit-20261024/render-final/page-5.png",
+      "png_sha256": "5224560c8a14e35069e70b33e4dba8ceba7d10953dd2b0ceb2cf760aaf0daf68",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-5.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 6,
+      "final_png": "organizer/audit-20261024/render-final/page-6.png",
+      "png_sha256": "f706411430597d46b167a3e348cf7d7ec783337d1abeff67276bf2e7bbc6b08b",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-6.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 7,
+      "final_png": "organizer/audit-20261024/render-final/page-7.png",
+      "png_sha256": "0be033ecfeaf3bdd8179bab6cc07305de2014c929b489831ac917046993a6eac",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-7.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 8,
+      "final_png": "organizer/audit-20261024/render-final/page-8.png",
+      "png_sha256": "4cd7d750f8858a3d9b5d89f2286d10b504daab04c71654935398f4eff920379e",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-8.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 9,
+      "final_png": "organizer/audit-20261024/render-final/page-9.png",
+      "png_sha256": "eb9fdf9724e0707977f98f8732d95978d68c2cf03e940ef013ef84a8c420f251",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-9.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 10,
+      "final_png": "organizer/audit-20261024/render-final/page-10.png",
+      "png_sha256": "304c244ab754041edc18bd4df5e201eda5b700d4cb7eac80e9dc63e9812f40a3",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-10.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 11,
+      "final_png": "organizer/audit-20261024/render-final/page-11.png",
+      "png_sha256": "ffeb76920d8bfb2eae3b41a96021744eb300319d57f4f367a9ca8be10ccb02f8",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-11.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 12,
+      "final_png": "organizer/audit-20261024/render-final/page-12.png",
+      "png_sha256": "bd44c3f678dac4275c852925db1c87644d67ccb52b1f8edcdbf61d550c7efeac",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-12.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 13,
+      "final_png": "organizer/audit-20261024/render-final/page-13.png",
+      "png_sha256": "ff57ebf7832d548b5e10429d8fb8745c3adde88c988d211781b0ebeb49fc74c0",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-13.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 14,
+      "final_png": "organizer/audit-20261024/render-final/page-14.png",
+      "png_sha256": "ccbe711bef31146c0305310d89881c4094ee66faff0cb509836a55ac4b2f4412",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-14.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 15,
+      "final_png": "organizer/audit-20261024/render-final/page-15.png",
+      "png_sha256": "008eafa6a503d756b732c99a93829d5d5f57328fddab8a2ae56f167872a27c22",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-15.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 16,
+      "final_png": "organizer/audit-20261024/render-final/page-16.png",
+      "png_sha256": "af7f4531213e00a6e3cac9dafe13863b6e431061268aa1e6d84675a37680a979",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-16.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 17,
+      "final_png": "organizer/audit-20261024/render-final/page-17.png",
+      "png_sha256": "546e361afb0a659af45d189c3822384b16270d1a71e0b371b5540118875bebdf",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-17.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 18,
+      "final_png": "organizer/audit-20261024/render-final/page-18.png",
+      "png_sha256": "9590402c86492d1707943eaedd72ea21825bc14620b1e34b011aff335bf33d22",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-18.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 19,
+      "final_png": "organizer/audit-20261024/render-final/page-19.png",
+      "png_sha256": "eaba86b89e2aef96d4deedd1d1ad22d0a283eb598fe7858db2fed869dfcc1e4c",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-19.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 20,
+      "final_png": "organizer/audit-20261024/render-final/page-20.png",
+      "png_sha256": "819d8a215b1efbe3187b5565ad41420a005b38b1fdb41b149339b9140a98ab81",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-20.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 21,
+      "final_png": "organizer/audit-20261024/render-final/page-21.png",
+      "png_sha256": "bb4474dded306b2a981d2c2f886fadbf2b7eb951ad3ce793a2611157e7822143",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render-final/page-21.png",
+      "identical_pixels_verified": false,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 22,
+      "final_png": "organizer/audit-20261024/render-final/page-22.png",
+      "png_sha256": "8644c1fc0c3a6226347ca0b42c8230be7a61dde65d82f912f6b0dcf2835c9758",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-22.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 23,
+      "final_png": "organizer/audit-20261024/render-final/page-23.png",
+      "png_sha256": "c224223ac2107d2f7241b47fd7f6f84e978d4ad1f6c37bd7ebdd1dacc45276c0",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-23.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 24,
+      "final_png": "organizer/audit-20261024/render-final/page-24.png",
+      "png_sha256": "b1f4e2ef217ecb16fab9e90a4d737a34446b2a9256cb49663e84b2d06b6300db",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-24.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 25,
+      "final_png": "organizer/audit-20261024/render-final/page-25.png",
+      "png_sha256": "5c4ae88c64fc134e536e1fe79e52eee71023bb01ba69429d317abe7476b8e2d9",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-25.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 26,
+      "final_png": "organizer/audit-20261024/render-final/page-26.png",
+      "png_sha256": "b3c42a76eb0afecf9f90e230100c46b30490a13ada0a4ace82891a7eebf3be8c",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-26.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 27,
+      "final_png": "organizer/audit-20261024/render-final/page-27.png",
+      "png_sha256": "ea7ea984ef1dcac02ad14a3e17586f0e85aba71cb67b38b0620118a56e180381",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-27.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 28,
+      "final_png": "organizer/audit-20261024/render-final/page-28.png",
+      "png_sha256": "02d04003b69552241e6ad62400d7fe92bfc8510bf6ee74dc3ca6656ff00181ee",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-28.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 29,
+      "final_png": "organizer/audit-20261024/render-final/page-29.png",
+      "png_sha256": "0904fde247ea3980b7d18f1897efa877a30fc124e83dcf717bd0a99b4d97572b",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-29.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 30,
+      "final_png": "organizer/audit-20261024/render-final/page-30.png",
+      "png_sha256": "03f0a514b218fd4d558b67e14bfdde68cf9030516910ca75dfc9ea7c61d67218",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-30.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    },
+    {
+      "page": 31,
+      "final_png": "organizer/audit-20261024/render-final/page-31.png",
+      "png_sha256": "d9bc135101ae6c709608763b89f75fe3e666b675863b7e282b49f6d4a2099d15",
+      "visually_inspected_pixels_from": "organizer/audit-20261024/render/page-31.png",
+      "identical_pixels_verified": true,
+      "view_image_detail": "original",
+      "passed": true
+    }
+  ]
+}

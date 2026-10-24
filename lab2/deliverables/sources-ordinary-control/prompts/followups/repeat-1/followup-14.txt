@@ -1,0 +1,16 @@
+Your exact actual response13 is retained above as your preceding assistant reply. Correct that same source using the instructions below; no completed replacement file is supplied by the organizer.
+
+Your response13 was BYTE-FOR-BYTE IDENTICAL to response12. You made NO correction. Compilation still cannot see the four names when initializing the Lab2 X/Y tables. This is not an arithmetic-body error: the definitions already exist later in the file.
+
+Add FOUR forward declarations BEFORE the existing line that starts the lab2_primary_vtbl table. Do not place them after the X/Y tables or after the four definitions. Each declaration must use the exact static return type, ECOCALLMETHOD, name and parameter list of its own definition, but end with a SEMICOLON instead of an opening body brace. Keep all four existing full definitions later in the file unchanged. Keep every existing C token outside these four new declaration statements unchanged. Do not replace the table callbacks with Lab65 callbacks.
+
+These are the EXACT FOUR FIRST LINES of YOUR OWN definitions in response13, extracted without editing. They are ABI evidence, not new function bodies from the organizer:
+
+```c
+static int32_t ECOCALLMETHOD Lab2X_Addition(IEcoCalculatorXPtr_t me, int16_t a, int16_t b) {
+static int16_t ECOCALLMETHOD Lab2X_Subtraction(IEcoCalculatorXPtr_t me, int16_t a, int16_t b) {
+static int32_t ECOCALLMETHOD Lab2Y_Multiplication(IEcoCalculatorYPtr_t me, int16_t a, int16_t b) {
+static int16_t ECOCALLMETHOD Lab2Y_Division(IEcoCalculatorYPtr_t me, int16_t a, int16_t b) {
+```
+
+Create the four declarations from those own signature lines by replacing the terminal opening brace with a semicolon. Place all four declarations before lab2_primary_vtbl, which itself precedes lab2_x_vtbl and lab2_y_vtbl. Each callback name should then occur in a declaration, a table, and its retained definition. No line comments, new function bodies, layout changes, offsets, reference changes or cleanup edits. Return the COMPLETE entire C file with the actual four declaration statements inserted. Do not repeat the unchanged source again. All previous attempts remain counted.

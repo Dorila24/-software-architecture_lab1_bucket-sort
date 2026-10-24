@@ -1,0 +1,126 @@
+[
+  {
+    "variant": "short",
+    "repeat": 1,
+    "run": "20261020-182007-14dc44ee",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "unknown type name 'IEcoLab65Impl'; did you mean 'EcoLab65Impl'?",
+      "incompatible pointer types passing 'IEcoLab65Ptr_t' (aka 'struct IEcoLab65 *') to parameter of type 'IEcoUnknownPtr_t' (aka 'struct IEcoUnknown *') [-Werror,-Wincompatible-pointer-types]"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 2190,
+    "max_output_tokens": 12288
+  },
+  {
+    "variant": "detailed",
+    "repeat": 1,
+    "run": "20261020-211201-98f1f599",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "invalid preprocessing directive",
+      "unknown type name 'These'"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 2895,
+    "max_output_tokens": 12288
+  },
+  {
+    "variant": "ordinary",
+    "repeat": 1,
+    "run": "20261020-211627-1c611fe0",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "invalid preprocessing directive",
+      "unknown type name 'These'"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 2877,
+    "max_output_tokens": 12288
+  },
+  {
+    "variant": "detailed",
+    "repeat": 2,
+    "run": "20261020-212050-b55d6456",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "unknown type name 'IEcoUnknownVtbl'; did you mean 'IEcoUnknownVTbl'?",
+      "unknown type name 'IEcoUnknownVtbl'; did you mean 'IEcoUnknownVTbl'?"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 2180,
+    "max_output_tokens": 12288
+  },
+  {
+    "variant": "ordinary",
+    "repeat": 2,
+    "run": "20261020-212446-4628c000",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "// comments are not allowed in this language [-Werror,-Wcomment]",
+      "implicit declaration of function 'AddRefImpl' [-Werror,-Wimplicit-function-declaration]"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 2903,
+    "max_output_tokens": 12288
+  },
+  {
+    "variant": "short",
+    "repeat": 2,
+    "run": "20261020-212925-cba220d8",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "'SdkAbiReference.h' file not found"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 2199,
+    "max_output_tokens": 12288
+  },
+  {
+    "variant": "ordinary",
+    "repeat": 3,
+    "run": "20261020-213246-2112456a",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "'SdkAbiReference.h' file not found"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 2728,
+    "max_output_tokens": 12288
+  },
+  {
+    "variant": "short",
+    "repeat": 3,
+    "run": "20261020-213709-0a0504ad",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "unknown type name 'IEcoUnknownVtbl'; did you mean 'IEcoUnknownVTbl'?",
+      "unknown type name 'IEcoUnknownVtbl'; did you mean 'IEcoUnknownVTbl'?"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 3074,
+    "max_output_tokens": 12288
+  },
+  {
+    "variant": "detailed",
+    "repeat": 3,
+    "run": "20261020-214107-9ca29d1d",
+    "initial_build_passed": false,
+    "initial_acceptance_passed": false,
+    "initial_error": [
+      "invalid preprocessing directive",
+      "unknown type name 'These'"
+    ],
+    "first_finish_reason": "stop",
+    "first_output_tokens": 2413,
+    "max_output_tokens": 12288
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "old_sha256": "eeee99e9d64b4e5053fa7a9061232ee4f5ac4334dce7b420b02d206598888645",
+  "new_sha256": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201",
+  "only_changed_package_part": "word/document.xml",
+  "only_text_change": "техническое задание по гост -> техническое задание по ГОСТ",
+  "original_experiment_metrics_unchanged": true,
+  "measured_sources_unchanged": true
+}

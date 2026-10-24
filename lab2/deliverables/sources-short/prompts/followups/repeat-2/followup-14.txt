@@ -1,0 +1,11 @@
+Continue this SAME measured run using your exact response14. The requested comments are now correct, but an UNREQUESTED ONE-WORD executable regression broke the previously passing code. Fix ONLY that one type name and return the ENTIRE full source as ONE c block. Every other noncomment token AND every current comment must remain identical to response14.
+
+In the function lab2_Y_Release, owner recovery currently subtracts offsetof for Lab65State. This receiver belongs to Lab2State. Change ONLY the structure-type argument of offsetof in THAT function to Lab2State. Do not change any other offsetof, cast, function, table, comment or statement.
+
+This is the EXACT correct assignment line from YOUR OWN previously passing response13 in THIS same run, quoted unchanged (not another implementation):
+
+```c
+    state = (Lab2State*)((char*)me - offsetof(Lab2State, public_y));
+```
+
+Use that same own assignment in lab2_Y_Release. The cast is already Lab2State*, the field remains public_y, and the following call to primary public_Lab2_Release remains unchanged. Do NOT change the valid private-inner ownership comment or re-add the removed process-history comment. Do not rewrite either creator or any QI. Full response13 already passed both A/C suites; response14 differed functionally by this single wrong structure name, and it is the ONLY executable difference to repair. All previous costs remain counted.

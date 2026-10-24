@@ -1,0 +1,18 @@
+Continue the SAME measured short-prompt repeat3. Your EXACT actual response7 is retained above. The allocator body is now correct; preserve it and EVERY other body unchanged. Fix ANNOTATION PLACEMENT ONLY.
+
+ECOCALLMETHOD belongs in a FUNCTION DECLARATOR between return type and function name. It does NOT belong before a callback name in a virtual-table initializer expression. It happens to expand to nothing on this Mac, so compilation does not detect the wrong position; the explicit SDK declaration requirement is still unmet.
+
+Your OWN creator already shows the correct declarator position (exact first line from your response7):
+```c
+int16_t ECOCALLMETHOD createEcoLab65(IEcoUnknown* system, IEcoUnknown* outer, const UGUID* iid, void** out) {
+```
+Your OWN callback forward declaration below currently lacks the annotation; add ECOCALLMETHOD between its return type and its name, and do the SAME at the existing matching function definition:
+```c
+static int16_t lab65_query_interface(IEcoLab65Ptr_t me, const UGUID* riid, voidptr_t* ppv);
+```
+
+Do this for ALL21 callbacks: lab65_query_interface, lab65_add_ref, lab65_release, lab65_sort_int, lab65_sort_long, lab65_sort_float, lab65_sort_double, lab65_sort_long_double; unknown_query_interface, unknown_add_ref, unknown_release; x_query_interface, x_add_ref, x_release, x_addition, x_subtraction; y_query_interface, y_add_ref, y_release, y_multiplication, y_division.
+
+There are21 existing forward declarations AND21 existing definitions, so add42 correct declarator annotations. REMOVE the21 incorrect ECOCALLMETHOD tokens from the four virtual-table INITIALIZERS: initializer entries must be only their existing callback names and commas. Keep the two already correct creator annotations unchanged. lab_allocator has its own fixed ABI and needs no annotation change. Final total must be44 ECOCALLMETHOD occurrences:42callbacks plus2creators, and ZERO in table initializer bodies.
+
+After ignoring ECOCALLMETHOD tokens, every other noncomment C token must match your response7 exactly. No body, type, layout, constructor stub, guard, return, field, name or table callback change. No line comments or explanatory new comments. Return the entire full C file with actual annotation placement corrected, not a patch and not the unchanged source.

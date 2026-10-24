@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-21T02:11:45.311239+00:00",
+  "observations": [
+    {
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/clang",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "Apple clang version 17.0.0 (clang-1700.0.13.3)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin"
+    },
+    {
+      "command": [
+        "xcrun",
+        "--show-sdk-version"
+      ],
+      "exit_code": 0,
+      "output": "15.4"
+    },
+    {
+      "command": [
+        "sw_vers"
+      ],
+      "exit_code": 0,
+      "output": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "client_sha256": "207aafd122006fff09960a18980c278b2434b41174175c654a499f4ae39c7f55",
+  "profiles": [
+    "A",
+    "C"
+  ],
+  "routes": [
+    "direct_E",
+    "Lab65_containment",
+    "Lab2_with_aggregate"
+  ],
+  "arithmetic": {
+    "iterations": 500000,
+    "calls_per_iteration": 4,
+    "operands": [
+      7,
+      2
+    ],
+    "expected_checksum": 15500000
+  },
+  "query": {
+    "iterations": 500000,
+    "operation": "QI(X) plus Release"
+  },
+  "repeats": 5,
+  "warmup_addition_calls": 10000,
+  "clock": "C89 clock(), process CPU time",
+  "compilation": "same -O2 strict C89, no sanitizer for timing",
+  "limits": "fixed tiny operands and a single process; does not measure sorting throughput, end-to-end application latency, all input distributions, energy or hardware cost",
+  "sorting": {
+    "client_sha256": "85735e5c2b08a4c0decf830e6f19c2852475110fcaf1a240ecb164173b06fd49",
+    "route": "Lab2 queried directly for actual aggregated Lab65",
+    "type": "double",
+    "buckets": 128,
+    "uniform_n": [
+      1000,
+      10000,
+      50000
+    ],
+    "cluster_reverse_n": [
+      1000,
+      5000,
+      10000
+    ],
+    "repetitions": 5,
+    "input_seed": 1234567,
+    "reference": "C qsort on identical copied input; all elements compared exactly",
+    "order": "alternate Bucket/qsort first by repetition",
+    "timer": "C89 clock() process CPU time; generation server stopped before timing",
+    "design_origin": "Same input distributions and sizes as the independent first-laboratory client; registration adapted before any accepted second-laboratory component or performance observation."
+  },
+  "calls_client_prepared_at": "2026-10-20T12:53:28.423977+00:00",
+  "calls_client_prepared_before_first_answer": true,
+  "sorting_client_prepared_at": "2026-10-20T13:02:05.079645+00:00",
+  "sorting_client_prepared_before_first_answer": false,
+  "amendments": [
+    {
+      "at": "2026-10-20T14:45:48.311379+00:00",
+      "reason": "Before any performance execution: original B exposes X only, so four-operation baseline must use E, which exposes both X and Y. No acceptance validator or generation configuration changed.",
+      "old_baseline": "direct_B",
+      "new_baseline": "direct_E",
+      "performance_samples_before_amendment": 0
+    }
+  ]
+}

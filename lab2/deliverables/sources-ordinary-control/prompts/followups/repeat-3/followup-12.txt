@@ -1,0 +1,13 @@
+Continue this SAME measured run using your exact response12. It fixed private cleanup and aggregate bus transfer, but accidentally deleted ONE still-needed local cleanup block. Restore ONLY that block and return the ENTIRE complete source file in one c code block. All other executable tokens and comments must stay identical.
+
+This is the EXACT unchanged block from YOUR OWN response11 in THIS run, not another run or new code from the organizer:
+
+```c
+    if (local_allocator != 0) {
+        local_allocator->pVTbl->Release(local_allocator);
+    }
+```
+
+Restore that block at the END of the createEcoLab65 cleanup section, AFTER the existing local_bus Release block and BEFORE the final return status. When allocation of state fails, local_allocator is still an owned local reference, so it MUST be released there. After ownership has transferred to state its local alias is already zero, so this block correctly does nothing and cannot double-release it.
+
+Preserve your now-correct null-out ordering, copied GUID, initialized fields, cleared transferred aliases, private Unknown Release in state cleanup, aggregate publication followed by local-state-null and goto cleanup, and standalone QI with exactly one shared initial-reference Release. Do not alter any other method, table, creator or ownership comment. No extra Release anywhere. Keep C89 block comments and the complete qualified-method prefix unchanged. All earlier requests, failures, tokens and time remain counted.

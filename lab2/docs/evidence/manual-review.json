@@ -1,0 +1,275 @@
+{
+  "at": "2026-10-21T17:05:36.068592+00:00",
+  "all_nine_reviewed": true,
+  "passed": true,
+  "summary": "Ручной разбор всех девяти итоговых файлов подтвердил единую публичную идентичность, делегирование управляющему Unknown, отдельный приватный Unknown агрегата и один включённый E с получением обоих его интерфейсов. Проверены типы callback функций, переходы QueryInterface, владение ссылками, однократное снятие начальной ссылки и очистка частично созданных объектов. Тексты финальных файлов совпадают с последними ответами Qwen; численный файл первой работы неизменен. Читаемость оценивалась отдельно: содержательные имена, короткие интерфейсные методы, C89 и корректные комментарии о владении. Найденные ошибки и недостатки исправляла модель в тех же попытках; исходники вручную не правились. Эта оценка и конечные тесты не заменяют формального доказательства.",
+  "reviews": [
+    {
+      "run": "20261020-182007-14dc44ee",
+      "label": "short",
+      "repeat": 1,
+      "model_request": 26,
+      "at": "2026-10-20T21:31:52.999698+00:00",
+      "source_sha256": "aea0b1fcda4374f39e92a6acb333b99b71de78a1ac72b8e2463747eea17b6ac9",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response26; no organizer workspace edits",
+      "findings": [
+        "Lab65 retains the qualified response22 implementation and ABI. All public control methods delegate to borrowed controller; private Unknown uses local count.",
+        "Lab2 own X/Y controls recover the correct offsets and use primary outer QI/AddRef/Release; canonical Unknown is primary public_lab2 address. All-to-all interfaces use one outer identity.",
+        "One contained E provides separately owned X and Y; arithmetic directly calls their exact typed vendor methods. Lab65 is obtained through actual bus with canonical outer and IID Unknown; only private inner Unknown retained.",
+        "Lab2 QI Lab65 directly returns the private-inner QI result with no extra AddRef. Held public X/Y and inner Lab65 retain outer through the same count by code inspection.",
+        "Both creators transfer system/allocator refs before dependencies and clear local aliases. Construction ref released once on success or failure; bus always released. Destructors release owned refs, save allocator, Free state before final allocator Release; no access after free.",
+        "Typed static tables and C89 compilation, actual factories and SDK calls, no forbidden libc or fake APIs confirmed. Supported public sets are constant after publication.",
+        "Readability: descriptive owned_/public_ fields, typed focused wrappers, consistent four-space indentation, C89 guard/nested-block style and two concise comments on the two critical ownership relationships. Constructors retain explicit staged acquisition and one failure cleanup; no handwritten formatting.",
+        "Model response26 adds correct borrowed-controller and private-inner-ownership comments only; noncomment C tokens are identical to manually reviewed response25. Full A/C suites still28936 zero-failure assertions each."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "comments_count": 2,
+      "noncomment_tokens_equal_to_reviewed_response25": true
+    },
+    {
+      "run": "20261020-211201-98f1f599",
+      "label": "detailed",
+      "repeat": 1,
+      "model_request": 15,
+      "at": "2026-10-20T22:46:18.182621+00:00",
+      "source_sha256": "059a2cfde8e68f40b56f644c18e35bd844c36235fcb6faaa14c12f1729a6b1d1",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response15; no organizer workspace edits",
+      "findings": [
+        "Both full frozen A/C suites pass; real registry, mock refs, failure cleanup, interface identity, forwarding and UBSan.",
+        "All own X/Y recover correct offsets; Lab65 public controls use borrowed controller, private Unknown local; Lab2 contains one E and privately owns aggregated Lab65 Unknown. Both creators transfer system/allocator aliases before dependencies; destruction Free precedes allocator Release.",
+        "Lab65 prefix matches own qualified response11 except existing IdEcoLab65 include; no foreign generated source. Consistent four-space C89, meaningful owned_/public_ names, short typed wrappers.",
+        "Four correct ownership/allocator-order comments added by Qwen; all noncomment tokens identical to reviewed14. Same full A/C suites pass again. GetVersion retains a harmless unused local; no functional or material readability issue."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "comments_count": 4,
+      "noncomment_tokens_equal_to_reviewed_response14": true
+    },
+    {
+      "run": "20261020-211627-1c611fe0",
+      "label": "ordinary",
+      "repeat": 1,
+      "model_request": 15,
+      "at": "2026-10-21T13:36:39.648970+00:00",
+      "source_sha256": "e755593350942590a81bf0c4894053b088def75c5f3c6c70acb284b64c02f81b",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response15; no organizer workspace edits",
+      "findings": [
+        "Own response15 changes exactly the two Lab2Y AddRef/Release offsetof structure types; all other bytes equal own14. Both full frozen A/C suites pass28936 assertions each with zero failures/live allocations, system and allocator refs1 and UBSan clean.",
+        "Manual full-source review: Lab65 public65/X/Y controls delegate to borrowed controller, nondelegating Unknown uses local references; fixed supported set and typed arithmetic forwarding to contained A/C.X and D.Y. Five numerical methods directly reuse frozen Lab1 source. Qualified Lab65 prefix tokens equal own9 after comments and added CID include.",
+        "Lab2 primary is the unique canonical Unknown; all six X/Y control callbacks recover correct Lab2State offsets and delegate to primary. Its Lab65 QI directly returns private inner QI with no extra AddRef. Public interfaces retain the same outer lifetime.",
+        "One E is created through Y, its own QI supplies X; actual bus aggregates Lab65 under explicitly typed nonnull primary Unknown and only private inner Unknown is owned. No public-inner reference cycle.",
+        "Both creators copy optional manager GUID before extension release, transfer system/allocator aliases before dependencies and clear them, release bus and exactly one initial reference on standalone success or error. Aggregate private initial reference transferred. Destructors save allocator, release dependencies/system, Free state then Release allocator and immediately return.",
+        "Readable C89: meaningful owned/public names, consistent layout, short typed wrappers, accurate borrowed-controller/private-inner ownership comments. Constructors use explicit acquisition stages and cleanup. No manual C edits. Source and undefined-symbol review found no forbidden libc calls; this is finite screening, not formal proof."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "manual_nm_log": "manual-nm-final15.log",
+      "qualified_prefix_tokens_equal_own9": true
+    },
+    {
+      "run": "20261020-212050-b55d6456",
+      "label": "detailed",
+      "repeat": 2,
+      "model_request": 16,
+      "at": "2026-10-21T15:55:24.642860+00:00",
+      "source_sha256": "20948764fb7ec745d205795dd5a6538d21b94bb3157016113bec0556114fa7ae",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response16; no organizer workspace edits",
+      "findings": [
+        "Exact own Qwen response16. Both unchanged full A/C clients pass28936 assertions each, zero failures/live allocations, system/allocator refs1, UBSan clean. New diff is7 Lab2 control bodies plus one accurate private-inner ownership block comment; all creators, arithmetic forwards and tables unchanged from15.",
+        "Qualified Lab65 prefix equals own14 after removing added CID include and redundant creator declarations already supplied by frozen ReuseContract.h. Public65/X/Y delegate to borrowed controller; private Unknown local count, supported4 set, five frozen numerical forwards and actual A/C.X,D.Y dependencies remain unchanged.",
+        "Lab2 canonical Unknown is primary public_lab2. Six typed X/Y controls use correct Lab2State field offsets and primary QI/AddRef/Release; primary5-set grants one outer ref per own success, directly returns private inner QI for Lab65 with no extra AddRef. No duplicated secondary destructor or facade. GetVersion valid2/null0 and exact SDK callback calling conventions preserved.",
+        "Creator owns oneE viaY then sameE.QIX and actual bus-created Lab65 private Unknown under explicitly typed nonnull outer primary. No permanent delegating inner ref; destructor releases owned E X/Y, private inner and system, saves allocator, Free state then final allocator Release and immediate0. Both creators copy optional manager GUID value before extension release, initialize fields and clear transferred aliases before deps, release partial objects and local refs once, correctly transfer private aggregate initial ref or drop one standalone construction ref.",
+        "Readability passed: meaningful owned/public fields, familiar pCMe this-object naming, consistent C89, focused typed forwarding/control functions, explicit status-guarded acquisitions and shared cleanup. Correct borrowed-controller and private-inner cycle comments explain non-obvious ownership; no process-history comments. Manual source/undefined-symbol screening found no forbidden libc calls; finite screening is not formal proof."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "comments_count": 2,
+      "manual_nm_log": "manual-nm-final16.log",
+      "qualified_prefix_tokens_equal_own14_except_redundant_prototypes_and_cid_include": true
+    },
+    {
+      "run": "20261020-212446-4628c000",
+      "label": "ordinary",
+      "repeat": 2,
+      "model_request": 9,
+      "at": "2026-10-21T10:46:46.258155+00:00",
+      "source_sha256": "636dbc1b5a0bbf28cc16c3f4e6902c4d91a6ff49e606eea98145d56f1c80af81",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response9; no organizer workspace edits",
+      "findings": [
+        "The single diff from own8 is Lab2X_AddRef offsetof type corrected to Lab2State. Exact own Qwen response9 and both full frozen A/C clients pass28936 assertions each, no live allocations, system/allocator references1, UBSan clean.",
+        "All23 qualified Lab65 functions/signatures match own6 after comment removal; public65/X/Y controls delegate to borrowed controller, private Unknown keeps local count and typed arithmetic forwards to A/C.X and D.Y.",
+        "Lab2 owns three public embedded interfaces, uses primary canonical Unknown and one outer count. Six X/Y control callbacks use correct Lab2State offsets and primary controls; four typed arithmetic methods call the owned vendor E interfaces.",
+        "One E is created viaY then its own QI obtainsX. Actual bus creates Lab65 with nonnull explicitly typed canonical outer, requesting private Unknown; only that private reference is stored. Public Lab65 branch returns its QI result directly without an extra outer AddRef.",
+        "Both creators copy the optional manager GUID value before extension release, transfer system/allocator ownership and clear aliases before dependencies, drop exactly one initial construction reference on standalone success/failure and release local bus. Destructors save allocator, release owned dependencies and system, Free state before final allocator Release, and return immediately with no freed-state read.",
+        "Readability passed: consistent indentation, meaningful owned_/public_ names, short typed wrappers, C89 declaration order, purpose/stage comments and correct borrowed-controller/private-inner ownership comments. Two constructors are longer and use explicit status-guarded stages. No manual formatting or source edit.",
+        "Manual source screening found no forbidden standard-library calls. nm confirms only five legacy sort functions and compiler-inserted stack-check symbols in Reuse.c; numerical object depends only on lab_allocator. This is not formal proof of all indirect behavior."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "comments_count": 27,
+      "qualified_lab65_functions_unchanged_from_own6": 23,
+      "manual_nm_log": "manual-nm-final09.log"
+    },
+    {
+      "run": "20261020-212925-cba220d8",
+      "label": "short",
+      "repeat": 2,
+      "model_request": 15,
+      "at": "2026-10-21T16:27:18.468615+00:00",
+      "source_sha256": "005bc251e58c59af9676619e204fd4181b4152556f43fdf9e9a07c9c7dc01cd0",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response15; no organizer workspace edits",
+      "findings": [
+        "Full A/C suites pass28936/0, live0/env1/mem1, UBSan clean. Correct final requested-IID QI restored before dropping initial ref; extra failure branch goes to shared cleanup, success drops once then clears local state. Qualified Lab65 prefix tokens equal own9 after added CID header/comments normalization.",
+        "Full Lab2 review: three embedded public interfaces, canonical primary Unknown, constant5 set, six typed controls use correct Lab2State offsets/primary functions, direct private-inner QI for Lab65 without extra AddRef, oneE.Y then sameE.QIX, actual bus aggregates65 using typed canonical outer/IIDUnknown. All typed callbacks use ECOCALLMETHOD; lab_allocator is fixed plain-C helper.",
+        "Both creators copy manager GUID before extension release, clear transferred system/allocator aliases before dependencies, balance construction/temporary refs and partial failure cleanup. Both destructors save allocator, release owned interfaces/system, Free state before final allocator Release and immediately return. No forbidden libc found in manual source/symbol screening; no formal proof implied.",
+        "Response14 corrected both comments but introduced one Lab65State offset regression in Lab2 Y Release. Response15 changes exactly that one structure type back to Lab2State; all executable tokens equal own fully reviewed/passed response13. Full unchanged A/C checks each28936/0, live0/environment1/memory1 and UBSan clean.",
+        "Readability passed: meaningful names, consistent C89, short typed methods and accurate comments for borrowed public controller and owned private inner Unknown; process-history comment removed. No manual workspace edits."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "comments_count": 3,
+      "manual_nm_log": "manual-nm-final15.log"
+    },
+    {
+      "run": "20261020-213246-2112456a",
+      "label": "ordinary",
+      "repeat": 3,
+      "model_request": 16,
+      "at": "2026-10-21T17:05:36.038921+00:00",
+      "source_sha256": "7ee025d927875fa8de34038faea604443e54799be9921c00ae08cf566da04e87",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response16; no organizer workspace edits",
+      "findings": [
+        "Exact own response16 changes only6 Lab2 secondary control bodies, secondE acquisition to SAME E.Y.QueryInterfaceX, shared state-release condition and one accurate owned-private-Unknown comment. All other bytes of own15 unchanged; qualified Lab65 prefix remains own14 with added existing CID header. Both unchanged full A/C suites each28936/0, live0/env1/mem1, UBSan clean.",
+        "Lab2 primary canonical Unknown is public_lab2, constant5 set includes direct private-inner QI Lab65 with no extra AddRef. All6 X/Y controls recover correct OWN Lab2State offsets and delegate primary QI/AddRef/Release.14 callbacks exact typed declarations/definitions precede3 distinct tables, proper ECOCALLMETHOD, GetVersion2/null0, arithmetic forwards actual E.X/E.Y operations.",
+        "Both creators copy manager GUID value before extension Release, null transferred system/allocator aliases before dependencies, initialize fields and balance construction refs. Lab2 creates exactly oneE viaY then sameE.QIX and actual private65 aggregate through bus with typed canonical primary outer and IIDUnknown. It drops one initial reference unconditionally at shared cleanup, independently releases all3 remaining local refs, no state access after Release. Lab65 aggregate publication transfers private initial ref then shared local cleanup; standalone and failures use private Release.",
+        "Private65 Unknown local count and public65 controls borrowed-controller delegation preserved. Lab2 retains only private65 Unknown, not delegating public refs. Destructors release owned dependencies and system, save allocator, Free before final allocator Release and immediate0. Manual source/undefined-symbol screening found no prohibited libc calls; not a formal proof.",
+        "Readability passed: meaningful public/owned/inner names, focused typed control/arithmetic wrappers, consistent C89, explicit acquire/check/transfer/cleanup stages, short accurate borrowed-controller and owned-private-Unknown comments. Redundant state-null checks do not affect behavior; no organizer source editing or formatting."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "comments_count": 3,
+      "manual_nm_log": "manual-nm-final16.log"
+    },
+    {
+      "run": "20261020-213709-0a0504ad",
+      "label": "short",
+      "repeat": 3,
+      "model_request": 15,
+      "at": "2026-10-21T16:54:05.553663+00:00",
+      "source_sha256": "c9721c7a0f400580610376aca190a229ffcad04c6e934592739e09eae0542d3d",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response15; no organizer workspace edits",
+      "findings": [
+        "Exact own response15 changes only the two missing local_system/allocator Release blocks in Lab2 cleanup compared with14. Both unchanged full A/C suites each28936 assertions, zero failures/live allocations, env1/mem1 and UBSan clean. Qualified Lab65 executable prefix preserved from own11 except existing CID header include.",
+        "Full Lab2 review: primary Lab2 canonical Unknown and constant5-set, six correctly typed X/Y controls recover OWN Lab2State offsets and delegate primary methods, direct private inner QI for Lab65 with no extra AddRef. GetVersion2/null0,14 callbacks declared before3 distinct tables; exact SDK return/parameter types and ECOCALLMETHOD present.",
+        "Creator acquires exactly oneE.Y then sameE.QIX, actual bus Lab65 with typed canonical outer and IIDUnknown, retains only private inner Unknown. Both creators copy manager GUID value before extension Release; initialize all fields; transfer system/allocator refs and null local aliases before dependencies. One shared local state Release drops initial ref on success/failure, all3 remaining local references independently Released, aggregate65 transfer preserves private initial ref.",
+        "Destructors release owned dependencies/system, save allocator, Free storage before final allocator Release and immediately return0. All public65 controls use borrowed controller while its private Unknown uses local lifetime. Manual source and undefined-symbol screening found no forbidden libc calls; finite screening is not formal proof.",
+        "Readability passed: meaningful public/owned/inner field names, consistent C89 blocks and short typed methods, explicit acquisition/cleanup stages, accurate borrowed-controller and owned-private-Unknown comments. No process-history comments, no organizer formatting or implementation changes."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "comments_count": 3,
+      "manual_nm_log": "manual-nm-final15.log"
+    },
+    {
+      "run": "20261020-214107-9ca29d1d",
+      "label": "detailed",
+      "repeat": 3,
+      "model_request": 11,
+      "at": "2026-10-21T14:40:48.119546+00:00",
+      "source_sha256": "9f72405e65fe409b0ad12c3d8d822c788a379a464ab1bba82e6b48c3a75dc9b7",
+      "full_tests_passed": true,
+      "assertions_per_profile": 28936,
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "architecture_reviewed": true,
+      "numeric_source_unchanged": true,
+      "source_origin_verified": "Exact own Qwen response11; no organizer workspace edits",
+      "findings": [
+        "Both unchanged A/C suites pass28936/0, live0/env1/mem1 and UBSan clean. Diff from own9 fixes only missing aggregate QI, six typed Lab2 X/Y controls and required outer cast; complete qualified Lab65 prefix matches own8 after comment/Id include normalization.",
+        "Manual architecture review: public65/X/Y delegate to borrowed controller; private Unknown local count; Lab2 canonical primary Unknown, own X/Y use correct offsets and primary controls; aggregate QI returns private-inner QI result directly, oneE.Y then sameE.QIX and actual bus Lab65 outer primary/privateUnknown. All 38 definitions/prototypes use proper SDK types/ECOCALLMETHOD; redundant exact function casts in tables do not hide signature differences.",
+        "Both creators copy manager GUID before extension Release, transfer and clear aliases before dependencies, correctly transfer aggregate initial ref or drop exactly one construction ref on standalone publication/error, release bus and partial objects. Destructors save allocator, release all owned interfaces/system, Free state before allocator Release and immediately return; supported sets constant after creation.",
+        "Comments-only response11 adds one accurate C89 block comment at the owned private inner Unknown, explaining the controller-cycle risk. Every executable token equals manually reviewed10; both full A/C suites still28936/0, live0/env1/mem1 and UBSan clean. Meaningful names, consistent C89 layout, typed focused wrappers, two ownership comments and explicit staged constructors pass readability review."
+      ],
+      "readability_remaining": [],
+      "ready_for_delivery": true,
+      "readability_passed": true,
+      "comments_count": 2,
+      "noncomment_tokens_equal_to_reviewed_response10": true
+    }
+  ]
+}

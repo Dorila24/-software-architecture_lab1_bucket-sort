@@ -1,0 +1,11 @@
+{
+  "modified_source": "SourceFiles/Reuse.c",
+  "frozen_legacy_sort_sha256": "d5a76ceec4fece2c4330a4b89bbf8a88b378294527073ceb4e27ec8de39e399c",
+  "new_lab2_guid": "C776000EC38746C089AD38BFB1C8BB9C",
+  "supplied_scope": "static factory boilerplate, fixed public ABI, previous sorting numerical methods, vendor components; model supplies both object implementations and all composition/lifetime logic",
+  "profiles": [
+    "A",
+    "C"
+  ],
+  "graph": "Lab2 aggregates Lab65; Lab65 contains A/C and D(B); Lab2 contains E(aggregated B)."
+}

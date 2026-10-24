@@ -1,0 +1,161 @@
+{
+  "repository": "https://github.com/peerf-eco/Eco.Education",
+  "commit": "7f1664b0489bcea6d5b211807ea5cb0ce0e1068e",
+  "files": [
+    {
+      "path": "Vendor/Eco.CalculatorA/SourceFiles/CEcoCalculatorA.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson02/Eco.CalculatorA/SourceFiles/CEcoCalculatorA.c",
+      "sha256": "11889b5595f880387242fad868d2d0678f7dc2a7454a253fea9ec6bd8965177f"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorA/SourceFiles/CEcoCalculatorAFactory.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson02/Eco.CalculatorA/SourceFiles/CEcoCalculatorAFactory.c",
+      "sha256": "38f53c462ca4042a8d41f225d70197908ac4c3c43b39a0431b23224be669fa38"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorA/HeaderFiles/CEcoCalculatorA.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson02/Eco.CalculatorA/HeaderFiles/CEcoCalculatorA.h",
+      "sha256": "0149dc82feb05735aae61023126a9df98045bd2161b8cd03e55160ce7900043d"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorA/HeaderFiles/CEcoCalculatorAFactory.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson02/Eco.CalculatorA/HeaderFiles/CEcoCalculatorAFactory.h",
+      "sha256": "1f179df1254bb15c35c41d9405dd93b5830ff5950efcedcfc92f50ed5a13e34a"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorA/SharedFiles/IdEcoCalculatorA.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson02/Eco.CalculatorA/SharedFiles/IdEcoCalculatorA.h",
+      "sha256": "9ff050e270aeddfc378debf03253bdbcf52b7287619930f5356efa0796ea1d5f"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorA/SharedFiles/IEcoCalculatorX.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson02/Eco.CalculatorA/SharedFiles/IEcoCalculatorX.h",
+      "sha256": "a990c87e35f9e928e65086cce61bc7e88df7096a84c425dab7a812b87dbc72d6"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorB/SourceFiles/CEcoCalculatorB.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson03/Eco.CalculatorB/SourceFiles/CEcoCalculatorB.c",
+      "sha256": "914248b3a877db0ac70a1479b1938043dc5fb23a66c17a759839802daf2dae45"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorB/SourceFiles/CEcoCalculatorBFactory.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson03/Eco.CalculatorB/SourceFiles/CEcoCalculatorBFactory.c",
+      "sha256": "2a7f86bd3f9c9ef7d3f959dbe74ebc4ee2d934138e05da5d6a4844e2d5a8528d"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorB/HeaderFiles/CEcoCalculatorBFactory.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson03/Eco.CalculatorB/HeaderFiles/CEcoCalculatorBFactory.h",
+      "sha256": "a9e0252785b9e444e1dc5053b72baef30bccec5b2dba530ee6175c4f66699a9a"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorB/HeaderFiles/CEcoCalculatorB.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson03/Eco.CalculatorB/HeaderFiles/CEcoCalculatorB.h",
+      "sha256": "c4617549c4abf051d84a67aa7d913c93aa7b42e75818375779e05f70660ce433"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorB/SharedFiles/IEcoCalculatorX.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson03/Eco.CalculatorB/SharedFiles/IEcoCalculatorX.h",
+      "sha256": "a990c87e35f9e928e65086cce61bc7e88df7096a84c425dab7a812b87dbc72d6"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorB/SharedFiles/IdEcoCalculatorB.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson03/Eco.CalculatorB/SharedFiles/IdEcoCalculatorB.h",
+      "sha256": "7bb43d49d19e70e184951fb3e5259b847c761a63536d0b522de8bd08052d2d2f"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorC/SourceFiles/CEcoCalculatorCFactory.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/SourceFiles/CEcoCalculatorCFactory.c",
+      "sha256": "a9108db1d6fe333897aa29d7ac812349856c6c56e44c90637876de2ee8a31364"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorC/SourceFiles/CEcoCalculatorC.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/SourceFiles/CEcoCalculatorC.c",
+      "sha256": "d59cb49e1f6ee2f85b520ae895a4f2b7f3ab9e8a9005a05a1ffa4df24a2fd344"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorC/HeaderFiles/CEcoCalculatorC.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/HeaderFiles/CEcoCalculatorC.h",
+      "sha256": "d8a6efe135e5b06a450935eb7e8f4cb3e35ef506c119aea7c890ecfdeef7d0ee"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorC/HeaderFiles/CEcoCalculatorCFactory.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/HeaderFiles/CEcoCalculatorCFactory.h",
+      "sha256": "48257af76870a99732feab8a7be71f438aeb3b39946953d372028e6c074822d8"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorC/SharedFiles/IEcoCalculatorY.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/SharedFiles/IEcoCalculatorY.h",
+      "sha256": "c50f520097e54b259681e720350f9207278d09ef7b70ead7d06a5e7fe7ee2c0d"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorC/SharedFiles/IdEcoCalculatorC.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/SharedFiles/IdEcoCalculatorC.h",
+      "sha256": "38b82b600bdb29d307066a8ddc3c460f81197dfe11e2a4119b1bd86905ed3313"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorC/SharedFiles/IEcoCalculatorX.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/SharedFiles/IEcoCalculatorX.h",
+      "sha256": "a990c87e35f9e928e65086cce61bc7e88df7096a84c425dab7a812b87dbc72d6"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorD/SourceFiles/CEcoCalculatorD.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson06/Eco.CalculatorD/SourceFiles/CEcoCalculatorD.c",
+      "sha256": "43577112f6313483206035df8e6822c0c59ac57113f0b5d0738d358cdeab2c35"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorD/SourceFiles/CEcoCalculatorDFactory.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson06/Eco.CalculatorD/SourceFiles/CEcoCalculatorDFactory.c",
+      "sha256": "ec08ce35bd9a04dae2168075f839d1822dd761c6709c151095a3b667d5cfcc23"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorD/HeaderFiles/CEcoCalculatorD.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson06/Eco.CalculatorD/HeaderFiles/CEcoCalculatorD.h",
+      "sha256": "cab193d9d9ff805caeb02927ce82516f181c8fd0ac2d6483e95092c6fa116d25"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorD/HeaderFiles/CEcoCalculatorDFactory.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson06/Eco.CalculatorD/HeaderFiles/CEcoCalculatorDFactory.h",
+      "sha256": "984bba78fe7547819f43ca8aeab5b9b0a9f4e083753726cb75acf4fb11d839b2"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorD/SharedFiles/IEcoCalculatorY.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson06/Eco.CalculatorD/SharedFiles/IEcoCalculatorY.h",
+      "sha256": "c50f520097e54b259681e720350f9207278d09ef7b70ead7d06a5e7fe7ee2c0d"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorD/SharedFiles/IdEcoCalculatorD.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson06/Eco.CalculatorD/SharedFiles/IdEcoCalculatorD.h",
+      "sha256": "508ac5e35d9e1fb48e0f78552d0976f5bbcf5e3d1669101e203f4839cfae6968"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorE/SourceFiles/CEcoCalculatorE.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson07/Eco.CalculatorE/SourceFiles/CEcoCalculatorE.c",
+      "sha256": "1fc5f13f1f3ed1f4431f5986ba18be789598fe97917a6b426867614fbb46a6a2"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorE/SourceFiles/CEcoCalculatorEFactory.c",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson07/Eco.CalculatorE/SourceFiles/CEcoCalculatorEFactory.c",
+      "sha256": "3453b10d479ae8783070c6b7510275cf93c44e1a17a010afb346fbb4a5097ef9"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorE/HeaderFiles/CEcoCalculatorEFactory.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson07/Eco.CalculatorE/HeaderFiles/CEcoCalculatorEFactory.h",
+      "sha256": "84859ab62cbf38dbf46c646fbe6436edce441aaba0f6e7ddf28b006aaf0522ec"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorE/HeaderFiles/CEcoCalculatorE.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson07/Eco.CalculatorE/HeaderFiles/CEcoCalculatorE.h",
+      "sha256": "e44cfeb6bef5c86dcdfbdd49c5cf6e8a18a1e9637d9a5509984034bbf1ee9b69"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorE/SharedFiles/IEcoCalculatorY.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson07/Eco.CalculatorE/SharedFiles/IEcoCalculatorY.h",
+      "sha256": "c50f520097e54b259681e720350f9207278d09ef7b70ead7d06a5e7fe7ee2c0d"
+    },
+    {
+      "path": "Vendor/Eco.CalculatorE/SharedFiles/IdEcoCalculatorE.h",
+      "teacher_path": "Eco.Pro.Training/001.InsideACOM/Lessons/Lesson07/Eco.CalculatorE/SharedFiles/IdEcoCalculatorE.h",
+      "sha256": "0d7e655b9a55a8a3b6834812cf6e17130ca5a3fe4c08598595339d247ed24175"
+    }
+  ]
+}

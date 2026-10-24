@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лабораторная 2 · ACOM</title>
+<style>
+  :root { color-scheme: light; font: 16px/1.55 system-ui, sans-serif; color: #172c38; background: #f0f4f5; }
+  body { max-width: 1100px; margin: 36px auto; padding: 0 24px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin: 8px 0 16px; }
+  h2 { font-size: 22px; margin-top: 0; }
+  p { max-width: 920px; } .eyebrow { font-weight: 700; color: #276651; }
+  .panel { border: 1px solid #d2dfe0; border-radius: 14px; padding: 24px; background: white; margin: 24px 0; }
+  .controls { display: flex; flex-wrap: wrap; align-items: end; gap: 14px; }
+  label { display: grid; font-size: 14px; font-weight: 600; gap: 5px; }
+  select, button { font: inherit; border: 1px solid #9cabb2; border-radius: 7px; padding: 10px 12px; background: white; }
+  button { cursor: pointer; font-weight: 650; background: #185b49; color: white; border-color: #185b49; }
+  button.secondary { background: #fff; color: #185b49; } button:disabled { cursor: wait; opacity: .55; }
+  #status { font-weight: 700; min-height: 28px; margin-top: 20px; } .pass { color: #126240; } .fail { color: #a32022; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 20px; border-radius: 8px; background: #132a35; color: #e6f4f0; font: 14px/1.6 ui-monospace, monospace; max-height: 420px; overflow: auto; }
+  img { width: 100%; height: auto; display: block; } .muted { color: #49616e; font-size: 14px; }
+  code { font-family: ui-monospace, monospace; } footer { margin: 24px 0; color: #49616e; }
+</style>
+<body>
+<div class="eyebrow">Архитектура ПО · Лабораторная работа 2</div>
+<h1>Включение и агрегирование ACOM</h1>
+<p><strong>Фирсова Валерия Дмитриевна · 24ТИДИ</strong><br>
+Eco.Lab2 объединяет сортировку Bucket sort из первой работы с калькуляторами преподавателя.
+Кнопки ниже собирают C89-компоненты с настоящим Eco SDK и запускают нативные клиенты.</p>
+<section class="panel">
+  <h2>Запуск на этом Mac</h2>
+  <div class="controls">
+    <label>Промпт<select id="variant"><option value="gost">Подробный · ТЗ по ГОСТ</option><option value="short">Краткий</option><option value="ordinary-control">Обычный длинный · контроль</option></select></label>
+    <label>Повтор<select id="repeat"><option>1</option><option selected>2</option><option>3</option></select></label>
+    <label>Профиль SDK<select id="profile"><option>A</option><option>C</option></select></label>
+    <button id="demo">Арифметика и сортировка</button>
+    <button id="verify" class="secondary">Проверить ACOM</button>
+  </div>
+  <p class="muted">A и C имеют одинаковый CID в учебной поставке и проверяются отдельно.
+  Проверка ACOM выполняет 39 436 утверждений для выбранной конфигурации с UBSan.</p>
+  <div id="status" role="status" aria-live="polite">Готово к запуску. Результатов ещё нет.</div>
+  <p id="command" class="muted"></p>
+  <pre id="output" tabindex="0" aria-label="Фактический вывод клиента">Выберите демонстрацию или независимую проверку.</pre>
+</section>
+<section class="panel">
+  <h2>Что показывает демонстрация</h2>
+  <p>Клиент запрашивает цепочку интерфейсов <code>Lab2 → X → Y → Lab65</code>, выполняет
+  четыре арифметические операции и сортирует массив <code>[7, −4, 2, 7, 0, −100]</code>.
+  Целочисленное деление <code>7 / 2</code> возвращает <code>3</code>.</p>
+  <p>Независимые проверки дополнительно обходят все пары публичных интерфейсов:
+  <strong>4 × 4 у Lab65 и 5 × 5 у Lab2</strong>, проверяют канонический Unknown,
+  удержание ссылок, внешний контроллер, отказы зависимостей и сортировку относительно эталона.</p>
+  <img src="/architecture.png" alt="Архитектура: Lab2 агрегирует Lab65 и включает E; Lab65 включает A или C и D; D включает B, E агрегирует B.">
+</section>
+<footer>Страница добавлена для демонстрации после эксперимента. Её время не входит в измерения генерации Qwen.
+Тесты конечны; проверенный профиль — macOS arm64. Отчёт и полная история находятся в репозитории.</footer>
+<script>
+const statusEl = document.querySelector('#status');
+const outputEl = document.querySelector('#output');
+const commandEl = document.querySelector('#command');
+async function run(action) {
+  const settings = {action, variant: document.querySelector('#variant').value,
+    repeat: Number(document.querySelector('#repeat').value), profile: document.querySelector('#profile').value};
+  document.querySelectorAll('button, select').forEach(el => el.disabled = true);
+  statusEl.className = ''; statusEl.textContent = 'Сборка и запуск нативного клиента…';
+  commandEl.textContent = ''; outputEl.textContent = 'Ожидаем вывод процесса на этом Mac…';
+  try {
+    const response = await fetch('/api/run', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(settings)});
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
+    statusEl.className = result.passed ? 'pass' : 'fail';
+    statusEl.textContent = `${result.passed ? 'PASS' : 'FAIL'} · ${result.variant} · повтор ${result.repeat} · профиль ${result.profile} · ${result.seconds} с · код выхода ${result.returncode}`;
+    commandEl.textContent = result.command;
+    outputEl.textContent = result.output;
+  } catch (error) {
+    statusEl.className = 'fail'; statusEl.textContent = 'Ошибка запуска'; outputEl.textContent = String(error);
+  } finally { document.querySelectorAll('button, select').forEach(el => el.disabled = false); }
+}
+document.querySelector('#demo').addEventListener('click', () => run('demo'));
+document.querySelector('#verify').addEventListener('click', () => run('verify'));
+</script>
+</body>

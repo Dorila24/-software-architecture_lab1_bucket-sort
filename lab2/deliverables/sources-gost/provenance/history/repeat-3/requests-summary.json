@@ -1,0 +1,322 @@
+[
+  {
+    "index": 1,
+    "started_at": "2026-10-20T18:41:07.766908+00:00",
+    "duration_s": 237.2892892920063,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 15515,
+      "completion_tokens": 2413,
+      "total_tokens": 17928
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T18:45:05.770931+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 1,
+        "accepted": false,
+        "findings": [
+          "Третий ГОСТ ответ не компилируется: Markdown включён как C, неверные относительные пути SharedFiles/Vendor, C99 объявления и несовместимые типы system.",
+          "В объектах хранится Unknown-таблица по значению, нет полных таблиц численных методов Lab65 и GetVersion Lab2.",
+          "Публичные X/Y возвращаются непосредственно из независимых калькуляторов, что не сохраняет единую identity составного объекта.",
+          "Параметр outer фактически игнорируется, private ND и публичное делегирование controller отсутствуют; Lab2 создаёт независимый Lab65 напрямую.",
+          "Системные/шинные/allocator ссылки не освобождаются полностью."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-01.c",
+    "source_sha256": "f99b81dd63ecf651c1698b06c5d7ebdc4c25cde4e4d518886e79cef8b0ec92f8"
+  },
+  {
+    "index": 2,
+    "started_at": "2026-10-20T23:25:25.181187+00:00",
+    "duration_s": 252.41775500000222,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 10732,
+      "completion_tokens": 3475,
+      "total_tokens": 14207
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-20T23:29:38.135454+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 2,
+        "source_sha256": "5b12a5b0241cc6ed7c951d4a2a41a8493a65c81223545e4b37ccdcda64d17837",
+        "accepted": false,
+        "findings": [
+          "Все21callbacks/prototypesи4tablesсгенерированы,обаcreatorsintentionalerrorstubs. Ноcallbackprototypes/defsнеимеютECOCALLMETHOD;6compileerrors5declsafterguards+//.",
+          "PrivateQIpublicbranchesошибочноlocal_refs++ПЛЮСpublicAddRef:это2разныхссылкиприaggregate,лишняяlocalcountтечёт. PrivateDestructorнеReleaseinnerX/innerY/system. Нетguardsme/iidпередoffset,derivedstatechecksненадёжны.",
+          "Следующееуточнениемеханическиисправляетметоды/ABI/C89/nullguard,убирает3лишнихlocalincrementsвprivateQIи добавляетpartial-safeownedcleanup. Реальныйconstructorбудетотдельнымэтапом;дополнительныйruntimeэтойверсии не выполнялся."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-02.c",
+    "source_sha256": "5b12a5b0241cc6ed7c951d4a2a41a8493a65c81223545e4b37ccdcda64d17837"
+  },
+  {
+    "index": 3,
+    "started_at": "2026-10-21T00:01:04.056103+00:00",
+    "duration_s": 304.7016871250016,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 13708,
+      "completion_tokens": 3833,
+      "total_tokens": 17541
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T00:06:09.300475+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 3,
+        "source_sha256": "5ae2e4325fd55945a9cdaf6b8cb3b7326bc69f3b2373a123e527ac1b0c66ffe4",
+        "accepted": false,
+        "findings": [
+          "PrivateQI исправлен: public branches больше не увеличивают local_refs перед публичным AddRef. PrivateRelease теперь освобождает X/Y/System, сохраняет allocator и возвращает 0 после Free.",
+          "Проверки исходного me/riid предшествуют offset, но объявления owner после guards нарушают C89 (20 первых compiler errors). ECOCALLMETHOD всё ещё отсутствует на 21 callbacks/prototypes.",
+          "Пять sort wrappers добавляют SDK -18 и локальную allocator guard вместо прямого numerical forwarding; оба creator пока безопасные заглушки. Следующий узкий этап только mechanical C89/macros/direct numeric forwarding."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-03.c",
+    "source_sha256": "5ae2e4325fd55945a9cdaf6b8cb3b7326bc69f3b2373a123e527ac1b0c66ffe4"
+  },
+  {
+    "index": 4,
+    "started_at": "2026-10-21T00:43:06.830461+00:00",
+    "duration_s": 281.4774313340022,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 13660,
+      "completion_tokens": 3574,
+      "total_tokens": 17234
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T00:47:50.168026+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 4,
+        "source_sha256": "4331dc5636b6c6d4accab2ecd14a4fec913f4760406c712c6617ec7c1c1b025b",
+        "accepted": false,
+        "findings": [
+          "Все17ownerDECLперенесеныпередguards,assignmentпослеguards;5sortwrapperсталитолькопрямымnumericreturn. C89сборкатеперьуспешна;Lab65/Lab2ещёsafecreatorstubs.",
+          "Publiccontrollerdelegation,privateQI4branchesсединственнымref increment,savedallocator/dependencycleanup/immediatereturn0сохранены. Но21callbacks/prototypesпо-прежнемуБЕЗECOCALLMETHOD.",
+          "Следующийэтапузкий:добавитьТОЛЬКОECOCALLMETHODво21prototype/definitionбезлюбойправкител;затемгенерироватьконструкторLab65изсобственногокаркаса."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-04.c",
+    "source_sha256": "4331dc5636b6c6d4accab2ecd14a4fec913f4760406c712c6617ec7c1c1b025b"
+  },
+  {
+    "index": 5,
+    "started_at": "2026-10-21T02:00:12.223615+00:00",
+    "duration_s": 293.9432977500037,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 13360,
+      "completion_tokens": 3742,
+      "total_tokens": 17102
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T02:05:08.141501+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 5,
+        "source_sha256": "513278e2d10fae326548e3cc622dceb20fc5b85367fe00cc5ca42f496a973290",
+        "accepted": false,
+        "findings": [
+          "Добавлены ровно42ECOCALLMETHOD:21callbackпрототип и21определение. После удаления этих макросов токены полностью совпадают с собственным ответом4; тела, таблицы и состояния не изменены.",
+          "Методы и таблицы компилируются в C89, me/riid/out guards предшествуют owner recovery, private QI/cleanup/public controller delegation и5numericwrappers соответствуют контракту.",
+          "Конструкторы ещё безопасные заглушки. Следующее продолжение реализует только createEcoLab65 с реальными SDK acquisition и reference-case правилами; после ручного разбора требуется независимая A/C диагностика."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-05.c",
+    "source_sha256": "513278e2d10fae326548e3cc622dceb20fc5b85367fe00cc5ca42f496a973290"
+  },
+  {
+    "index": 6,
+    "started_at": "2026-10-21T10:07:32.341107+00:00",
+    "duration_s": 362.48193900000024,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 14491,
+      "completion_tokens": 4572,
+      "total_tokens": 19063
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T10:13:36.797511+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 6,
+        "source_sha256": "55d2c78b288e6576af2ae530c25bafba4d80a9a416b7e921ba6175d82c8df988",
+        "accepted": false,
+        "findings": [
+          "Все locals нового конструктора стоят перед guards, C89 и42callbackannotations сохранены; весь остальной собственный исходник совпадает с ответом5. Реальные acquisition и начальная ссылка1 реализованы.",
+          "Но borrowed get_Manager pointer используется после Release extension; aggregate earlyreturn не освобождает bus; standalone после однократного privateRelease попадает в общий cleanup и освобождает state повторно; null dependency/status0 возвращает ложный успех. Ownership comment не добавлен.",
+          "Следующее уточнение меняет только четыре локальных участка этого конструктора и добавляет один borrowed-controller block comment. Независимый runtime пока не допускается. Исходный UNSENT промпт до masked-body уточнения сохранён отдельно; фактически отправленная версия подтверждена followup05."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-06.c",
+    "source_sha256": "55d2c78b288e6576af2ae530c25bafba4d80a9a416b7e921ba6175d82c8df988"
+  },
+  {
+    "index": 7,
+    "started_at": "2026-10-21T10:54:13.297138+00:00",
+    "duration_s": 357.44929358399986,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 14691,
+      "completion_tokens": 4653,
+      "total_tokens": 19344
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T11:00:12.702816+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 7,
+        "source_sha256": "d21bb3275a0927ec43162994c94d6991f7feb2b71849da2209d91180a7a6cf46",
+        "accepted": false,
+        "findings": [
+          "Исправлены managerGUID VALUE до extensionRelease, nonzero status при null dependencies и Release bus на aggregate earlyreturn. Borrowed-controller note теперьвалидный C89 block comment. Методы/таблицы/макросы сохранены.",
+          "Но standalone ifsuccess/else по-прежнему снимает одну construction ref и затем общий if(state) cleanup снимает вторую; локальный aliasstate не очищен. Это единственное оставшееся опасное место перед квалификацией Lab65. Runtime не запускается.",
+          "Следующее максимально узкое уточнение НЕ удаляет уже существующие ветки: просит лишь очистить LOCAL state alias после существующего if/else release, до cleanup label. Тогда earlier failures всё ещё уничтожают nonnull partial state, publication не освобождается дважды. Реальный ответ7 сохраняется в роли assistant."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-07.c",
+    "source_sha256": "d21bb3275a0927ec43162994c94d6991f7feb2b71849da2209d91180a7a6cf46"
+  },
+  {
+    "index": 8,
+    "started_at": "2026-10-21T11:31:16.002482+00:00",
+    "duration_s": 353.8385269999999,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 14349,
+      "completion_tokens": 4659,
+      "total_tokens": 19008
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T11:37:11.877354+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 8,
+        "source_sha256": "4687c1134f2a386aef7fade8078a5b1cf3631a0d143b56faa1f9f4fe95912c21",
+        "accepted": false,
+        "findings": [
+          "Добавлена ровно одна nullassignment localstate после существующего if/else constructionRelease; остальные байты прежние. Standalone doubleRelease устранён.",
+          "Оба неизменных A/C клиента:17100assertions, только2ожидаемых missingLab2 failures,live0/env1/mem1,UBSanclean. Lab65квалифицирован, полный Lab2ещёнеготов.",
+          "Следующий запрос генерирует полный Lab2 поверх точной собственной квалифицированной версии8; не передаётся реализация другого повтора."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-08.c",
+    "source_sha256": "4687c1134f2a386aef7fade8078a5b1cf3631a0d143b56faa1f9f4fe95912c21"
+  },
+  {
+    "index": 9,
+    "started_at": "2026-10-21T12:16:05.279697+00:00",
+    "duration_s": 640.2324083330004,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 16124,
+      "completion_tokens": 8736,
+      "total_tokens": 24860
+    },
+    "error": null,
+    "validation_passed": false,
+    "validation_at": "2026-10-21T12:26:46.051837+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 9,
+        "source_sha256": "ca2a0a4e606b7a6f9f5d92b1aeb76d681132ec0744f36b37c052c58e63371253",
+        "accepted": false,
+        "findings": [
+          "Full Lab2 introduced, but primary QI omits aggregated Lab65 and X/Y return different Unknown identities; duplicated controls. Compile also rejects uncast outer primary. One-E dependency and copied manager GUID retained. Targeted Lab2 controls correction requested."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-09.c",
+    "source_sha256": "ca2a0a4e606b7a6f9f5d92b1aeb76d681132ec0744f36b37c052c58e63371253"
+  },
+  {
+    "index": 10,
+    "started_at": "2026-10-21T13:51:56.032261+00:00",
+    "duration_s": 632.9683512919983,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 18457,
+      "completion_tokens": 8162,
+      "total_tokens": 26619
+    },
+    "error": null,
+    "validation_passed": true,
+    "validation_at": "2026-10-21T14:02:35.070612+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 10,
+        "source_sha256": "c83473531a3c399d16685c5fd11d1dc85743e7afdfc178cede8686796dc09acd",
+        "accepted": false,
+        "findings": [
+          "Both unchanged A/C suites pass28936/0, live0/env1/mem1 and UBSan clean. Diff from own9 fixes only missing aggregate QI, six typed Lab2 X/Y controls and required outer cast; complete qualified Lab65 prefix matches own8 after comment/Id include normalization.",
+          "Manual architecture review: public65/X/Y delegate to borrowed controller; private Unknown local count; Lab2 canonical primary Unknown, own X/Y use correct offsets and primary controls; aggregate QI returns private-inner QI result directly, oneE.Y then sameE.QIX and actual bus Lab65 outer primary/privateUnknown. All 38 definitions/prototypes use proper SDK types/ECOCALLMETHOD; redundant exact function casts in tables do not hide signature differences.",
+          "Both creators copy manager GUID before extension Release, transfer and clear aliases before dependencies, correctly transfer aggregate initial ref or drop exactly one construction ref on standalone publication/error, release bus and partial objects. Destructors save allocator, release all owned interfaces/system, Free state before allocator Release and immediately return; supported sets constant after creation.",
+          "C89 and meaningful names/consistent layout/short wrappers are readable. One accurate borrowed-controller comment exists, but the requested private-inner ownership/cycle comment was omitted. Request comments-only in same run before final readiness; no manual formatting or C edits."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-10.c",
+    "source_sha256": "c83473531a3c399d16685c5fd11d1dc85743e7afdfc178cede8686796dc09acd"
+  },
+  {
+    "index": 11,
+    "started_at": "2026-10-21T14:28:44.525035+00:00",
+    "duration_s": 624.9536604170025,
+    "ok": true,
+    "usage": {
+      "prompt_tokens": 17689,
+      "completion_tokens": 8196,
+      "total_tokens": 25885
+    },
+    "error": null,
+    "validation_passed": true,
+    "validation_at": "2026-10-21T14:39:15.477330+00:00",
+    "manual_findings": [
+      {
+        "run": "20261020-214107-9ca29d1d",
+        "request": 11,
+        "source_sha256": "9f72405e65fe409b0ad12c3d8d822c788a379a464ab1bba82e6b48c3a75dc9b7",
+        "accepted": true,
+        "findings": [
+          "Both unchanged A/C suites pass28936/0, live0/env1/mem1 and UBSan clean. Diff from own9 fixes only missing aggregate QI, six typed Lab2 X/Y controls and required outer cast; complete qualified Lab65 prefix matches own8 after comment/Id include normalization.",
+          "Manual architecture review: public65/X/Y delegate to borrowed controller; private Unknown local count; Lab2 canonical primary Unknown, own X/Y use correct offsets and primary controls; aggregate QI returns private-inner QI result directly, oneE.Y then sameE.QIX and actual bus Lab65 outer primary/privateUnknown. All 38 definitions/prototypes use proper SDK types/ECOCALLMETHOD; redundant exact function casts in tables do not hide signature differences.",
+          "Both creators copy manager GUID before extension Release, transfer and clear aliases before dependencies, correctly transfer aggregate initial ref or drop exactly one construction ref on standalone publication/error, release bus and partial objects. Destructors save allocator, release all owned interfaces/system, Free state before allocator Release and immediately return; supported sets constant after creation.",
+          "Comments-only response11 adds one accurate C89 block comment at the owned private inner Unknown, explaining the controller-cycle risk. Every executable token equals manually reviewed10; both full A/C suites still28936/0, live0/env1/mem1 and UBSan clean. Meaningful names, consistent C89 layout, typed focused wrappers, two ownership comments and explicit staged constructors pass readability review."
+        ]
+      }
+    ],
+    "model_response_source": "model-response-11.c",
+    "source_sha256": "9f72405e65fe409b0ad12c3d8d822c788a379a464ab1bba82e6b48c3a75dc9b7"
+  }
+]

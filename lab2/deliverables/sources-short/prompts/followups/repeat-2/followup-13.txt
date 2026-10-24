@@ -1,0 +1,7 @@
+Continue this SAME measured run. Your exact response13 PASSES BOTH full frozen A/C suites and the manual architecture review. Make COMMENTS ONLY changes and return the ENTIRE complete source in ONE c block. EVERY noncomment C token must remain identical to response13, including the restored publication QI and its failure guard. Do not change any declaration, table or executable statement.
+
+1. REPLACE the WRONG comment beside Lab2State owned_inner_unknown. That field OWNS the PRIVATE nondelegating Unknown of the aggregated Lab65, and Lab2 destructor Releases that owned reference. It is NOT the borrowed controller. The new short meaningful C89 BLOCK comment should explain private inner ownership and why retaining a public delegating inner interface instead would form an outer reference cycle. Do not retain the wrong borrowed label at this field. The actual Lab65 controller field remains BORROWED with its existing correct comment; preserve that separate comment.
+
+2. DELETE the process-history comment immediately before final publication QI in createEcoLab2, the one mentioning restoration from response11. It is an experiment note, not an explanation of code purpose. Do not change the following QI line or its condition.
+
+Use only ANSI C89 slash-star/star-slash BLOCK comment syntax, no line comments, no placeholder syntax examples. Keep all other comments and every noncomment token unchanged. All previous failures, requests, usage and time remain counted.

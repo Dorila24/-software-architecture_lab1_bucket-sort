@@ -1,0 +1,454 @@
+[
+  {
+    "repeat": 1,
+    "seed": 42,
+    "position": 3,
+    "label": "ordinary",
+    "path": "20261020-211627-1c611fe0",
+    "source_sha256": "e755593350942590a81bf0c4894053b088def75c5f3c6c70acb284b64c02f81b",
+    "metrics": {
+      "requests": 15,
+      "successful_requests": 15,
+      "failed_requests": 0,
+      "requests_without_usage": 0,
+      "prompt_tokens_known": 208853,
+      "completion_tokens_known": 66879,
+      "total_tokens_known": 275732,
+      "tokens_complete": false,
+      "requests_complete": false,
+      "timing_complete": false,
+      "initial_request_prompt_tokens": 15293,
+      "model_time_s": 5240.898422582007,
+      "tool_time_s": 0.1667737059948422,
+      "validation_time_s": 25.733373580993202,
+      "active_time_s": 5267.115838874995,
+      "tool_calls": 15,
+      "repair_cycles": 14,
+      "estimated_cost_known": 0.0,
+      "context_compaction_time_s": 0.07695183498304914
+    },
+    "budget_extensions": [
+      {
+        "at": "2026-10-20T21:35:47.499486+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 1,
+            "after": 2
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T21:44:08.304087+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 2,
+            "after": 3
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T21:55:56.314604+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 3,
+            "after": 4
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T22:07:57.829992+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 4,
+            "after": 5
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T22:19:53.865750+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 5,
+            "after": 6
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T22:45:49.548044+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 6,
+            "after": 7
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T23:04:35.755918+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 7,
+            "after": 8
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T23:31:00.030429+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 8,
+            "after": 9
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T00:10:16.263188+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 9,
+            "after": 10
+          },
+          "max_wall_s": {
+            "before": 3600,
+            "after": 5400.0
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T01:23:12.574012+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 10,
+            "after": 11
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T02:06:10.066816+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 11,
+            "after": 12
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T10:15:39.653717+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 12,
+            "after": 13
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T11:02:31.967624+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 13,
+            "after": 14
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T11:43:00.246620+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 14,
+            "after": 15
+          },
+          "max_wall_s": {
+            "before": 5400.0,
+            "after": 7200.0
+          }
+        }
+      }
+    ],
+    "manual_followups": 15,
+    "status": "passed"
+  },
+  {
+    "repeat": 2,
+    "seed": 43,
+    "position": 2,
+    "label": "ordinary",
+    "path": "20261020-212446-4628c000",
+    "source_sha256": "636dbc1b5a0bbf28cc16c3f4e6902c4d91a6ff49e606eea98145d56f1c80af81",
+    "metrics": {
+      "requests": 9,
+      "successful_requests": 9,
+      "failed_requests": 0,
+      "requests_without_usage": 0,
+      "prompt_tokens_known": 128199,
+      "completion_tokens_known": 43300,
+      "total_tokens_known": 171499,
+      "tokens_complete": true,
+      "requests_complete": true,
+      "timing_complete": true,
+      "initial_request_prompt_tokens": 15293,
+      "model_time_s": 3453.7858241679887,
+      "tool_time_s": 0.0947685820026436,
+      "validation_time_s": 16.451654583000845,
+      "active_time_s": 3470.5157560019934,
+      "tool_calls": 9,
+      "repair_cycles": 8,
+      "estimated_cost_known": 0.0,
+      "context_compaction_time_s": 0.032559873994159716
+    },
+    "budget_extensions": [
+      {
+        "at": "2026-10-20T22:29:30.588116+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 1,
+            "after": 2
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T22:54:33.952614+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 2,
+            "after": 3
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T23:14:33.078577+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 3,
+            "after": 4
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T23:45:22.068030+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 4,
+            "after": 5
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T00:28:52.237402+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 5,
+            "after": 6
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T01:41:33.121808+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 6,
+            "after": 7
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T09:47:15.135196+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 7,
+            "after": 8
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T10:34:27.096436+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 8,
+            "after": 9
+          },
+          "max_wall_s": {
+            "before": 3600,
+            "after": 5400.0
+          }
+        }
+      }
+    ],
+    "manual_followups": 8,
+    "status": "passed"
+  },
+  {
+    "repeat": 3,
+    "seed": 44,
+    "position": 1,
+    "label": "ordinary",
+    "path": "20261020-213246-2112456a",
+    "source_sha256": "7ee025d927875fa8de34038faea604443e54799be9921c00ae08cf566da04e87",
+    "metrics": {
+      "requests": 16,
+      "successful_requests": 16,
+      "failed_requests": 0,
+      "requests_without_usage": 0,
+      "prompt_tokens_known": 229326,
+      "completion_tokens_known": 77558,
+      "total_tokens_known": 306884,
+      "tokens_complete": true,
+      "requests_complete": true,
+      "timing_complete": true,
+      "initial_request_prompt_tokens": 15293,
+      "model_time_s": 5999.268011709997,
+      "tool_time_s": 0.17744249800352918,
+      "validation_time_s": 28.345093833000192,
+      "active_time_s": 6028.101532789015,
+      "tool_calls": 16,
+      "repair_cycles": 15,
+      "estimated_cost_known": 0.0,
+      "context_compaction_time_s": 0.04754408300141222
+    },
+    "budget_extensions": [
+      {
+        "at": "2026-10-20T23:19:31.419315+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 1,
+            "after": 2
+          }
+        }
+      },
+      {
+        "at": "2026-10-20T23:51:01.091092+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 2,
+            "after": 3
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T00:34:02.407702+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 3,
+            "after": 4
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T01:50:36.187772+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 4,
+            "after": 5
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T09:56:49.542257+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 5,
+            "after": 6
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T10:43:58.607294+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 6,
+            "after": 7
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T11:21:04.521765+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 7,
+            "after": 8
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T12:05:07.312413+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 8,
+            "after": 9
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T13:41:04.413075+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 9,
+            "after": 10
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T14:17:32.960006+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 10,
+            "after": 11
+          },
+          "max_wall_s": {
+            "before": 3600,
+            "after": 5400.0
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T14:53:04.292614+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 11,
+            "after": 12
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T15:25:38.554089+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 12,
+            "after": 13
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T16:02:01.858782+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 13,
+            "after": 14
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T16:31:26.214088+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 14,
+            "after": 15
+          },
+          "max_wall_s": {
+            "before": 5400.0,
+            "after": 7200.0
+          }
+        }
+      },
+      {
+        "at": "2026-10-21T16:53:24.630986+00:00",
+        "changes": {
+          "max_requests": {
+            "before": 15,
+            "after": 16
+          }
+        }
+      }
+    ],
+    "manual_followups": 15,
+    "status": "passed"
+  }
+]

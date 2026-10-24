@@ -1,0 +1,17 @@
+{
+  "short": {
+    "directory": "sources-short",
+    "file_count": 206,
+    "archive_sha256": "112d9eb78c4ead29ce7a896cf1bb4cc3d3881dc3324247951cf0f6bec0b7198a"
+  },
+  "detailed": {
+    "directory": "sources-gost",
+    "file_count": 179,
+    "archive_sha256": "bbf75e471f39090b9dc5fdd33f407ea51874d1f89d9cf0e93cde6491233928b5"
+  },
+  "ordinary": {
+    "directory": "sources-ordinary-control",
+    "file_count": 176,
+    "archive_sha256": "2b989607a7b999d464ce8c3d34f15486965fa843c14cec68f948d36fdefddffa"
+  }
+}

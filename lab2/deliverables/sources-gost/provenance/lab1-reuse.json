@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/Dorila24/-software-architecture_lab1_bucket-sort",
+  "commit": "0c08f541e0f47ac544685b93c43f0e0cdd5b0f71",
+  "numerical_source": "SourceFiles/BucketMethods.c",
+  "sha256": "d5a76ceec4fece2c4330a4b89bbf8a88b378294527073ceb4e27ec8de39e399c",
+  "unchanged": true,
+  "old_factory_not_reused": true
+}

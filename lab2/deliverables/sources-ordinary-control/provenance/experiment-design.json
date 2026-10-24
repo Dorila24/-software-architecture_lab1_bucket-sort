@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-20T15:16:50.596868+00:00",
+  "comparison_valid": true,
+  "predecessor_invalid_series": "../experiment-20261020-acom-gost",
+  "seed_directory": "seed-v2/Eco.Lab2",
+  "seed_sha256": "172c0e68138870fd19a3fd568985053f7d155357b145b78d1562ca7e18d2697c",
+  "configs": {
+    "1": "config-v2-pair-1.toml",
+    "2": "config-v2-pair-2.toml",
+    "3": "config-v2-pair-3.toml"
+  },
+  "checks_directory": "checks-v2",
+  "initial_request_budget": 1,
+  "method": "three matched short/GOST pairs plus three ordinary-long controls; one initial response per run, explicit measured followups",
+  "runs": [
+    {
+      "repeat": 1,
+      "seed": 42,
+      "position": 1,
+      "label": "short",
+      "path": "20261020-182007-14dc44ee"
+    },
+    {
+      "repeat": 1,
+      "seed": 42,
+      "position": 2,
+      "label": "detailed",
+      "path": "20261020-211201-98f1f599"
+    },
+    {
+      "repeat": 1,
+      "seed": 42,
+      "position": 3,
+      "label": "ordinary",
+      "path": "20261020-211627-1c611fe0"
+    },
+    {
+      "repeat": 2,
+      "seed": 43,
+      "position": 1,
+      "label": "detailed",
+      "path": "20261020-212050-b55d6456"
+    },
+    {
+      "repeat": 2,
+      "seed": 43,
+      "position": 2,
+      "label": "ordinary",
+      "path": "20261020-212446-4628c000"
+    },
+    {
+      "repeat": 2,
+      "seed": 43,
+      "position": 3,
+      "label": "short",
+      "path": "20261020-212925-cba220d8"
+    },
+    {
+      "repeat": 3,
+      "seed": 44,
+      "position": 1,
+      "label": "ordinary",
+      "path": "20261020-213246-2112456a"
+    },
+    {
+      "repeat": 3,
+      "seed": 44,
+      "position": 2,
+      "label": "short",
+      "path": "20261020-213709-0a0504ad"
+    },
+    {
+      "repeat": 3,
+      "seed": 44,
+      "position": 3,
+      "label": "detailed",
+      "path": "20261020-214107-9ca29d1d"
+    }
+  ],
+  "plan": [
+    {
+      "repeat": 1,
+      "seed": 42,
+      "position": 1,
+      "label": "short",
+      "prompt": "short.txt"
+    },
+    {
+      "repeat": 1,
+      "seed": 42,
+      "position": 2,
+      "label": "detailed",
+      "prompt": "detailed.txt"
+    },
+    {
+      "repeat": 1,
+      "seed": 42,
+      "position": 3,
+      "label": "ordinary",
+      "prompt": "ordinary-long.txt"
+    },
+    {
+      "repeat": 2,
+      "seed": 43,
+      "position": 1,
+      "label": "detailed",
+      "prompt": "detailed.txt"
+    },
+    {
+      "repeat": 2,
+      "seed": 43,
+      "position": 2,
+      "label": "ordinary",
+      "prompt": "ordinary-long.txt"
+    },
+    {
+      "repeat": 2,
+      "seed": 43,
+      "position": 3,
+      "label": "short",
+      "prompt": "short.txt"
+    },
+    {
+      "repeat": 3,
+      "seed": 44,
+      "position": 1,
+      "label": "ordinary",
+      "prompt": "ordinary-long.txt"
+    },
+    {
+      "repeat": 3,
+      "seed": 44,
+      "position": 2,
+      "label": "short",
+      "prompt": "short.txt"
+    },
+    {
+      "repeat": 3,
+      "seed": 44,
+      "position": 3,
+      "label": "detailed",
+      "prompt": "detailed.txt"
+    }
+  ],
+  "prompts_sha256": {
+    "short": "2add72a8c648bc1e21547ef88d4104c838fcbc4365b980ee8937c1682a621c91",
+    "detailed": "bb18bc731a587a5e0cc1a190f90dbf8f8f1ee0ee8176fab57285d820db585ad0",
+    "ordinary": "e87c86f8d47c3d175a74d358f282f1430b70d0fa5695c593df3021ef2ab7de4e"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "checked_at": "2026-10-24T09:17:16.285157+00:00",
+  "all_18_baseline_and_extended_passed": true,
+  "results": [
+    {
+      "variant": "short",
+      "repeat": 1,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "short",
+      "repeat": 1,
+      "profile": "C",
+      "passed": true
+    },
+    {
+      "variant": "short",
+      "repeat": 2,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "short",
+      "repeat": 2,
+      "profile": "C",
+      "passed": true
+    },
+    {
+      "variant": "short",
+      "repeat": 3,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "short",
+      "repeat": 3,
+      "profile": "C",
+      "passed": true
+    },
+    {
+      "variant": "gost",
+      "repeat": 1,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "gost",
+      "repeat": 1,
+      "profile": "C",
+      "passed": true
+    },
+    {
+      "variant": "gost",
+      "repeat": 2,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "gost",
+      "repeat": 2,
+      "profile": "C",
+      "passed": true
+    },
+    {
+      "variant": "gost",
+      "repeat": 3,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "gost",
+      "repeat": 3,
+      "profile": "C",
+      "passed": true
+    },
+    {
+      "variant": "ordinary-control",
+      "repeat": 1,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "ordinary-control",
+      "repeat": 1,
+      "profile": "C",
+      "passed": true
+    },
+    {
+      "variant": "ordinary-control",
+      "repeat": 2,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "ordinary-control",
+      "repeat": 2,
+      "profile": "C",
+      "passed": true
+    },
+    {
+      "variant": "ordinary-control",
+      "repeat": 3,
+      "profile": "A",
+      "passed": true
+    },
+    {
+      "variant": "ordinary-control",
+      "repeat": 3,
+      "profile": "C",
+      "passed": true
+    }
+  ],
+  "report_sha256": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201",
+  "sdk_models_solver_environment_excluded": true,
+  "local_metadata_paths_are_historical_not_build_dependencies": true
+}
