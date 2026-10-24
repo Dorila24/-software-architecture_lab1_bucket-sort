@@ -4,3 +4,5 @@
 *.zip binary
 *.png binary
 *.a binary
+*.jpg binary
+*.mp4 binary

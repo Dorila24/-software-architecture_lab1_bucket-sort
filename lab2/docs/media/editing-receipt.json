@@ -1,0 +1,52 @@
+{
+  "source_sha256": "d7e67299d5db20bed1dc1497f052626b90e4f82cfd665824fd3f14a57a472b8a",
+  "source_dimensions": [
+    3024,
+    1964
+  ],
+  "source_duration_seconds": 46.27,
+  "retained_segments_seconds": [
+    [
+      7.2,
+      12.8
+    ],
+    [
+      14.2,
+      19.2
+    ],
+    [
+      20.6,
+      30.0
+    ],
+    [
+      31.4,
+      35.8
+    ],
+    [
+      37.2,
+      41.6
+    ],
+    [
+      43.2,
+      46.2
+    ]
+  ],
+  "crop_xywh": [
+    448,
+    1090,
+    2136,
+    488
+  ],
+  "output_dimensions": [
+    1600,
+    366
+  ],
+  "output_fps": 30,
+  "encoding": "H.264 yuv420p, CRF18, faststart, no audio",
+  "edits": "Crop to status/command/output; remove initial idle and compilation-wait sections; retained sections play at original speed. Displayed results/timing text unchanged.",
+  "recorded_timings_are": "Build plus demo process wall time; not isolated sorting/arithmetic benchmarks.",
+  "output_sha256": "53e35a1f0266d479396e777343672c0bc5f572c32aa3a68539d0fb6dc300c259",
+  "bytes": 380266,
+  "output_duration_seconds": 31.97,
+  "full_decode_check": "passed, no decoding errors"
+}

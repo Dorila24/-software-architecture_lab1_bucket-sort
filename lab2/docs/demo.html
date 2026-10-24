@@ -36,7 +36,7 @@ Eco.Lab2 объединяет сортировку Bucket sort из первой
     <button id="verify" class="secondary">Проверить ACOM</button>
   </div>
   <p class="muted">A и C имеют одинаковый CID в учебной поставке и проверяются отдельно.
-  Проверка ACOM выполняет 39 436 утверждений для выбранной конфигурации с UBSan.</p>
+  Проверка ACOM выполняет 39 436 утверждений для выбранной конфигурации с UBSan. Время в строке PASS включает сборку и запуск; скорость алгоритма приведена отдельно в таблицах README.</p>
   <div id="status" role="status" aria-live="polite">Готово к запуску. Результатов ещё нет.</div>
   <p id="command" class="muted"></p>
   <pre id="output" tabindex="0" aria-label="Фактический вывод клиента">Выберите демонстрацию или независимую проверку.</pre>
@@ -68,7 +68,7 @@ async function run(action) {
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
     statusEl.className = result.passed ? 'pass' : 'fail';
-    statusEl.textContent = `${result.passed ? 'PASS' : 'FAIL'} · ${result.variant} · повтор ${result.repeat} · профиль ${result.profile} · ${result.seconds} с · код выхода ${result.returncode}`;
+    statusEl.textContent = `${result.passed ? 'PASS' : 'FAIL'} · ${result.variant} · повтор ${result.repeat} · профиль ${result.profile} · сборка и запуск: ${result.seconds} с · код выхода ${result.returncode}`;
     commandEl.textContent = result.command;
     outputEl.textContent = result.output;
   } catch (error) {

@@ -32,8 +32,8 @@
     "sha256": "8cd89e1c643603284a59c97999012ef805ec87b26f9f078e50506e2f7a3c21f1"
   },
   "README.md": {
-    "bytes": 18377,
-    "sha256": "a53d89870ce9f7b848e959e14d80e5ec3135d3c3757eb432fc614e7698874842"
+    "bytes": 18690,
+    "sha256": "70b071cfc12fe4c1188cf6c2acaa2daf06ed4d4933c3a958b1846071ba202f6f"
   },
   "SharedFiles/ErrEcoLab65.h": {
     "bytes": 785,
@@ -100,20 +100,20 @@
     "sha256": "12e3d90d530e617875db238a3ab93a5e7918539c1d69dd7b8e57c67f58c93c60"
   },
   "lab2/.gitattributes": {
-    "bytes": 139,
-    "sha256": "5ac76b7671b06e66aa313eec5980e5bf4830e8393fb90445159dae5d6b44f899"
+    "bytes": 165,
+    "sha256": "a76e0853afe27f63c166022116647b7ac6120f5d71745ac5779e4a96946480d4"
   },
   "lab2/.gitignore": {
     "bytes": 191,
     "sha256": "906dd3c472e16668c588ea6390ceae36cbc525b5dcc3eb9605d5c6b643382386"
   },
   "lab2/README.md": {
-    "bytes": 19009,
-    "sha256": "510c56be8524d14da62e5612e087821e307d09966d5f74e57ade0706ae29fb3d"
+    "bytes": 27560,
+    "sha256": "d0984b1327a459bdb936bda8c7b647c214635680b8197b5dc92792c0201b6bd4"
   },
   "lab2/SHA256SUMS": {
-    "bytes": 92143,
-    "sha256": "19979e4b694b492ec4888349804acc5599f87259e98a267add553ba8241f3d34"
+    "bytes": 92540,
+    "sha256": "581eadf26f68e378d94000ce3c2b55b191a7526094d87fa307c44ec0827e1ff5"
   },
   "lab2/THIRD_PARTY_NOTICES.md": {
     "bytes": 2337,
@@ -2612,8 +2612,8 @@
     "sha256": "f0abc3f95de7b5e722fe7fd386e7aad3dab3b7551ea8d6b59d5da7c59cd594a8"
   },
   "lab2/docs/demo.html": {
-    "bytes": 6887,
-    "sha256": "14e13b182cd48181dd69b2dba29af30a0c22bcad5f45b8dc1af919d768bac844"
+    "bytes": 7096,
+    "sha256": "e9c1c6edab09e1af3218764d6b356e207fd63078a4ad2aa8eb1e4973e3965012"
   },
   "lab2/docs/evidence/final-visual-qa.json": {
     "bytes": 12724,
@@ -2815,6 +2815,18 @@
     "bytes": 5576,
     "sha256": "3753ab3672cd619246108b3224f1208629c52fef5e6b8cf46f2477448c6cd047"
   },
+  "lab2/docs/media/editing-receipt.json": {
+    "bytes": 1095,
+    "sha256": "1564d69958753398bc65fa809aafb623f5c320d52719ac7e81baa9f11ebad243"
+  },
+  "lab2/docs/media/lab2-console-demo.mp4": {
+    "bytes": 380266,
+    "sha256": "53e35a1f0266d479396e777343672c0bc5f572c32aa3a68539d0fb6dc300c259"
+  },
+  "lab2/docs/media/lab2-console-poster.jpg": {
+    "bytes": 43832,
+    "sha256": "e4222f4d481fbe7fce359e2c33142af4735754377ffb650b8deb4d3f5d445fcb"
+  },
   "lab2/docs/publication-checks.json": {
     "bytes": 2206,
     "sha256": "d663087f29918353dc164c8c7614704fee383517ec865736e470869c8aa5a25a"
@@ -2846,6 +2858,10 @@
   "lab2/tools/serve_demo.py": {
     "bytes": 5747,
     "sha256": "b883b8d265a4e05e6586175ac4ecd42a61165021dae976970422c47079ae178e"
+  },
+  "lab2/tools/update_benchmark_tables.py": {
+    "bytes": 8833,
+    "sha256": "d07cf29b49d6bbacc847b6ad618f5e0ed3892855b732de82a79cc2fde2171844"
   },
   "licenses/ARPO-MIT.txt": {
     "bytes": 1078,
