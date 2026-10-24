@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "edited_at": "2026-10-24T22:20:53.597787+00:00",
+  "scope": "Plain Russian wording and layout in repository README, Lab2 README and Lab2 Word report",
+  "report_sha256": "3e49786d07312a6ab941690d4a2580cf2ebc5e18fc344b2593fa55aa6eb09b82",
+  "previous_report_sha256": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201",
+  "previous_report_pages": 31,
+  "current_report_pages": 20,
+  "original_prompts_and_numerical_data_preserved": true,
+  "protected_implementation_measurement_archive_video_files_unchanged": 343,
+  "data_verification": "data-check.json",
+  "visual_review": {
+    "all_pages_reviewed": true,
+    "pages": 20,
+    "issues_found": false,
+    "page_sha256": {
+      "page-1.png": "866e8f95e354313e910fba04f3bc588fae667f6b10b38137d7eaecbba59842cf",
+      "page-2.png": "959e387b0015d27d7074c56662d88e6687c49dbe8c65f7af02e75a4cfa9c204b",
+      "page-3.png": "2a381f9fe453659e010517b68fecac5d1f969eb45d05853231b3bd56cb3a84b5",
+      "page-4.png": "ad8f326407cd41203c1e6f04b591f269a4fb70541ede97cfbad6ae5ce4ab3a57",
+      "page-5.png": "5999e099229db3199e8f82f23f3eb4145b21cfd715fc64a1e9e491ca347a2faa",
+      "page-6.png": "7c345b509165879c15b7bc4b635534b32a3e9091252040a61ffba9cf2613157d",
+      "page-7.png": "b95cd15bc390d934193d8f66ba15c46022ec9f7dbdfa5d81eacbf70a86c1618a",
+      "page-8.png": "6cbcca9d8bca370a6d3ab7acb17015ebf06147ce359bf2bb45b09b8dd60f6a10",
+      "page-9.png": "4a06d9126382863cd439f0d9cb4c976385937a224105e970153cc93842157bd4",
+      "page-10.png": "ac4f0ae399bf0e64b305df8c3289ea1fe2fab1db176cc03a37e75dc4ef34f12d",
+      "page-11.png": "7df011687ac15082874157113d0bca3dff358d603197adaf98f86b9e98a04782",
+      "page-12.png": "23ec4778023c421fbd7516345e74858513844265c4b477e36b43d96649949c33",
+      "page-13.png": "1e3b5ed3148ef32bfcb702c2457fd5a6f1b9a6611d18163a38eeaa05dc5aeda4",
+      "page-14.png": "3715b000cb832726d958817ffbb1549a1339665465bba066576a31f9c26085fb",
+      "page-15.png": "3f7ab23728a60b5385a58e45e1466040703be77f379b19f171e6455afb6ec39e",
+      "page-16.png": "fc32c69aa713c0100dd0cd608e93751988a6b476144541f41e10abe710e8ba11",
+      "page-17.png": "c039a3f0cc3b80a9479b07eb05d374d1e6f6c6d3c918762d039510a6cdfd0a84",
+      "page-18.png": "f1ddb771b6402490a36ba0ea1ce314a41597ecb5959e0e160dc56a3ef204c89c",
+      "page-19.png": "7b0c4f240e6142d6427be69be7e90dc3ef4abd5120ff6805b816a564fdc9d347",
+      "page-20.png": "e25afb9cdb8acb5b1b91a67ba7cf5a094efbb65648469e68b85d64d31d70d840"
+    }
+  },
+  "native_word_equations": 2,
+  "russian_architecture_figure": "../../figures/acom-architecture-ru.png",
+  "component_tests_rerun_for_editorial_edit": false,
+  "technical_acceptance_evidence": "../../integration-20261025/lab2-18-configurations.json",
+  "limitations_preserved": [
+    "Incomplete usage/time for interrupted model calls",
+    "Complete Lab2 behavioral acceptance was after generation",
+    "Vendor C/D identity defect remains private",
+    "Finite tests on macOS arm64"
+  ]
+}

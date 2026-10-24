@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "report_sha256": "3e49786d07312a6ab941690d4a2580cf2ebc5e18fc344b2593fa55aa6eb09b82",
+  "author_and_group_verified": true,
+  "original_prompts_preserved": [
+    "short.txt",
+    "detailed.txt"
+  ],
+  "generation_runs_reconciled": 9,
+  "initial_groups_reconciled": 3,
+  "full_cost_groups_reconciled": 3,
+  "sort_summary_rows_reconciled": 12,
+  "call_summary_rows_reconciled": 18,
+  "parameters_and_full_costs_preserved": true,
+  "native_word_equations": 2,
+  "note": "Checks current document data. Rendering and visual review are recorded separately; historical component tests were not rerun for this text edit."
+}

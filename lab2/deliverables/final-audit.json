@@ -263,7 +263,7 @@
   "requests_complete": false,
   "unknown_interrupted_attempts_are_explicit": true,
   "reports": {
-    "report-comparison.docx": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201"
+    "report-comparison.docx": "3e49786d07312a6ab941690d4a2580cf2ebc5e18fc344b2593fa55aa6eb09b82"
   },
   "files": {
     ".DS_Store": "2280d829602b10e7d0fb4baa69c5a87c79b3f0f56cc8e857ff711b3447f3670a",
@@ -273,10 +273,20 @@
     "benchmarks-sort.csv": "ed16558f8e2367139b983e7235a5beadd1f2b1682c3cbafcf17804567bb50578",
     "generation-initial-phase.csv": "4dba99425f87fb0f447ff82993e69d6ab38518e0a604d64a9e302995bef5773b",
     "generation-measurements.csv": "937d766abda83f1f88439e1555f8e411c94a66f6e88214661392b55182e78eb9",
-    "report-comparison.docx": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201",
+    "report-comparison.docx": "3e49786d07312a6ab941690d4a2580cf2ebc5e18fc344b2593fa55aa6eb09b82",
     "sources-gost.zip": "bbf75e471f39090b9dc5fdd33f407ea51874d1f89d9cf0e93cde6491233928b5",
     "sources-manifest.json": "57f6b4c30c4791ddf501698dd1df1cdf143155367a3d2d12d3d74aa466c72e5b",
     "sources-ordinary-control.zip": "2b989607a7b999d464ce8c3d34f15486965fa843c14cec68f948d36fdefddffa",
     "sources-short.zip": "112d9eb78c4ead29ce7a896cf1bb4cc3d3881dc3324247951cf0f6bec0b7198a"
+  },
+  "editorial_revision": {
+    "verified": true,
+    "at": "2026-10-24T22:20:53.597787+00:00",
+    "previous_report": "docs/editorial-history/20261025/report-before-rewrite.docx",
+    "previous_audit": "docs/editorial-history/20261025/final-audit-before.json",
+    "revision_check": "docs/editorial-history/20261025/revision-check.json",
+    "component_tests_rerun": false,
+    "component_sources_and_metrics_unchanged": true,
+    "report_pages_visually_checked": 20
   }
 }

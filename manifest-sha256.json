@@ -32,8 +32,8 @@
     "sha256": "8cd89e1c643603284a59c97999012ef805ec87b26f9f078e50506e2f7a3c21f1"
   },
   "README.md": {
-    "bytes": 18690,
-    "sha256": "70b071cfc12fe4c1188cf6c2acaa2daf06ed4d4933c3a958b1846071ba202f6f"
+    "bytes": 18666,
+    "sha256": "9df12fede743f9c44f4198b5aaa4177868951517b5648adab48f37e37d24e3a3"
   },
   "SharedFiles/ErrEcoLab65.h": {
     "bytes": 785,
@@ -108,12 +108,12 @@
     "sha256": "906dd3c472e16668c588ea6390ceae36cbc525b5dcc3eb9605d5c6b643382386"
   },
   "lab2/README.md": {
-    "bytes": 27560,
-    "sha256": "d0984b1327a459bdb936bda8c7b647c214635680b8197b5dc92792c0201b6bd4"
+    "bytes": 24816,
+    "sha256": "ebff9c4c75bc507ce59a115970f4941615be53a3796068a89ec550f660a359cd"
   },
   "lab2/SHA256SUMS": {
-    "bytes": 92540,
-    "sha256": "581eadf26f68e378d94000ce3c2b55b191a7526094d87fa307c44ec0827e1ff5"
+    "bytes": 93794,
+    "sha256": "ae080461e8f682666b70aebe81bacb282db14a43376df7b202ca9198504e7502"
   },
   "lab2/THIRD_PARTY_NOTICES.md": {
     "bytes": 2337,
@@ -136,8 +136,8 @@
     "sha256": "ed16558f8e2367139b983e7235a5beadd1f2b1682c3cbafcf17804567bb50578"
   },
   "lab2/deliverables/final-audit.json": {
-    "bytes": 10301,
-    "sha256": "a65575fce46dc5f4dcbb82cda97e5708af051517ed6e47a5947e806af9453f4f"
+    "bytes": 10772,
+    "sha256": "e469e86d268ad671f1b6f35893c08c29e4d26f86dacf758b7bf87ba3ea687c2d"
   },
   "lab2/deliverables/generation-initial-phase.csv": {
     "bytes": 537,
@@ -148,8 +148,8 @@
     "sha256": "937d766abda83f1f88439e1555f8e411c94a66f6e88214661392b55182e78eb9"
   },
   "lab2/deliverables/report-comparison.docx": {
-    "bytes": 219571,
-    "sha256": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201"
+    "bytes": 295173,
+    "sha256": "3e49786d07312a6ab941690d4a2580cf2ebc5e18fc344b2593fa55aa6eb09b82"
   },
   "lab2/deliverables/sources-gost.zip": {
     "bytes": 409317,
@@ -2615,6 +2615,38 @@
     "bytes": 7096,
     "sha256": "e9c1c6edab09e1af3218764d6b356e207fd63078a4ad2aa8eb1e4973e3965012"
   },
+  "lab2/docs/editorial-history/20261025/data-check.json": {
+    "bytes": 636,
+    "sha256": "41a62b40662b96d026b13f8f5178b60ec093a24b7a3dec96a46f89e1ac5003bd"
+  },
+  "lab2/docs/editorial-history/20261025/final-audit-before.json": {
+    "bytes": 10301,
+    "sha256": "a65575fce46dc5f4dcbb82cda97e5708af051517ed6e47a5947e806af9453f4f"
+  },
+  "lab2/docs/editorial-history/20261025/lab2-readme-before.md": {
+    "bytes": 27560,
+    "sha256": "d0984b1327a459bdb936bda8c7b647c214635680b8197b5dc92792c0201b6bd4"
+  },
+  "lab2/docs/editorial-history/20261025/report-before-rewrite.docx": {
+    "bytes": 219571,
+    "sha256": "e3c6193dea7d9badf088080c9af6a36b7fb27e4c7bbd90d1278235df384c7201"
+  },
+  "lab2/docs/editorial-history/20261025/repository-readme-before.md": {
+    "bytes": 18690,
+    "sha256": "70b071cfc12fe4c1188cf6c2acaa2daf06ed4d4933c3a958b1846071ba202f6f"
+  },
+  "lab2/docs/editorial-history/20261025/revision-check.json": {
+    "bytes": 2983,
+    "sha256": "bbd3c45194177cd4d700c72953b7034d7db36f826237f968f83f65b819b0aba9"
+  },
+  "lab2/docs/editorial-history/20261025/revision.md": {
+    "bytes": 1686,
+    "sha256": "904bc9f169b21a474e604fef5e624937deca78156e7247e6c1e25737c379c2b8"
+  },
+  "lab2/docs/editorial-history/20261025/table-builder-before.py": {
+    "bytes": 8833,
+    "sha256": "d07cf29b49d6bbacc847b6ad618f5e0ed3892855b732de82a79cc2fde2171844"
+  },
   "lab2/docs/evidence/final-visual-qa.json": {
     "bytes": 12724,
     "sha256": "0d3a5b15363ffd033ba971bf0879ad15b29984dbe0f2c1077106247ab1dfd3fa"
@@ -2642,6 +2674,14 @@
   "lab2/docs/evidence/teacher-files.json": {
     "bytes": 9154,
     "sha256": "24edb8bf5b10ee996099319994adac5977b7e9e79e0614ed7047c6adfddf63cb"
+  },
+  "lab2/docs/figures/acom-architecture-ru.png": {
+    "bytes": 194386,
+    "sha256": "325bbbcdeab88e6fcd71e357f91f33e27a888b7196425e56e845a37390f4eee7"
+  },
+  "lab2/docs/figures/acom-architecture-ru.svg": {
+    "bytes": 5195,
+    "sha256": "6b1b5dcbc2a85ec60e828b205769b896b46e1743df304a4bb28e93562f7dfff9"
   },
   "lab2/docs/figures/acom-architecture.png": {
     "bytes": 85971,
@@ -2860,8 +2900,12 @@
     "sha256": "b883b8d265a4e05e6586175ac4ecd42a61165021dae976970422c47079ae178e"
   },
   "lab2/tools/update_benchmark_tables.py": {
-    "bytes": 8833,
-    "sha256": "d07cf29b49d6bbacc847b6ad618f5e0ed3892855b732de82a79cc2fde2171844"
+    "bytes": 8746,
+    "sha256": "7d5206b6c54450e3bf483facfe5ce4cffe845c24a6942f3904fe9bbf813c9efc"
+  },
+  "lab2/tools/verify_report.py": {
+    "bytes": 6098,
+    "sha256": "64f0a30194127bc39bb183d85f5c2e4c98966c97a19b4f0bca2e989af21b1803"
   },
   "licenses/ARPO-MIT.txt": {
     "bytes": 1078,
